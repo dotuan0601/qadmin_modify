@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Company;
+use App\FooterInfo;
+use App\FooterSitemap;
 use App\Http\Controllers\Controller;
+use App\ImageAct;
 use App\News;
 use App\PriceShow;
 use App\Products;
@@ -56,6 +60,30 @@ class HomepageController extends Controller {
 
         $price_shows  = PriceShow::all();
 
-        return view('welcome', compact('arr_menu', 'products', 'feature_news', 'other_news', 'price_shows'));
+        $companies = Company::all();
+
+        $img_act_feature = ImageAct::all()->where('is_feature', '=', 1);
+        $img_acts = ImageAct::all()->take(6);
+
+        $footer = FooterInfo::all()->take(1);
+        $raw_footer_sitemap = FooterSitemap::all();
+        $footer_sitemap = [];
+        foreach ($raw_footer_sitemap as $sitemap) {
+            if ($sitemap->is_parent && !array_key_exists($sitemap->name, $footer_sitemap)) {
+                $footer_sitemap[$sitemap->name] = ['name' => $sitemap['name']];
+            }
+
+            if ($sitemap->parent_id) {
+                if (array_key_exists($sitemap->parent_id, $footer_sitemap)) {
+                    $footer_sitemap[$sitemap->parent_id]['children'][] = [
+                        'name' => $sitemap->name,
+                        'link' => $sitemap->link
+                    ];
+                }
+            }
+        }
+
+        return view('welcome', compact('arr_menu', 'products', 'feature_news', 'other_news', 'price_shows',
+            'companies', 'img_act_feature', 'img_acts', 'footer', 'footer_sitemap'));
     }
 }
