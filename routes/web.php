@@ -20,3 +20,9 @@ Route::get('/trang-chu', 'Frontend\HomepageController@index');
 
 Route::get('/gop-y', 'Frontend\FeedbackController@index')->name('feedback.index');
 Route::post('feedback', 'Frontend\FeedbackController@store')->name('feedback.store');
+
+# captcha
+Route::get('createcaptcha', 'CaptchaController@create');
+Route::post('captcha', 'CaptchaController@captchaValidate');
+Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
+

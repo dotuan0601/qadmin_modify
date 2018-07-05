@@ -104,6 +104,12 @@
                                                     @endif
                                                 @endforeach
 
+                                                    @if ($errors->has('captcha'))
+                                                    <span class="help-block" style="color: red">
+                                                      <strong>{{ $errors->first('captcha') }}</strong>
+                                                  </span>
+                                                    @endif
+
                                                 <script type="text/javascript">
                                                     $('.close').click(function () {
                                                         $("#show-msg-gop-y").css("display", "none")
@@ -126,9 +132,28 @@
                                                     <label class="label">
                                                         Nhập mã hiển thị
                                                     </label>
+                                                    <input id="captcha" type="text" class="form-control" name="captcha"/>
                                                 </div>
                                                 <div id="ctl00_mainContent_ctl00_captcha" class="RadCaptcha RadCaptcha_Default" style="width:50%;">
-                                                    Captcha here
+                                                    <span id="ctl00_mainContent_ctl00_captcha_ctl00" style="visibility:hidden;">Mã không đúng.</span>
+                                                    <div id="ctl00_mainContent_ctl00_captcha_SpamProtectorPanel">
+                                                        <div id="ctl00_mainContent_ctl00_captcha_ctl01" class="captcha">
+                                                            <span>{!! captcha_img() !!}</span>
+                                                            <button type="button" class="btn btn-success"><i class="fa fa-refresh" id="refresh"></i></button>
+
+                                                            <script type="text/javascript">
+                                                                $('#refresh').click(function(){
+                                                                    $.ajax({
+                                                                        type:'GET',
+                                                                        url:'refreshcaptcha',
+                                                                        success:function(data){
+                                                                            $(".captcha span").html(data.captcha);
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="ctl00_mainContent_ctl00_up1" style="display:none;" role="status" aria-hidden="true">

@@ -76,6 +76,11 @@ class FeedbackController extends Controller {
     }
 
     public function store(Request $request) {
+        request()->validate([
+            'captcha' => 'required|captcha'
+        ],
+            ['captcha.captcha'=>'Sai ma hien thi']);
+
         $feedback_content = $request->get('feedback-content');
 
         # create new feedback
