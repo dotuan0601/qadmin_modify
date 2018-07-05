@@ -16,4 +16,7 @@
 //});
 
 Route::get('/', 'Frontend\HomepageController@index');
+Route::get('/trang-chu', 'Frontend\HomepageController@index');
 
+Route::get('/gop-y', 'Frontend\FeedbackController@index')->name('feedback.index');
+Route::post('feedback', 'Frontend\FeedbackController@store')->name('feedback.store');

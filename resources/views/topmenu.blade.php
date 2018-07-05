@@ -19,14 +19,14 @@
         }
 
     @endphp
-    <li class="{{$class_name}}"><a href="https://anovafeed.vn/gioi-thieu" target="_self">{{$each_menu['name']}}</a>
+    <li class="{{$class_name}}"><a href="/{{str_slug($each_menu['name'])}}" target="_self">{{$each_menu['name']}}</a>
 
     @if($class_name == 'hassub')
     <div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
     <div class="sub">
         <ul>
         @foreach( $each_menu['children'] as $sub_menu)
-            <li><a href="https://anovafeed.vn/san-pham/anova-feed" target="_self">{{$sub_menu}}</a></li>
+            <li><a href="/{{str_slug($sub_menu)}}" target="_self">{{$sub_menu}}</a></li>
         @endforeach
         </ul>
         </div>
@@ -37,25 +37,32 @@
 
                             <div class="topmenu clearfix">
                                 <div class="title">Sitemaps</div>
-                                <div class="topmenu clearfix Module Module-138"><div class="ModuleContent"><ul class="toplink">
-    <li class="active"><a href="http://www.anovacorp.vn/">Anova<br>
-    Corp</a></li>
-    <li> <a href="http://www.thanhnhon.com/">Thanh Nhon<br>
-    CORP</a></li>
-    <li> <a href="http://www.anovafeed.vn/">Anova<br>
-    FEED</a></li>
-    <li> <a href="http://www.anovafarm.vn/">Anova<br>
-    Farm</a></li>
-    <li> <a href="http://www.biopharmachemie.com/">Bio<br>
-    Pharmachemie</a></li>
-    <li> <a href="http://www.anova.com.vn/">Anova<br>
-    JV</a></li>
-    <li> <a href="http://www.anovapharma.com/">Anova<br>
-    Pharma</a></li>
-    <li> <a href="http://www.anovatrade-corp.com/">Anova<br>
-    Trade</a></li>
-    <!--<li> <a href="http://www.anovabiotech.vn/">Anova<br />
-    Biotech</a></li>-->
-</ul></div></div>
+                                <div class="topmenu clearfix Module Module-138">
+                                    <div class="ModuleContent">
+                                        <ul class="toplink">
+                                            <li class="active"><a href="http://www.anovacorp.vn/">Anova<br>
+                                            Corp</a></li>
+                                            <li> <a href="http://www.thanhnhon.com/">Thanh Nhon<br>
+                                            CORP</a></li>
+                                            <li> <a href="http://www.anovafeed.vn/">Anova<br>
+                                            FEED</a></li>
+                                            <li> <a href="http://www.anovafarm.vn/">Anova<br>
+                                            Farm</a></li>
+                                            <li> <a href="http://www.biopharmachemie.com/">Bio<br>
+                                            Pharmachemie</a></li>
+                                            <li> <a href="http://www.anova.com.vn/">Anova<br>
+                                            JV</a></li>
+                                            <li> <a href="http://www.anovapharma.com/">Anova<br>
+                                            Pharma</a></li>
+                                            <li> <a href="http://www.anovatrade-corp.com/">Anova<br>
+                                            Trade</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+</ul>
+                                </div>
                             </div>
                         </section>
+                    </div>
+                </section>
