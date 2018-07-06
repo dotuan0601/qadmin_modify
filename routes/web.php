@@ -15,9 +15,11 @@
 //    return view('welcome');
 //});
 
+# homepage
 Route::get('/', 'Frontend\HomepageController@index');
 Route::get('/trang-chu', 'Frontend\HomepageController@index');
 
+# feedback
 Route::get('/gop-y', 'Frontend\FeedbackController@index')->name('feedback.index');
 Route::post('feedback', 'Frontend\FeedbackController@store')->name('feedback.store');
 
@@ -26,3 +28,5 @@ Route::get('createcaptcha', 'CaptchaController@create');
 Route::post('captcha', 'CaptchaController@captchaValidate');
 Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
 
+# about
+Route::get('/gioi-thieu', 'Frontend\AboutController@index')->name('about.index');

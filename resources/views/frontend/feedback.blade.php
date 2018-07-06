@@ -83,7 +83,9 @@
         </header>
         <div style="display: block; width: 1440px; height: 130px; float: none;"></div>
         <main>
-            @include('breadcum')
+            <div id="ctl00_divAlt1" class="altcontent1 cmszone">
+                @include('breadcum')
+            </div>
 
             <div class="container">
                 <section class="row flex flex-wrap">
