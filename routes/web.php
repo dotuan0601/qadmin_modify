@@ -30,3 +30,6 @@ Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
 
 # about
 Route::get('/gioi-thieu', 'Frontend\AboutController@index')->name('about.index');
+# kien thuc chan nuoi
+Route::get('/kien-thuc-chan-nuoi', 'Frontend\KnowledgeController@index')->name('about.index');
+Route::get('/kien-thuc-chan-nuoi/{cat_slug}', 'Frontend\KnowledgeController@index')->name('about.index');
