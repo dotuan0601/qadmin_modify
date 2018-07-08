@@ -12,15 +12,15 @@
     <![endif]-->
 
 
-    <link rel="stylesheet" type="text/css" href="css/toolbar.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="css/addons.css">
-    <link rel="stylesheet" type="text/css" href="css/wow_book.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/about/toolbar.css">
+    <link rel="stylesheet" type="text/css" href="css/about/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="css/about/addons.css">
+    <link rel="stylesheet" type="text/css" href="css/about/wow_book.css">
+    <link rel="stylesheet" type="text/css" href="css/about/main.css">
     <link rel="shortcut icon" href="https://anovafeed.vn/Data/Sites/1/skins/default/favicon.ico">
-    <script type="text/javascript" async="" src="js/analytics.js"></script><script src="js/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" async="" src="js/about/analytics.js"></script><script src="js/about/jquery.min.js" type="text/javascript"></script>
 
-    <script src="js/jquery.mousewheel.min.js"></script></head>
+    <script src="js/about/jquery.mousewheel.min.js"></script></head>
 <body id="ctl00_Body" class="canhcam aboutpage vi-vn"><div class="parallax-mirror" style="visibility: hidden; z-index: -100; position: fixed; top: 888px; left: 200px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 430px; width: 1440px;"><img class="parallax-slider" src="img/aboutbg.jpg" style="transform: translate3d(0px, 0px, 0px); position: absolute; left: 0px; height: 900px; width: 1440px; max-width: none; top: -539px;"></div>
 
 
@@ -32,6 +32,14 @@
         <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk3NjY2MTIwNw9kFgJmD2QWAgIBDxYCHgRsYW5nBQJ2aRYCAgMPFgIeBWNsYXNzBRdjYW5oY2FtIGFib3V0cGFnZSB2aS12bhYCAgUPZBYOAgkPZBYCZg9kFgJmD2QWAmYPD2QWAh4Ic2l0ZXJvb3QFFGh0dHBzOi8vYW5vdmFmZWVkLnZuFgQCAQ8PFgYeB1Rvb2xUaXAFC1TDrG0ga2nhur9tHghDc3NDbGFzcwULc2VhcmNoaW5wdXQeBF8hU0ICAhYEHgxhdXRvY29tcGxldGUFA29mZh4LcGxhY2Vob2xkZXIFDlTDrG0ga2nhur9tLi4uZAIFDxYCHwEFDHNlYXJjaGJ1dHRvbmQCGQ8PFgQfBAUTYWx0Y29udGVudDEgY21zem9uZR8FAgJkZAIbDw8WBh8EBRBsZWZ0c2lkZSBjbXN6b25lHwUCAh4HVmlzaWJsZWhkZAIdDw8WBB8EBRpjb2wteHMtMTIgbWlk">
         <input type="hidden" name="__VIEWSTATE1" id="__VIEWSTATE1" value="ZGxlLWZ1bGx3aWR0aB8FAgJkZAIfDw8WBh8EBRFyaWdodHNpZGUgY21zem9uZR8FAgIfCGhkZAIhDw8WBh8EBRNhbHRjb250ZW50MiBjbXN6b25lHwUCAh8IaGRkAikPDxYCHwhoZGRkvESSIFQRe4K78+Ld95phf7iNRbM=">
     </div>
+
+
+    <script src="other/about/WebResource.axd" type="text/javascript"></script>
+
+
+    <script src="other/about/ScriptResource.axd" type="text/javascript"></script>
+
+
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
             <div class="overlay"></div>
@@ -106,14 +114,19 @@
                                         @foreach($cats as $k => $cat)
                                             @if($k == $cat_index_active)
                                                 <li class="active">
-                                                    <a href="/{{$current_slug}}#{{$cat->slug}}" target="_self">{{$cat->name}}</a>
+                                                    <a href="#{{$cat->slug}}" target="_self">{{$cat->name}}</a>
                                                 </li>
                                             @else
                                                 <li>
-                                                    <a href="/{{$current_slug}}#{{$cat->slug}}" target="_self">{{$cat->name}}</a>
+                                                    <a href="#{{$cat->slug}}" target="_self">{{$cat->name}}</a>
                                                 </li>
                                             @endif
+
                                         @endforeach
+
+                                        <li class="">
+                                            <a href="#part-chung-chi" target="_self">Thành tựu - Giải thưởng</a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -127,6 +140,8 @@
                         
 
             </div>
+
+
             <div class="container">
                 <section class="row flex flex-wrap">
 
@@ -191,129 +206,23 @@
                                                                             <div class="wowbook-gutter-shadow" style="height: 760px;"></div></div></div><div class="wowbook-shadow-clipper" style="display: none; width: 1070px; height: 760px;"><div class="wowbook-shadow-container" style="position: relative;"><div class="wowbook-shadow-internal"></div><div class="wowbook-shadow-fold"></div><div class="wowbook-fold-gradient-container"><div class="wowbook-fold-gradient"></div></div></div></div><div class="wowbook-hard-page-shadow" style="display: none; width: 535px; height: 760px;"></div><div class="wowbook-handle wowbook-left wowbook-disabled"></div><div class="wowbook-handle wowbook-right" style="left: 1020px;"></div></div></div></div><div class="wowbook-book-shadow" style="top: 0px; position: absolute; z-index: 0; display: block; width: 535px; height: 760px; left: 535px;"></div></div></div></div>
                                         </div>
                                     </div>
-                                </div></div></section><section id="part-5" class="about-award clearfix"><div class="container Module Module-173"><div class="ModuleContent"><h2 class="abouttitle">Thành tựu - giải thưởng</h2>
+                                </div></div></section>
+
+                                <section id="part-chung-chi" class="about-award clearfix"><div class="container Module Module-173"><div class="ModuleContent"><h2 class="abouttitle">Thành tựu - giải thưởng</h2>
                                     <div class="awardlist clearfix">
                                         <div class="row flex flex-wrap">
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/1.png" alt="Thức ăn hỗn hợp cho heo con từ tập ăn đến 7kg" title="Thức ăn hỗn hợp cho heo con từ tập ăn đến 7kg">
-                                                        <img src="img/1.png" alt="Thức ăn hỗn hợp cho heo con từ tập ăn đến 7kg">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo con từ tập ăn đến 7kg</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/2.png" alt="Thức ăn hỗn hợp cho heo con  từ 7kg đến 15 kg" title="Thức ăn hỗn hợp cho heo con  từ 7kg đến 15 kg">
-                                                        <img src="img/2.png" alt="Thức ăn hỗn hợp cho heo con  từ 7kg đến 15 kg">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo con  từ 7kg đến 15 kg</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/3.png" alt="Thức ăn hỗn hợp cho heo từ 15 đến 30 kg" title="Thức ăn hỗn hợp cho heo từ 15 đến 30 kg">
-                                                        <img src="img/3.png" alt="Thức ăn hỗn hợp cho heo từ 15 đến 30 kg">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo từ 15 đến 30 kg</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/4.png" alt="Thức ăn hỗn hợp cho heo thịt từ 30 kg đến 60 kg" title="Thức ăn hỗn hợp cho heo thịt từ 30 kg đến 60 kg">
-                                                        <img src="img/4.png" alt="Thức ăn hỗn hợp cho heo thịt từ 30 kg đến 60 kg">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo thịt từ 30 kg đến 60 kg</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/5.png" alt="Thức ăn hỗn hợp cho heo vỗ béo từ 60 kg đến xuất chuồng" title="Thức ăn hỗn hợp cho heo vỗ béo từ 60 kg đến xuất chuồng">
-                                                        <img src="img/5.png" alt="Thức ăn hỗn hợp cho heo vỗ béo từ 60 kg đến xuất chuồng">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo vỗ béo từ 60 kg đến xuất chuồng</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/6.png" alt="Thức ăn hỗn hợp cho heo nái mang thai" title="Thức ăn hỗn hợp cho heo nái mang thai">
-                                                        <img src="img/6.png" alt="Thức ăn hỗn hợp cho heo nái mang thai">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo nái mang thai</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/7.png" alt="Thức ăn hỗn hợp cho heo nái nuôi con" title="Thức ăn hỗn hợp cho heo nái nuôi con">
-                                                        <img src="img/7.png" alt="Thức ăn hỗn hợp cho heo nái nuôi con">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp cho heo nái nuôi con</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/8.png" alt="Thức ăn hỗn hợp dành cho vịt đẻ" title="Thức ăn hỗn hợp dành cho vịt đẻ">
-                                                        <img src="img/8.png" alt="Thức ăn hỗn hợp dành cho vịt đẻ">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp dành cho vịt đẻ</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/9.png" alt="Thức ăn hỗn hợp dành cho vịt đẻ thương phẩm" title="Thức ăn hỗn hợp dành cho vịt đẻ thương phẩm">
-                                                        <img src="img/9.png" alt="Thức ăn hỗn hợp dành cho vịt đẻ thương phẩm">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Thức ăn hỗn hợp dành cho vịt đẻ thương phẩm</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/10.jpg" alt="Chứng chỉ về hệ thống quản lý chất lượng ISO 9001 : 2015" title="Chứng chỉ về hệ thống quản lý chất lượng ISO 9001 : 2015">
-                                                        <img src="img/10.jpg" alt="Chứng chỉ về hệ thống quản lý chất lượng ISO 9001 : 2015">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Chứng chỉ về hệ thống quản lý chất lượng ISO 9001 : 2015</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/111.jpg" alt="Chứng chỉ về hệ thống Quản lý An toàn thực phẩm ISO 22000 : 2005" title="Chứng chỉ về hệ thống Quản lý An toàn thực phẩm ISO 22000 : 2005">
-                                                        <img src="img/111.jpg" alt="Chứng chỉ về hệ thống Quản lý An toàn thực phẩm ISO 22000 : 2005">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Chứng chỉ về hệ thống Quản lý An toàn thực phẩm ISO 22000 : 2005</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
-                                            <div class="awardcol">
-                                                <figure>
-                                                    <a class="img" data-fancybox="photo" href="img/112.jpg" alt="Chứng chỉ về hệ thống quản lý vệ sinh an toàn thực phẩm HACCP" title="Chứng chỉ về hệ thống quản lý vệ sinh an toàn thực phẩm HACCP">
-                                                        <img src="img/112.jpg" alt="Chứng chỉ về hệ thống quản lý vệ sinh an toàn thực phẩm HACCP">
-                                                    </a>
-                                                    <figcaption>
-                                                        <div class="des">Chứng chỉ về hệ thống quản lý vệ sinh an toàn thực phẩm HACCP</div>
-                                                    </figcaption>
-                                                </figure>
-                                            </div>
+                                            @foreach ($archives as $archive)
+                                                <div class="awardcol">
+                                                    <figure>
+                                                        <a class="img" data-fancybox="photo" href="uploads/{{$archive->img}}" alt="{{$archive->name}}" title="{{$archive->name}}">
+                                                            <img src="uploads/{{$archive->img}}" alt="{{$archive->name}}">
+                                                        </a>
+                                                        <figcaption>
+                                                            <div class="des">{{$archive->name}}</div>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div></div></section>
@@ -321,7 +230,9 @@
                     </div>
 
                 </section>
-            </div></main>
+            </div>
+
+        </main>
 
         @include('footer')
     </div>

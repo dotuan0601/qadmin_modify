@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\AboutArchive;
 use App\AboutCategory;
 use App\AboutContent;
 use App\Company;
@@ -79,12 +80,15 @@ class AboutController extends Controller {
             }
         }
 
+        # archive
+        $archives = AboutArchive::all();
+
         $breadcrumb_arr = [
             ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
             ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
         ];
 
         return view('frontend.about', compact('arr_menu', 'cats', 'footer', 'footer_sitemap',
-            'breadcrumb_arr', 'current_slug', 'contents'));
+            'breadcrumb_arr', 'current_slug', 'contents', 'archives'));
     }
 }
