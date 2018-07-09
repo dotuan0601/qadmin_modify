@@ -171,8 +171,10 @@
                                     <div class="newslist newslist3 clearfix video-wrap">
                                         <section class="row flex flex-wrap">
                                             <div class="col-xs-12 col-lg-9">
-                                                <div id="videoPlayer"><video width="100%" height="418" class="video-js vjs-default-skin" controls="" preload="none" data-setup="{}" poster="img/knowledge/42-1.jpg">
-                                                        <source src="https://youtu.be/KAxXwpas3jQ" type="video/mp4"></video></div>
+                                                <div class="col-xs-12 col-lg-9">
+                                                    <div id="videoPlayer"><video width="100%" height="418" class="video-js vjs-default-skin" controls="" preload="none" data-setup="{}" poster="img/knowledge/42-1.jpg">
+                                                    <source src="https://youtu.be/KAxXwpas3jQ" type="video/mp4"></video></div>
+                                                </div>
                                             </div>
                                             <div class="col-xs-12 col-lg-3">
                                                 <section class="row flex flex-wrap video-right">
@@ -181,14 +183,14 @@
                                                             <div class="newscol video small">
                                                                 <figure>
                                                                     <a class="video2" href="javascript:void(0);">
-                                                                        <img src="uplods/{{$related_video->img}}" alt="{{$related_video->name}}">
+                                                                        <img src="uploads/{{$related_video->img}}" alt="{{$related_video->name}}">
                                                                     </a>
                                                                     <figcaption>
                                                                         <h2 class="newsname">{{$related_video->name}}</h2>
                                                                     </figcaption>
                                                                     <div class="contentvideo" style="display:none;" id="video2">
                                                                         <span class="videotype">youtube</span>
-                                                                        <span class="videosrc">{{$related_video->video_src}}</span>
+                                                                        <span class="videosrc">{{$related_video->video_src . '?ecver=2&amp;version=3&amp;autoplay=1&amp;rel=0'}}</span>
                                                                     </div>
                                                                 </figure>
                                                             </div>

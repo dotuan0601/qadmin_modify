@@ -33,3 +33,8 @@ Route::get('/gioi-thieu', 'Frontend\AboutController@index')->name('about.index')
 # kien thuc chan nuoi
 Route::get('/kien-thuc-chan-nuoi', 'Frontend\KnowledgeController@index')->name('about.index');
 Route::get('/kien-thuc-chan-nuoi/{cat_slug}', 'Frontend\KnowledgeController@index')->name('about.index');
+# san pham
+Route::get('/san-pham', 'Frontend\ProductController@index')->name('product.index');
+Route::get('/san-pham/({sub-menu}', 'Frontend\ProductController@index')->name('product.index');
+Route::get('/san-pham/{current_menu}', 'Frontend\ProductController@index')->name('product.index');
+Route::get('/san-pham/{current_menu}/{current_cat}', 'Frontend\ProductController@index')->name('product.index');

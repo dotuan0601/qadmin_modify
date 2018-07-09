@@ -16,16 +16,16 @@
     </div>
 </div>
 
-{!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.products.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
+{!! Form::open(array('files' => true, 'route' => config('quickadmin.route').'.productcategory.store', 'id' => 'form-with-validation', 'class' => 'form-horizontal')) !!}
 
 <div class="form-group">
-    {!! Form::label('name', 'Tên sản phẩm', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'Tên danh mục', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('name', old('name'), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('img', 'Ảnh nhỏ', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('img', 'Ảnh đại diện', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::file('img') !!}
         {!! Form::hidden('img_w', 4096) !!}
@@ -33,9 +33,17 @@
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('short_description', 'Mô tả ngắn', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('is_home_page', 'Đặt ở trang chủ', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('short_description', old('short_description'), array('class'=>'form-control')) !!}
+        {!! Form::hidden('is_home_page','') !!}
+        {!! Form::checkbox('is_home_page', 1, false) !!}
+        
+    </div>
+</div><div class="form-group">
+    {!! Form::label('status', 'Trạng thái', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::hidden('status','') !!}
+        {!! Form::checkbox('status', 1, true) !!}
         
     </div>
 </div><div class="form-group">
@@ -43,12 +51,6 @@
     <div class="col-sm-10">
         {!! Form::select('frmenu_id', $frmenu, old('frmenu_id'), array('class'=>'form-control')) !!}
         <p class="help-block">(chỉ chọn menu con của menu Sản phẩm)</p>
-    </div>
-</div><div class="form-group">
-    {!! Form::label('productcategory_id', 'Thuộc danh mục', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::select('productcategory_id', $productcategory, old('productcategory_id'), array('class'=>'form-control')) !!}
-        
     </div>
 </div>
 

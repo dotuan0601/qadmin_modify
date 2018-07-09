@@ -9,7 +9,9 @@ use App\Products;
 use App\Http\Requests\CreateProductsRequest;
 use App\Http\Requests\UpdateProductsRequest;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Traits\FileUploadTrait;
+use App\FrMenu;
+use App\ProductCategory;
 
 
 class ProductsController extends Controller {
@@ -23,7 +25,7 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $products = Products::all();
+        $products = Products::with("frmenu")->with("productcategory")->get();
 
 		return view('admin.products.index', compact('products'));
 	}
@@ -35,9 +37,11 @@ class ProductsController extends Controller {
 	 */
 	public function create()
 	{
+	    $frmenu = FrMenu::pluck("name", "id")->prepend('Please select', 0);
+$productcategory = ProductCategory::pluck("name", "id")->prepend('Please select', 0);
+
 	    
-	    
-	    return view('admin.products.create');
+	    return view('admin.products.create', compact("frmenu", "productcategory"));
 	}
 
 	/**
@@ -47,7 +51,7 @@ class ProductsController extends Controller {
 	 */
 	public function store(CreateProductsRequest $request)
 	{
-	    
+	    $request = $this->saveFiles($request);
 		Products::create($request->all());
 
 		return redirect()->route(config('quickadmin.route').'.products.index');
@@ -62,9 +66,11 @@ class ProductsController extends Controller {
 	public function edit($id)
 	{
 		$products = Products::find($id);
+	    $frmenu = FrMenu::pluck("name", "id")->prepend('Please select', 0);
+$productcategory = ProductCategory::pluck("name", "id")->prepend('Please select', 0);
+
 	    
-	    
-		return view('admin.products.edit', compact('products'));
+		return view('admin.products.edit', compact('products', "frmenu", "productcategory"));
 	}
 
 	/**
@@ -77,7 +83,7 @@ class ProductsController extends Controller {
 	{
 		$products = Products::findOrFail($id);
 
-        
+        $request = $this->saveFiles($request);
 
 		$products->update($request->all());
 

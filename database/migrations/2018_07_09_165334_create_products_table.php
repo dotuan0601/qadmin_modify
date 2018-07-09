@@ -16,8 +16,11 @@ class CreateProductsTable extends Migration {
         Model::unguard();
         Schema::create('products',function(Blueprint $table){
             $table->increments("id");
-            $table->string("product_name")->nullable();
-            $table->string("img_link")->nullable();
+            $table->string("name")->nullable();
+            $table->string("img")->nullable();
+            $table->string("short_description")->nullable();
+            $table->integer("frmenu_id")->references("id")->on("frmenu")->nullable();
+            $table->integer("productcategory_id")->references("id")->on("productcategory")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

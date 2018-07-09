@@ -2,9 +2,9 @@
 
 @section('content')
 
-<p>{!! link_to_route(config('quickadmin.route').'.products.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
+<p>{!! link_to_route(config('quickadmin.route').'.productcategory.create', trans('quickadmin::templates.templates-view_index-add_new') , null, array('class' => 'btn btn-success')) !!}</p>
 
-@if ($products->count())
+@if ($productcategory->count())
     <div class="portlet box green">
         <div class="portlet-title">
             <div class="caption">{{ trans('quickadmin::templates.templates-view_index-list') }}</div>
@@ -16,31 +16,31 @@
                         <th>
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
-                        <th>Tên sản phẩm</th>
-<th>Ảnh nhỏ</th>
-<th>Mô tả ngắn</th>
+                        <th>Tên danh mục</th>
+<th>Ảnh đại diện</th>
+<th>Đặt ở trang chủ</th>
+<th>Trạng thái</th>
 <th>Thuộc menu sản phẩm</th>
-<th>Thuộc danh mục</th>
 
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($products as $row)
+                    @foreach ($productcategory as $row)
                         <tr>
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->name }}</td>
 <td>@if($row->img != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->img }}">@endif</td>
-<td>{{ $row->short_description }}</td>
+<td>{{ $row->is_home_page }}</td>
+<td>{{ $row->status }}</td>
 <td>{{ isset($row->frmenu->name) ? $row->frmenu->name : '' }}</td>
-<td>{{ isset($row->productcategory->name) ? $row->productcategory->name : '' }}</td>
 
                             <td>
-                                {!! link_to_route(config('quickadmin.route').'.products.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
-                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.products.destroy', $row->id))) !!}
+                                {!! link_to_route(config('quickadmin.route').'.productcategory.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
+                                {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => "return confirm('".trans("quickadmin::templates.templates-view_index-are_you_sure")."');",  'route' => array(config('quickadmin.route').'.productcategory.destroy', $row->id))) !!}
                                 {!! Form::submit(trans('quickadmin::templates.templates-view_index-delete'), array('class' => 'btn btn-xs btn-danger')) !!}
                                 {!! Form::close() !!}
                             </td>
@@ -55,7 +55,7 @@
                     </button>
                 </div>
             </div>
-            {!! Form::open(['route' => config('quickadmin.route').'.products.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
+            {!! Form::open(['route' => config('quickadmin.route').'.productcategory.massDelete', 'method' => 'post', 'id' => 'massDelete']) !!}
                 <input type="hidden" id="send" name="toDelete">
             {!! Form::close() !!}
         </div>

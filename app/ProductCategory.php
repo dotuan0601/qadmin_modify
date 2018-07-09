@@ -8,7 +8,7 @@ use Laraveldaily\Quickadmin\Observers\UserActionsObserver;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Products extends Model {
+class ProductCategory extends Model {
 
     use SoftDeletes;
 
@@ -19,14 +19,14 @@ class Products extends Model {
     */
     protected $dates = ['deleted_at'];
 
-    protected $table    = 'products';
+    protected $table    = 'productcategory';
     
     protected $fillable = [
           'name',
           'img',
-          'short_description',
-          'frmenu_id',
-          'productcategory_id'
+          'is_home_page',
+          'status',
+          'frmenu_id'
     ];
     
 
@@ -34,18 +34,12 @@ class Products extends Model {
     {
         parent::boot();
 
-        Products::observe(new UserActionsObserver);
+        ProductCategory::observe(new UserActionsObserver);
     }
     
     public function frmenu()
     {
         return $this->hasOne('App\FrMenu', 'id', 'frmenu_id');
-    }
-
-
-    public function productcategory()
-    {
-        return $this->hasOne('App\ProductCategory', 'id', 'productcategory_id');
     }
 
 

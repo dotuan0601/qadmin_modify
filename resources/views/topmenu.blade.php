@@ -11,17 +11,22 @@
   @foreach ($arr_menu as $each_menu)
     @php
         $class_name = '';
-        if ($each_menu['is_active']) {
-            $class_name = 'active';
+        if (array_key_exists('children', $each_menu) && $each_menu['children']) {
+            if ($each_menu['is_active']) {
+                $class_name = 'active hassub';
+            }
+            else {
+                $class_name = 'hassub';
+            }
         }
-        elseif (array_key_exists('children', $each_menu) && $each_menu['children']) {
-            $class_name = 'hassub';
+        elseif ($each_menu['is_active']) {
+            $class_name = 'active';
         }
 
     @endphp
     <li class="{{$class_name}}"><a href="/{{str_slug($each_menu['name'])}}" target="_self">{{$each_menu['name']}}</a>
 
-    @if($class_name == 'hassub')
+    @if($class_name == 'hassub' || $class_name == 'active hassub')
     <div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
     <div class="sub">
         <ul>
