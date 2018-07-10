@@ -162,64 +162,87 @@
                             </ol></div></div> </section>
 
             </div>
+
             <div class="container">
                 <section class="row flex flex-wrap">
-                    <div id="ctl00_divLeft" class="col-xs-12 col-lg-3 col-left cmszone">
 
-                        <div class="sidebar clearfix Module Module-178">
-                            <div class="ModuleContent">
-                                <nav class="sidebar-category clearfix">
-                                    <ul>
-                                        @foreach($product_menus as $k => $product_menu)
-                                            <li class="{{$product_menu['class']}}">
-                                                <a class="hvr-sweep-to-right" href="/san-pham/{{str_slug($k)}}" target="_self">{{$k}}</a>
-                                                <ul class="sub">
-                                                    @foreach($product_menu['children'] as $kk => $product_cat_id)
-                                                        <li><a href="/san-pham/{{str_slug($k)}}/{{$product_cat_id}}" target="_self">{{$kk}}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                    <div id="ctl00_divCenter" class="col-xs-12 middle-fullwidth">
 
-                    </div>
-                    <div id="ctl00_divCenter" class="col-xs-12 col-lg-9 col-right">
 
-                        <div class="clearfix Module Module-179"><div class="ModuleContent"><section class="product-page clearfix">
-                                    <h1 class="pagetitle">
-                                        <a href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-heo" target="_self">Thức ăn cho heo</a>
-                                    </h1>
-                                    <div class="productlist clearfix">
+
+                        <div class="Module Module-176"><div class="ModuleContent">
+                                <div id="ctl00_mainContent_ctl00_ctl00_pnlInnerWrap">
+
+
+
+                                    <section class="product-page clearfix">
+                                        <h1 class="pagetitle">{{$product->name}}</h1>
                                         <div class="row flex flex-wrap">
-                                            @foreach($products as $product)
-                                            <article class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                                <article class="productcol">
-                                                    <figure>
-                                                        <a class="productimg" href="{{ URL('/san-pham/' . $current_menu . '/detail/'.$product->id )}}" target="_self" title="{{$product->short_description}}">
-                                                            <img src="/uploads/{{$product->img}}" alt="{{$product->short_description}}">
-                                                        </a>
-                                                        <figcaption>
-                                                            <h4>{{strtoupper($product->name)}}</h4>
-                                                            <h3 class="productname">
-                                                                <a href="{{ URL('/san-pham/' . $current_menu . '/detail/'.$product->id )}}" target="_self" title="{{$product->short_description}}">{{$product->short_description}}</a></h3>
-                                                        </figcaption>
-                                                    </figure>
-                                                </article>
-                                            </article>
-                                            @endforeach
+                                            <div class="col-xs-12 col-md-5">
+                                                <a data-fancybox="gal1" class="product-mainimg" href="{{ URL('uploads/' . $product->img)}}">
+                                                    <img src="{{URL('uploads/' . $product->img)}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-12 col-md-7">
+                                                <div class="product-component clearfix">
+                                                    <div class="smalltitle">Thành phần</div>
+                                                    {!! $product_detail->ingredient !!}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
+                                        <section class="product-des clearfix">
+                                            <div class="content"><div class="smalltitle">
+                                                    <p><strong>THÀNH PHẦN CHÍNH&nbsp;</strong></p>
+                                                </div>
+                                                <ul>
+                                                    <li>{{$product_detail->main_part}}</li>
+                                                </ul>
+                                                <div class="smalltitle">
+                                                    <p><strong>HƯỚNG DẪN SỬ DỤNG VÀ BẢO QUẢN&nbsp;</strong></p>
+                                                </div>
+                                                {!! $product_detail->instruction !!}
+                                            </div>
+                                        </section>
+                                        {{--<div class="share mrb-xs-30">--}}
+                                            {{--<div class="fb-send">--}}
+                                            {{--</div>--}}
+                                            {{--<div class="face-like"><a class="fb-like fb_iframe_widget" data-href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-de-thuong-pham" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=100"><span style="vertical-align: bottom; width: 61px; height: 20px;"><iframe name="f267ccdaa7e7df" width="100px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/plugins/like.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F1e2RywyANNe.js%3Fversion%3D42%23cb%3Df3dbe19aa8681a8%26domain%3Danovafeed.vn%26origin%3Dhttps%253A%252F%252Fanovafeed.vn%252Ff1c219e38841124%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=100" style="border: none; visibility: visible; width: 61px; height: 20px;" class=""></iframe></span></a></div>--}}
+                                            {{--<div class="fb-share-button fb_iframe_widget" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey"><span style="vertical-align: bottom; width: 69px; height: 20px;"><iframe name="f37013cc5f19f5" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:share_button Facebook Social Plugin" src="https://www.facebook.com/plugins/share_button.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F1e2RywyANNe.js%3Fversion%3D42%23cb%3Df39d0075e4655c%26domain%3Danovafeed.vn%26origin%3Dhttps%253A%252F%252Fanovafeed.vn%252Ff1c219e38841124%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey" style="border: none; visibility: visible; width: 69px; height: 20px;" class=""></iframe></span></div>--}}
+                                            {{--<div class="google"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1531237501815" name="I0_1531237501815" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;count=true&amp;origin=https%3A%2F%2Fanovafeed.vn&amp;url=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.L9RsVMEwS34.O%2Fam%3DwQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCN93LHo6bKtnJ3EpvogAEBaFLHYnQ%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1531237501815&amp;_gfid=I0_1531237501815&amp;parent=https%3A%2F%2Fanovafeed.vn&amp;pfname=&amp;rpctoken=72151314" data-gapiattached="true" title="G+"></iframe></div></div>--}}
+                                            {{--<div class="tweet"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.27f80cac813b35806b7dd3e6c89947b7.vi.html#dnt=false&amp;id=twitter-widget-0&amp;lang=vi&amp;original_referer=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham&amp;size=m&amp;text=Th%E1%BB%A9c%20%C4%83n%20h%E1%BB%97n%20h%E1%BB%A3p%20d%C3%A0nh%20cho%20g%C3%A0%20%C4%91%E1%BA%BB%20th%C6%B0%C6%A1ng%20ph%E1%BA%A9m&amp;time=1531237501949&amp;type=share&amp;url=https%3A%2F%2Fanovafeed.vn%2Fsan-pham%2Fanova-feed%2Fthuc-an-cho-gia-cam%2Fthuc-an-cho-ga%2Fthuc-an-hon-hop-danh-cho-ga-de-thuong-pham" data-url="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-de-thuong-pham"></iframe></div>--}}
+                                        {{--</div>--}}
+                                        <section class="product-related clearfix">
+                                            <div class="smalltitle">Sản phẩm cùng loại</div>
+                                            <div class="productlist clearfix">
+                                                <div class="row flex flex-wrap">
+                                                    @foreach($related_products as $product)
+                                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                                                            <article class="productcol">
+                                                                <figure>
+                                                                    <a class="productimg" href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-long-mau-tu-28-ngay-tuoi-den-xuat-chuong" target="_self" title="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">
+                                                                        <img src="/Data/Sites/1/News/190/17.jpg" alt="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">
+                                                                    </a>
+                                                                    <figcaption>
+                                                                        <h3 class="productname">
+                                                                            <a href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-long-mau-tu-28-ngay-tuoi-den-xuat-chuong" target="_self" title="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">{{{ $product->name }}}</a></h3>
+                                                                    </figcaption>
+                                                                </figure>
+                                                            </article>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+
+
+
+                                </div></div></div>
 
                     </div>
 
                 </section>
-            </div></main>
+            </div>
 
         @include('footer')
     </div>
