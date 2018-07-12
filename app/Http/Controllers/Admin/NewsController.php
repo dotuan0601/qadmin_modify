@@ -10,6 +10,7 @@ use App\Http\Requests\CreateNewsRequest;
 use App\Http\Requests\UpdateNewsRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\FileUploadTrait;
+use App\FrMenu;
 
 
 class NewsController extends Controller {
@@ -23,7 +24,7 @@ class NewsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        $news = News::all();
+        $news = News::with("frmenu")->get();
 
 		return view('admin.news.index', compact('news'));
 	}
@@ -35,9 +36,10 @@ class NewsController extends Controller {
 	 */
 	public function create()
 	{
+	    $frmenu = FrMenu::pluck("name", "id")->prepend('Please select', 0);
+
 	    
-	    
-	    return view('admin.news.create');
+	    return view('admin.news.create', compact("frmenu"));
 	}
 
 	/**
@@ -62,9 +64,10 @@ class NewsController extends Controller {
 	public function edit($id)
 	{
 		$news = News::find($id);
+	    $frmenu = FrMenu::pluck("name", "id")->prepend('Please select', 0);
+
 	    
-	    
-		return view('admin.news.edit', compact('news'));
+		return view('admin.news.edit', compact('news', "frmenu"));
 	}
 
 	/**

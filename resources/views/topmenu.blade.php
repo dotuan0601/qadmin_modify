@@ -31,7 +31,7 @@
     <div class="sub">
         <ul>
         @foreach( $each_menu['children'] as $sub_menu)
-            <li><a href="/{{str_slug($sub_menu)}}" target="_self">{{$sub_menu}}</a></li>
+            <li><a href="/{{str_slug($each_menu['name'])}}/{{str_slug($sub_menu)}}" target="_self">{{$sub_menu}}</a></li>
         @endforeach
         </ul>
         </div>

@@ -19,36 +19,42 @@
 {!! Form::model($news, array('files' => true, 'class' => 'form-horizontal', 'id' => 'form-with-validation', 'method' => 'PATCH', 'route' => array(config('quickadmin.route').'.news.update', $news->id))) !!}
 
 <div class="form-group">
-    {!! Form::label('title', 'Tiêu đề', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('name', 'Tiêu đề', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::text('title', old('title',$news->title), array('class'=>'form-control')) !!}
+        {!! Form::text('name', old('name',$news->name), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('img', 'Ảnh', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('frmenu_id', 'Thuộc menu', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
-        {!! Form::file('img') !!}
-        {!! Form::hidden('img_w', 4096) !!}
-        {!! Form::hidden('img_h', 4096) !!}
+        {!! Form::select('frmenu_id', $frmenu, old('frmenu_id',$news->frmenu_id), array('class'=>'form-control')) !!}
         
     </div>
 </div><div class="form-group">
-    {!! Form::label('short_description', 'Mô tả', array('class'=>'col-sm-2 control-label')) !!}
-    <div class="col-sm-10">
-        {!! Form::textarea('short_description', old('short_description',$news->short_description), array('class'=>'form-control')) !!}
-        
-    </div>
-</div><div class="form-group">
-    {!! Form::label('is_feature', 'Đặc trưng không', array('class'=>'col-sm-2 control-label')) !!}
+    {!! Form::label('is_feature', 'Đặc trưng', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::hidden('is_feature','') !!}
         {!! Form::checkbox('is_feature', 1, $news->is_feature == 1) !!}
         
     </div>
 </div><div class="form-group">
+    {!! Form::label('short_description', 'Mô tả ngắn', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::text('short_description', old('short_description',$news->short_description), array('class'=>'form-control')) !!}
+        
+    </div>
+</div><div class="form-group">
     {!! Form::label('content', 'Nội dung', array('class'=>'col-sm-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::textarea('content', old('content',$news->content), array('class'=>'form-control ckeditor')) !!}
+        
+    </div>
+</div><div class="form-group">
+    {!! Form::label('img', 'Ảnh đại diện', array('class'=>'col-sm-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::file('img') !!}
+        {!! Form::hidden('img_w', 4096) !!}
+        {!! Form::hidden('img_h', 4096) !!}
         
     </div>
 </div>

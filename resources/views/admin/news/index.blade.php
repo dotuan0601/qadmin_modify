@@ -17,8 +17,10 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>Tiêu đề</th>
-<th>Ảnh</th>
-<th>Đặc trưng không</th>
+<th>Thuộc menu</th>
+<th>Đặc trưng</th>
+<th>Mô tả ngắn</th>
+<th>Ảnh đại diện</th>
 
                         <th>&nbsp;</th>
                     </tr>
@@ -30,9 +32,11 @@
                             <td>
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
-                            <td>{{ $row->title }}</td>
-<td>@if($row->img != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->img }}">@endif</td>
+                            <td>{{ $row->name }}</td>
+<td>{{ isset($row->frmenu->name) ? $row->frmenu->name : '' }}</td>
 <td>{{ $row->is_feature }}</td>
+<td>{{ $row->short_description }}</td>
+<td>@if($row->img != '')<img src="{{ asset('uploads/thumb') . '/'.  $row->img }}">@endif</td>
 
                             <td>
                                 {!! link_to_route(config('quickadmin.route').'.news.edit', trans('quickadmin::templates.templates-view_index-edit'), array($row->id), array('class' => 'btn btn-xs btn-info')) !!}

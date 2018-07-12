@@ -22,11 +22,12 @@ class News extends Model {
     protected $table    = 'news';
     
     protected $fillable = [
-          'title',
-          'img',
-          'short_description',
+          'name',
+          'frmenu_id',
           'is_feature',
-          'content'
+          'short_description',
+          'content',
+          'img'
     ];
     
 
@@ -37,6 +38,12 @@ class News extends Model {
         News::observe(new UserActionsObserver);
     }
     
+    public function frmenu()
+    {
+        return $this->hasOne('App\FrMenu', 'id', 'frmenu_id');
+    }
+
+
     
     
     

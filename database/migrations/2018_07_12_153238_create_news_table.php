@@ -16,11 +16,12 @@ class CreateNewsTable extends Migration {
         Model::unguard();
         Schema::create('news',function(Blueprint $table){
             $table->increments("id");
-            $table->string("title")->nullable();
-            $table->string("img")->nullable();
-            $table->text("short_description")->nullable();
+            $table->string("name")->nullable();
+            $table->integer("frmenu_id")->references("id")->on("frmenu")->nullable();
             $table->tinyInteger("is_feature")->default(0)->nullable();
+            $table->string("short_description")->nullable();
             $table->text("content")->nullable();
+            $table->string("img")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
