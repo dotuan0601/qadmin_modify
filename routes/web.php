@@ -44,4 +44,4 @@ Route::get('/tin-tuc-su-kien', 'Frontend\NewsController@index')->name('news.inde
 //Route::get('/san-pham/({sub-menu}', 'Frontend\ProductController@index')->name('product.index');
 //Route::get('/san-pham/{current_menu}', 'Frontend\ProductController@index')->name('product.index');
 //Route::get('/san-pham/{current_menu}/{cat_id}', 'Frontend\ProductController@index')->where('cat_id', '[0-9]+')->name('product.index');
-//Route::get('/san-pham/{current_menu}/detail/{product_id}', 'Frontend\ProductController@detail')->name('product.detail');
+Route::get('/tin-tuc-su-kien/detail/{news_id}', 'Frontend\NewsController@detail')->name('news.detail');

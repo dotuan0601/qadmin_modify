@@ -103,12 +103,11 @@ class NewsController extends Controller {
      * Get product detail
      *
      * @param Request $request
-     * @param null $current_menu
-     * @param int $product_id
+     * @param int $news_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function detail(Request $request, $current_menu = null, $product_id = 1) {
-        $current_slug = 'san-pham';
+    public function detail(Request $request, $news_id = 1) {
+        $current_slug = 'tin-tuc-su-kien';
         $frmenu = FrMenu::all();
         $arr_menu = [];
         foreach ($frmenu as $key => $each_menu) {
@@ -154,13 +153,11 @@ class NewsController extends Controller {
             ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
         ];
 
-        $product = Products::all()->where('id', '=', $product_id)->first();
-        $product_detail = ProductDetail::all()->where('products_id', '=', $product_id)->first();
-        $related_products = Products::all()->where('productcategory_id', '=', $product->productcategory_id)
-        ->where('id', '!=', $product_id);
+        $news_detail = News::all()->where('id', '=', $news_id)->first();
+        $related_news = News::all()->where('frmenu_id', '=', $news_detail->frmenu_id)->where('id', '!=', $news_id);
 
-        return view('frontend.product_detail', compact('arr_menu', 'footer', 'footer_sitemap',
-            'breadcrumb_arr', 'current_menu', 'product', 'product_detail', 'related_products'));
+        return view('frontend.news_detail', compact('arr_menu', 'footer', 'footer_sitemap',
+            'breadcrumb_arr', 'current_menu', 'news_detail', 'related_news'));
     }
 
 }

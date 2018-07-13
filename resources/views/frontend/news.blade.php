@@ -169,12 +169,12 @@
                                         <div class="col-xs-12 col-lg-6">
                                             <div class="newscol big">
                                                 <figure>
-                                                    <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-se-chia-cung-cong-dong" target="_self" title="Anova Feed sẻ chia cùng cộng đồng">
+                                                    <a class="newsimg" href="{{ URL('/tin-tuc-su-kien/detail/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">
                                                         <img src="{{ 'uploads/' . $feature_top_news->img }}" alt="Anova Feed sẻ chia cùng cộng đồng">
                                                     </a>
                                                     <figcaption>
                                                         <h1 class="newsname">
-                                                            <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-se-chia-cung-cong-dong" target="_self" title="Anova Feed sẻ chia cùng cộng đồng">{{$feature_top_news->name}}</a></h1>
+                                                            <a href="{{ URL('/tin-tuc-su-kien/detail/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">{{$feature_top_news->name}}</a></h1>
                                                         <div class="newsdes"><p style="text-align: justify;">{{$feature_top_news->short_description}}</p></div>
                                                     </figcaption>
                                                 </figure>
