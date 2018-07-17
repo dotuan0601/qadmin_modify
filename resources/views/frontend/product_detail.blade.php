@@ -66,10 +66,10 @@
     </script>
 
 
-    <script src="{{asset('other/product/WebResource.axd')}}" type="text/javascript"></script>
+    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
 
 
-    <script src="{{asset('other/product/ScriptResource.axd')}}" type="text/javascript"></script>
+    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
 
@@ -219,12 +219,12 @@
                                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                                             <article class="productcol">
                                                                 <figure>
-                                                                    <a class="productimg" href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-long-mau-tu-28-ngay-tuoi-den-xuat-chuong" target="_self" title="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">
-                                                                        <img src="/Data/Sites/1/News/190/17.jpg" alt="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">
+                                                                    <a class="productimg" href="{{ URL('/san-pham/' . $current_menu . '/detail/'.$product->id )}}" target="_self" title="{{ $product->name }}">
+                                                                        <img src=" {{ asset('uploads/' . $product->img) }}" alt="{{ $product->name }}">
                                                                     </a>
                                                                     <figcaption>
                                                                         <h3 class="productname">
-                                                                            <a href="https://anovafeed.vn/san-pham/anova-feed/thuc-an-cho-gia-cam/thuc-an-cho-ga/thuc-an-hon-hop-danh-cho-ga-long-mau-tu-28-ngay-tuoi-den-xuat-chuong" target="_self" title="Thức ăn hỗn hợp dành cho gà lông màu từ 28 ngày tuổi đến xuất chuồng">{{{ $product->name }}}</a></h3>
+                                                                            <a href="{{ URL('/san-pham/' . $current_menu . '/detail/'.$product->id )}}" target="_self" title="{{ $product->name }}">{{{ $product->name }}}</a></h3>
                                                                     </figcaption>
                                                                 </figure>
                                                             </article>

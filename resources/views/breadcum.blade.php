@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="container">
-        <h1 class="pagename"> Góp ý</h1>
+        <h1 class="pagename"> </h1>
         <div class="clearfix Module Module-142">
             <ol class="breadcrumb">
                 @foreach($breadcrumb_arr as $breadcrum)

@@ -27,6 +27,11 @@
 <body id="ctl00_Body" class="canhcam vi-vn">
 
 
+    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
+
+
+    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
+
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
             <div class="overlay"></div>
@@ -78,7 +83,17 @@
                 </div>
             </section>
 
-            @include('topmenu')
+            <section class="headerbottom clearfix">
+                <div class="container">
+
+                    @include('topmenu')
+
+                    <div class="tool clearfix">
+                        <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <div class="language Module Module-136"></div>
+                    </div>
+                </div>
+            </section>
 
         </header>
         <div style="display: block; width: 1440px; height: 130px; float: none;"></div>

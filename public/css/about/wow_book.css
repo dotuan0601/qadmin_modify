@@ -138,7 +138,7 @@ img.wowbook-lazy {
 }
 
 .wowbook-right .wowbook-gutter-shadow {
-	background : url(./gutter_shadow_right.png) right top repeat-y;
+	background : url(../../img/gutter_shadow_right.png) right top repeat-y;
 	left       : 0;
 }
 

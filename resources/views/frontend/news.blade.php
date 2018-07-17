@@ -65,10 +65,10 @@
     </script>
 
 
-    <script src="{{ asset('other/news/WebResource.axd')}}" type="text/javascript"></script>
+    <script src="{{ asset('other/WebResource.axd')}}" type="text/javascript"></script>
 
 
-    <script src="{{ asset('other/news/ScriptResource.axd')}}" type="text/javascript"></script>
+    <script src="{{ asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
 

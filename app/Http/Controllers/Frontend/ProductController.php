@@ -193,8 +193,15 @@ class ProductController extends Controller {
         $related_products = Products::all()->where('productcategory_id', '=', $product->productcategory_id)
         ->where('id', '!=', $product_id);
 
-        return view('frontend.product_detail', compact('arr_menu', 'footer', 'footer_sitemap',
-            'breadcrumb_arr', 'current_menu', 'product', 'product_detail', 'related_products'));
+        if ($product_detail) {
+            return view('frontend.product_detail', compact('arr_menu', 'footer', 'footer_sitemap',
+                'breadcrumb_arr', 'current_menu', 'product', 'product_detail', 'related_products'));
+        }
+        else {
+            return view('frontend.product_detail_empty', compact('arr_menu', 'footer', 'footer_sitemap',
+                'breadcrumb_arr', 'current_menu', 'product', 'product_detail', 'related_products'));
+        }
+
     }
 
 }

@@ -87,7 +87,10 @@
     </script>
 
 
-    <script src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/WebResource.axd" type="text/javascript"></script>
+    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
+
+
+    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
 
     <script type="text/javascript">
         (function (d, s, id) {
@@ -108,8 +111,6 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }
         } (document, "script", "twitter-wjs");</script>
-
-    <script src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/ScriptResource.axd" type="text/javascript"></script>
 
 
 
@@ -171,80 +172,9 @@
             </section>
             <section class="headerbottom clearfix">
                 <div class="container">
-                    <section class="menu clearfix">
-                        <div class="sitelogo Module Module-135"><div class="ModuleContent"><a href="https://anovafeed.vn/"><img alt="" src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/logo.png"></a>
-                                <div class="text"><span style="font-size: 16px;">HIỆU QUẢ SỐ 1</span></div></div></div>
-                        <div class="clearfix Module Module-42"><div class="ModuleContent"><ul class="menulink">
-                                    <li><a href="https://anovafeed.vn/" target="_self">Trang chủ</a></li>
-                                    <li><a href="https://anovafeed.vn/gioi-thieu" target="_self">Giới thiệu</a></li>
-                                    <li class="hassub"><a href="https://anovafeed.vn/san-pham/anova-feed" target="_self">Sản phẩm</a><div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                        <div class="sub">
-                                            <ul>
-                                                <li><a href="https://anovafeed.vn/san-pham/anova-feed" target="_self">Anova Feed</a></li>
-                                                <li><a href="https://anovafeed.vn/san-pham/nova-feed" target="_self">Nova Feed</a></li>
-                                                <li><a href="https://anovafeed.vn/san-pham/saigon-feed" target="_self">Saigon Feed</a></li>
-                                                <li><a href="https://anovafeed.vn/san-pham/dream-feed-1" target="_self">Dream Feed</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="hassub"><a href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" target="_self">Kiến thức chăn nuôi</a><div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                        <div class="sub">
-                                            <ul>
-                                                <li><a href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" target="_self">Video kỹ thuật chăn nuôi</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/chan-nuoi-cung-chuyen-gia" target="_self">Chăn nuôi cùng chuyên gia</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/cau-hoi-thuong-gap" target="_self">Câu hỏi thường gặp</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="hassub active"><a href="https://anovafeed.vn/tin-tuc-su-kien" target="_self">Tin tức - Sự kiện</a><div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                        <div class="sub">
-                                            <ul>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat" target="_self">Tin tức thị trường nổi bật</a></li>
-                                                <li class="active"><a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty" target="_self">Tin tức công ty</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong" target="_self">Hoạt động cộng đồng</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep" target="_self">An toàn y tế chuyên nghiệp</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/tieu-chuan-ap-dung-2" target="_self">Tiêu chuẩn áp dụng</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/bao-cao-tac-dong-moi-truong" target="_self">Báo cáo tác động môi trường</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/chinh-sach-hse" target="_self">Chính sách HSE</a></li>
-                                                <li><a href="https://anovafeed.vn/tin-tuc-su-kien/khieu-nai-cong-dong" target="_self">Khiếu nại cộng đồng</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="hassub"><a href="https://anovafeed.vn/tuyen-dung/chinh-sach-nhan-su" target="_self">Tuyển dụng</a><div class="btn-showsub"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
-                                        <div class="sub">
-                                            <ul>
-                                                <li><a href="https://anovafeed.vn/tuyen-dung/chinh-sach-nhan-su" target="_self">Chính sách nhân sự</a></li>
-                                                <li><a href="https://anovafeed.vn/tuyen-dung/co-hoi-nghe-nghiep" target="_self">Cơ hội nghề nghiệp</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="https://anovafeed.vn/gop-y" target="_self">Góp ý</a></li>
-                                    <li><a href="https://anovafeed.vn/lien-he" target="_self">Liên hệ</a></li>
-                                </ul></div></div>
-                        <div class="topmenu clearfix">
-                            <div class="title">Sitemaps</div>
-                            <div class="topmenu clearfix Module Module-138"><div class="ModuleContent"><ul class="toplink">
-                                        <li class="active"><a href="http://www.anovacorp.vn/">Anova<br>
-                                                Corp</a></li>
-                                        <li> <a href="http://www.thanhnhon.com/">Thanh Nhon<br>
-                                                CORP</a></li>
-                                        <li> <a href="http://www.anovafeed.vn/">Anova<br>
-                                                FEED</a></li>
-                                        <li> <a href="http://www.anovafarm.vn/">Anova<br>
-                                                Farm</a></li>
-                                        <li> <a href="http://www.biopharmachemie.com/">Bio<br>
-                                                Pharmachemie</a></li>
-                                        <li> <a href="http://www.anova.com.vn/">Anova<br>
-                                                JV</a></li>
-                                        <li> <a href="http://www.anovapharma.com/">Anova<br>
-                                                Pharma</a></li>
-                                        <li> <a href="http://www.anovatrade-corp.com/">Anova<br>
-                                                Trade</a></li>
-                                        <!--<li> <a href="http://www.anovabiotech.vn/">Anova<br />
-                                        Biotech</a></li>-->
-                                    </ul></div></div>
-                        </div>
-                    </section>
+
+                    @include('topmenu')
+
                     <div class="tool clearfix">
                         <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
                         <div class="language Module Module-136"></div>

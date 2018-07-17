@@ -18,10 +18,15 @@
     <link rel="stylesheet" type="text/css" href="css/about/wow_book.css">
     <link rel="stylesheet" type="text/css" href="css/about/main.css">
     <link rel="shortcut icon" href="https://anovafeed.vn/Data/Sites/1/skins/default/favicon.ico">
-    <script type="text/javascript" async="" src="js/about/analytics.js"></script><script src="js/about/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" async="" src="js/about/analytics.js">
+
+    </script><script src="js/about/jquery.min.js" type="text/javascript"></script>
 
     <script src="js/about/jquery.mousewheel.min.js"></script></head>
-<body id="ctl00_Body" class="canhcam aboutpage vi-vn"><div class="parallax-mirror" style="visibility: hidden; z-index: -100; position: fixed; top: 888px; left: 200px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 430px; width: 1440px;"><img class="parallax-slider" src="img/aboutbg.jpg" style="transform: translate3d(0px, 0px, 0px); position: absolute; left: 0px; height: 900px; width: 1440px; max-width: none; top: -539px;"></div>
+<body id="ctl00_Body" class="canhcam aboutpage vi-vn">
+<div class="parallax-mirror" style="visibility: hidden; z-index: -100; position: fixed; top: 888px; left: 200px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 430px; width: 1440px;">
+    <img class="parallax-slider" src="{{ asset('img/aboutbg.jpg') }}" style="transform: translate3d(0px, 0px, 0px); position: absolute; left: 0px; height: 900px; width: 1440px; max-width: none; top: -539px;">
+</div>
 
 
 <form method="post" action="https://anovafeed.vn/{{$current_slug}}" id="aspnetForm">
@@ -34,10 +39,10 @@
     </div>
 
 
-    <script src="other/about/WebResource.axd" type="text/javascript"></script>
+    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
 
 
-    <script src="other/about/ScriptResource.axd" type="text/javascript"></script>
+    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
     <div class="fullpage">
@@ -91,7 +96,17 @@
                 </div>
             </section>
 
-            @include('topmenu')
+            <section class="headerbottom clearfix">
+                <div class="container">
+
+                    @include('topmenu')
+
+                    <div class="tool clearfix">
+                        <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <div class="language Module Module-136"></div>
+                    </div>
+                </div>
+            </section>
 
         </header><div style="display: block; width: 1440px; height: 130px; float: none;"></div>
         <main>

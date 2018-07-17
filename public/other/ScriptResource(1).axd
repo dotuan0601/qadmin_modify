@@ -21260,6 +21260,9 @@ A.removeClass(s);d("body").append("<style>"+t+"</style>")}}else alert("jQuery 1.
 
         $(document).ready(function() {
             new WOW().init();
+            jQuery(".chat_fb").click(function () {
+                jQuery('.fchat').toggle('slow');
+            });
             $('header').scrollToFixed();
             $('.topbar').scrollToFixed({
                 marginTop: 129,

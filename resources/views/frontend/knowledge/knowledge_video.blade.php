@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo -->
-<html id="ctl00_Html1" lang="vi"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="js/knowledge/analytics.js"></script><title>
+<html id="ctl00_Html1" lang="vi"><head id="ctl00_Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" src="{{ asset('js/knowledge/analytics.js') }}"></script><title>
         Heo - ANOVA FEED
     </title>
 
     <meta property="og:title" content="Heo">
     <meta property="og:site_name" content="ANOVA FEED">
     <meta itemprop="name" content="Heo">
-    <link rel="search" type="application/opensearchdescription+xml" title="Tìm kiếm ANOVA FEED" href="https://anovafeed.vn/SearchEngineInfo.ashx"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="search" type="application/opensearchdescription+xml" title="Tìm kiếm ANOVA FEED" href="https://anovafeed.vn/SearchEngineInfo.ashx">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
 
-    <link rel="stylesheet" type="text/css" href="css/knowledge/toolbar.css">
-    <link rel="stylesheet" type="text/css" href="css/knowledge/jquery.fancybox.css">
-    <link rel="stylesheet" type="text/css" href="css/knowledge/addons.css">
-    <link rel="stylesheet" type="text/css" href="css/knowledge/wow_book.css">
-    <link rel="stylesheet" type="text/css" href="css/knowledge/main.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <script src="js/knowledge/jquery.min.js" type="text/javascript"></script>
-    <script async="" src="js/knowledge/js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/knowledge/toolbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/knowledge/jquery.fancybox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/knowledge/addons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/knowledge/wow_book.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/knowledge/main.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    <script src="{{ asset('js/knowledge/jquery.min.js') }}" type="text/javascript"></script>
+    <script async="" src="{{ asset('js/knowledge/js') }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -28,7 +30,7 @@
 
         gtag('config', 'UA-116058005-1');
     </script>
-    <script src="js/knowledge/jquery.mousewheel.min.js"></script></head>
+    <script src="{{ asset('js/knowledge/jquery.mousewheel.min.js') }}"></script></head>
 <body id="ctl00_Body" class="canhcam vi-vn">
 
 
@@ -58,10 +60,10 @@
     </script>
 
 
-    {{--<script src="other/knowledge/WebResource.axd" type="text/javascript"></script>--}}
+    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
 
 
-    {{--<script src="other/knowledge/ScriptResource.axd" type="text/javascript"></script>--}}
+    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
 
@@ -93,7 +95,7 @@
             <section class="headertop clearfix">
                 <div class="container">
                     <div class="btn-showmenu"><span></span></div>
-                    <div class="sitelogo Module Module-135"><div class="ModuleContent"><a href="https://anovafeed.vn/"><img alt="" src="img/logo.png"></a>
+                    <div class="sitelogo Module Module-135"><div class="ModuleContent"><a href="https://anovafeed.vn/"><img alt="" src="{{asset('img/logo.png')}}"></a>
                             <div class="text"><span style="font-size: 16px;">HIỆU QUẢ SỐ 1</span></div></div></div>
                     <div class="topmenu clearfix Module Module-138"><div class="ModuleContent"><ul class="toplink">
                                 <li class="active"><a href="http://www.anovacorp.vn/">Anova<br>
@@ -122,30 +124,23 @@
                 </div>
             </section>
 
-            @include('topmenu')
+            <section class="headerbottom clearfix">
+                <div class="container">
+                    @include('topmenu')
+
+                    <div class="tool clearfix">
+                        <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        <div class="language Module Module-136"></div>
+                    </div>
+                </div>
+            </section>
 
         </header><div style="display: block; width: 1440px; height: 130px; float: none;"></div>
         <main>
             <div id="ctl00_divAlt1" class="altcontent1 cmszone">
 
 
-                <section class="breadcrumb-wrap clearfix"><div class="clearfix Module Module-141"><div class="ModuleContent"><div class="breadcrumb-bg">
-                                <img src="img/default.jpg" alt="">
-                                <div class="breadcrumb-overlay">
-                                </div>
-                            </div>
-                        </div></div><div class="container"><h1 class="pagename"> Kiến thức chăn nuôi</h1><div class="clearfix Module Module-142"><ol class="breadcrumb">
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/" class="itemcrumb" itemprop="url"><span itemprop="title">Trang chủ</span></a></li>
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" class="itemcrumb" itemprop="url"><span itemprop="title">Kiến thức chăn nuôi</span></a></li>
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" class="itemcrumb" itemprop="url"><span itemprop="title">Video kỹ thuật chăn nuôi</span></a></li>
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo" class="itemcrumb active" itemprop="url"><span itemprop="title">Heo</span></a></li>
-
-
-                            </ol></div></div> </section>
+                @include('breadcum')
 
             </div>
             <div class="container">
@@ -158,7 +153,7 @@
                                 <nav class="sidebar-category clearfix">
                                     <ul>
                                         @foreach($cat_arr as $cat)
-                                            <li class="{{$cat['class']}}"><a href="kien-thuc-chan-nuoi/{{$cat['href']}}" target="_self">{{$cat['name']}}</a></li>
+                                            <li class="{{$cat['class']}}"><a href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/' . $cat['href']) }}" target="_self">{{$cat['name']}}</a></li>
                                         @endforeach
                                     </ul>
                                 </nav>
@@ -172,7 +167,7 @@
                                         <section class="row flex flex-wrap">
                                             <div class="col-xs-12 col-lg-9">
                                                 <div class="col-xs-12 col-lg-9">
-                                                    <div id="videoPlayer"><video width="100%" height="418" class="video-js vjs-default-skin" controls="" preload="none" data-setup="{}" poster="img/knowledge/42-1.jpg">
+                                                    <div id="videoPlayer"><video width="100%" height="418" class="video-js vjs-default-skin" controls="" preload="none" data-setup="{}" poster="{{asset('img/knowledge/42-1.jpg')}}">
                                                     <source src="https://youtu.be/KAxXwpas3jQ" type="video/mp4"></video></div>
                                                 </div>
                                             </div>
