@@ -6,6 +6,8 @@ use App\AboutArchive;
 use App\AboutCategory;
 use App\AboutContent;
 use App\Company;
+use App\FaqCategory;
+use App\FaqQuestion;
 use App\FooterInfo;
 use App\FooterSitemap;
 use App\Http\Controllers\Controller;
@@ -125,9 +127,10 @@ class KnowledgeController extends Controller {
                 'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'detail'));
         }
         elseif ($current_slug && strpos($current_slug, 'cau-hoi') > -1) {
+            $faq_cats = FaqCategory::all()->where('is_active', '=', 1);
             $faqs = News::all()->where('frmenu_id', '=', $current_children_menu_id);
             return view('frontend.knowledge.knowledge_faq', compact('arr_menu', 'cats', 'footer', 'footer_sitemap',
-                'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'faqs'));
+                'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'faqs', 'faq_cats'));
         } else {
             # feature video
             $feature_video = KnowledgeVideo::all()->where('is_feature', '=', 1)->take(1);
@@ -240,4 +243,51 @@ class KnowledgeController extends Controller {
             'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'news'));
     }
 
+    public function store(Request $request) {
+        $name = $request->get('faq_name');
+        $email = $request->get('faq_email');
+        $cat = $request->get('faq_cat_selection');
+        $content = $request->get('faq_content');
+        if (!$name || $name == '') {
+            $request->session()->flash('alert-warning', 'Nhập họ tên!');
+            return redirect()->back();
+        }
+        else {
+            $request->session()->flash('faq_name', $name);
+        }
+        if (!$email || $email == '') {
+            $request->session()->flash('alert-warning', 'Nhập email!');
+            return redirect()->back();
+        }
+        elseif (!filter_var( $email, FILTER_VALIDATE_EMAIL )) {
+            $request->session()->flash('faq_email', $email);
+            $request->session()->flash('alert-warning', 'Email không hợp lệ!');
+            return redirect()->back();
+        }
+        else {
+            $request->session()->flash('faq_email', $email);
+        }
+        if (!$cat || $cat == '') {
+            $request->session()->flash('alert-warning', 'Chọn danh mục!');
+            return redirect()->back();
+        }
+        if (!$content || $content == '') {
+            $request->session()->flash('alert-warning', 'Nhập nội dung!');
+            return redirect()->back();
+        }
+        else {
+            $request->session()->flash('faq_content', $content);
+        }
+
+        FaqQuestion::create([
+            'name' => $name,
+            'email' => $email,
+            'faqcategory_id' => $cat,
+            'content' => stripslashes($content)
+        ]);
+
+        $request->session()->flash('alert-success', 'Cảm ơn bạn đã hỏi!');
+
+        return redirect()->back();
+    }
 }

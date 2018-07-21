@@ -31,10 +31,11 @@ Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
 # about
 Route::get('/gioi-thieu', 'Frontend\AboutController@index')->name('about.index');
 # kien thuc chan nuoi
-Route::get('/kien-thuc-chan-nuoi', 'Frontend\KnowledgeController@index')->name('about.index');
-Route::get('/kien-thuc-chan-nuoi/{cat_slug}', 'Frontend\KnowledgeController@index')->name('about.index');
-Route::get('/kien-thuc-chan-nuoi/detail/{news_id}', 'Frontend\KnowledgeController@detail')->name('about.detail')->where('news_id', '[0-9]+');
-Route::get('/kien-thuc-chan-nuoi/{cat_slug}/{detail}', 'Frontend\KnowledgeController@index')->name('about.index');
+Route::get('/kien-thuc-chan-nuoi', 'Frontend\KnowledgeController@index')->name('knowledge.index');
+Route::get('/kien-thuc-chan-nuoi/{cat_slug}', 'Frontend\KnowledgeController@index')->name('knowledge.index');
+Route::get('/kien-thuc-chan-nuoi/detail/{news_id}', 'Frontend\KnowledgeController@detail')->name('knowledge.detail')->where('news_id', '[0-9]+');
+Route::get('/kien-thuc-chan-nuoi/{cat_slug}/{detail}', 'Frontend\KnowledgeController@index')->name('knowledge.index');
+Route::post('knowledge', 'Frontend\KnowledgeController@store')->name('knowledge.store');
 # san pham
 Route::get('/san-pham', 'Frontend\ProductController@index')->name('product.index');
 Route::get('/san-pham/({sub-menu}', 'Frontend\ProductController@index')->name('product.index');

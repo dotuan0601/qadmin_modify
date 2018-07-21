@@ -82,6 +82,11 @@ class FeedbackController extends Controller {
             ['captcha.captcha'=>'Sai ma hien thi']);
 
         $feedback_content = $request->get('feedback-content');
+        if (!$feedback_content || $feedback_content == '') {
+            $request->session()->flash('alert-warning', 'Vui lòng nhập nội dung góp ý!');
+
+            return redirect()->route('feedback.index');
+        }
 
         # create new feedback
         Feedback::create([
