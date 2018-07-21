@@ -47,6 +47,10 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
+
+<script src="{{ asset('other/knowledge/ScriptResource.axd') }}" type="text/javascript"></script>
+<script src="{{ asset('other/knowledge/ScriptResource(1).axd') }}" type="text/javascript"></script>
+
 {!! Form::open(['route' => 'knowledge.store', 'id' => 'aspnetForm']) !!}
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
@@ -138,7 +142,7 @@
                         <div class="Module Module-168"><div class="ModuleContent"><section class="home-faq news-page clearfix">
                                     <h1 class="pagetitle">Câu hỏi thường gặp</h1>
                                     <div class="homefaq-list clearfix">
-                                        @foreach($faqs as $faq):
+                                        @foreach($faqs as $faq)
                                         <div class="faq clearfix">
                                             <div class="faqtitle active">{{ $faq->name }}</div>
                                             {!! $faq->content !!}

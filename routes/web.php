@@ -48,3 +48,9 @@ Route::get('/tin-tuc-su-kien', 'Frontend\NewsController@index')->name('news.inde
 //Route::get('/san-pham/{current_menu}', 'Frontend\ProductController@index')->name('product.index');
 //Route::get('/san-pham/{current_menu}/{cat_id}', 'Frontend\ProductController@index')->where('cat_id', '[0-9]+')->name('product.index');
 Route::get('/tin-tuc-su-kien/detail/{news_id}', 'Frontend\NewsController@detail')->name('news.detail');
+# tuyen dung
+Route::get('/tuyen-dung', 'Frontend\RecruitController@index')->name('recruit.index');
+Route::get('/tuyen-dung/{sub-menu}', 'Frontend\RecruitController@index')->name('recruit.index');
+# lien he
+Route::get('/lien-he', 'Frontend\ContactController@index')->name('contact.index');
+Route::post('contact', 'Frontend\ContactController@store')->name('contact.store');
