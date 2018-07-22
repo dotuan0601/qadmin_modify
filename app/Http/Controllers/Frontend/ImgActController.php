@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 
 
 
-class HomepageController extends Controller {
+class ImgActController extends Controller {
 
     /**
      * Display a listing of frmenu
@@ -53,20 +53,7 @@ class HomepageController extends Controller {
                 }
             }
         }
-
-        $products = Products::all();
-
-        $feature_news = News::all()->where('is_feature', '=', 1);
-        $other_news = News::all()->where('is_feature', '=', 0);
-
-        $price_shows  = PriceShow::all();
-
-        $companies = Company::all();
-
-        $img_act_feature = ImageAct::all()->where('is_feature', '=', 1)->first();
-        $img_acts = ImageAct::all()->where('is_feature', '!=', 1)->take(6);
-
-        $faqs = FaqList::all()->where('is_home_page', '=', 1);
+        $img_acts = ImageAct::all();
 
         $footer = FooterInfo::all()->take(1);
         $raw_footer_sitemap = FooterSitemap::all();
@@ -86,7 +73,12 @@ class HomepageController extends Controller {
             }
         }
 
-        return view('welcome', compact('arr_menu', 'products', 'feature_news', 'other_news', 'price_shows',
-            'companies', 'img_act_feature', 'img_acts', 'footer', 'footer_sitemap', 'faqs'));
+
+        $breadcrumb_arr = [
+            ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
+            ['name'=> 'Hình ảnh', 'class' => 'itemcrumb active'],
+        ];
+
+        return view('frontend.imgact', compact('arr_menu', 'img_acts', 'footer', 'footer_sitemap', 'breadcrumb_arr'));
     }
 }

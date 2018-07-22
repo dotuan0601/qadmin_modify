@@ -143,10 +143,14 @@
                                     <h1 class="pagetitle">Câu hỏi thường gặp</h1>
                                     <div class="homefaq-list clearfix">
                                         @foreach($faqs as $faq)
-                                        <div class="faq clearfix">
-                                            <div class="faqtitle active">{{ $faq->name }}</div>
-                                            {!! $faq->content !!}
-                                        </div>
+                                            <div class="faq clearfix">
+                                                <div class="faqtitle">{{ $faq->question }}</div>
+                                                <div class="faqcontent" style="">
+                                                    <div class="content">
+                                                        {!! stripslashes($faq->answer) !!}
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endforeach
                                     </div>
                                 </section>

@@ -17,6 +17,7 @@ use App\KnowledgeVideo;
 use App\News;
 use App\PriceShow;
 use App\Products;
+use App\FaqList;
 use Redirect;
 use Schema;
 use App\FrMenu;
@@ -128,7 +129,8 @@ class KnowledgeController extends Controller {
         }
         elseif ($current_slug && strpos($current_slug, 'cau-hoi') > -1) {
             $faq_cats = FaqCategory::all()->where('is_active', '=', 1);
-            $faqs = News::all()->where('frmenu_id', '=', $current_children_menu_id);
+//            $faqs = News::all()->where('frmenu_id', '=', $current_children_menu_id);
+            $faqs = FaqList::all();
             return view('frontend.knowledge.knowledge_faq', compact('arr_menu', 'cats', 'footer', 'footer_sitemap',
                 'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'faqs', 'faq_cats'));
         } else {

@@ -54,3 +54,5 @@ Route::get('/tuyen-dung/{sub-menu}', 'Frontend\RecruitController@index')->name('
 # lien he
 Route::get('/lien-he', 'Frontend\ContactController@index')->name('contact.index');
 Route::post('contact', 'Frontend\ContactController@store')->name('contact.store');
+# hinh anh hoat dong
+Route::get('/hinh-anh', 'Frontend\ImgActController@index')->name('img.index');
