@@ -1,0 +1,1683 @@
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
+--
+-- Host: localhost    Database: laravel
+-- ------------------------------------------------------
+-- Server version	5.7.22-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `laravel`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `laravel` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `laravel`;
+
+--
+-- Table structure for table `aboutarchive`
+--
+
+DROP TABLE IF EXISTS `aboutarchive`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutarchive` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutarchive`
+--
+
+LOCK TABLES `aboutarchive` WRITE;
+/*!40000 ALTER TABLE `aboutarchive` DISABLE KEYS */;
+INSERT INTO `aboutarchive` VALUES (1,'Vô địch C1','1531019211-Beautiful-Full-HD-Image.jpg','2018-07-07 20:06:52','2018-07-07 20:06:52',NULL),(2,'Giải aa','1531019227-1.png','2018-07-07 20:07:07','2018-07-07 20:07:07',NULL),(3,'Cử tạ x','1531019241-Beautiful-Full-HD-Images-HD.jpg','2018-07-07 20:07:21','2018-07-07 20:07:21',NULL),(4,'1 cái nữa','1531019259-download.jpeg','2018-07-07 20:07:39','2018-07-07 20:07:39',NULL),(5,'1111','1531020613-aboutbg.jpg','2018-07-07 20:30:14','2018-07-07 20:30:14',NULL),(6,'2222','1531020623-Beautiful-Full-HD-Images-HD.jpg','2018-07-07 20:30:24','2018-07-07 20:30:24',NULL),(7,'333333','1531020634-Beautiful-Full-HD-Image.jpg','2018-07-07 20:30:34','2018-07-07 20:30:34',NULL),(8,'333333','1531020634-Beautiful-Full-HD-Image.jpg','2018-07-07 20:30:34','2018-07-07 20:30:34',NULL),(9,'4444','1531020655-11.jpg','2018-07-07 20:30:55','2018-07-07 20:30:55',NULL),(10,'5555','1531020667-download.jpeg','2018-07-07 20:31:07','2018-07-07 20:31:07',NULL);
+/*!40000 ALTER TABLE `aboutarchive` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aboutcategory`
+--
+
+DROP TABLE IF EXISTS `aboutcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutcategory`
+--
+
+LOCK TABLES `aboutcategory` WRITE;
+/*!40000 ALTER TABLE `aboutcategory` DISABLE KEYS */;
+INSERT INTO `aboutcategory` VALUES (1,'DV','part-1',1,'2018-07-06 10:29:54','2018-07-06 10:39:27',NULL),(2,'Tầm nhìn - sứ mệnh','part-2',1,'2018-07-06 10:30:13','2018-07-06 10:39:39',NULL),(3,'Giá trị cốt lõii','part-3',1,'2018-07-06 10:30:25','2018-07-06 10:39:46',NULL),(4,'Lịch sử hình thành','part-4',1,'2018-07-06 10:31:38','2018-07-06 10:39:53',NULL),(5,'Thành tựu - Giải thưởng','part-5',1,'2018-07-06 10:32:00','2018-07-07 19:58:19','2018-07-07 19:58:19');
+/*!40000 ALTER TABLE `aboutcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aboutcontent`
+--
+
+DROP TABLE IF EXISTS `aboutcontent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutcontent` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `status` tinyint(4) DEFAULT '1',
+  `block_option` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutcontent`
+--
+
+LOCK TABLES `aboutcontent` WRITE;
+/*!40000 ALTER TABLE `aboutcontent` DISABLE KEYS */;
+INSERT INTO `aboutcontent` VALUES (1,'Giới thiệu chung','part-1','<div class=\"container\">\r\n    <h1 class=\"abouttitle\">ANOVA FEED</h1>\r\n    <div class=\"flex flex-content-center\">\r\n      <div class=\"aboutdes\">\r\n        <div class=\"content\"><p style=\"text-align: justify;\">Công ty Cổ phần DV, trực thuộc Tập đoàn ANOVA, một tập đoàn có thế mạnh trong lĩnh vực thức ăn chăn nuôi, thuốc thú y và thuốc thủy sản của Việt Nam. Với tầm nhìn trở thành <em><strong>“Nhà cung cấp chuỗi thức ăn an toàn hàng đầu tại Việt Nam”</strong></em>, tháng 06/2012, tập đoàn Anova đã thành lập công ty cổ phần Anova Feed chuyên về sản xuất thức ăn cho gia súc và gia cầm.</p>\r\n<p style=\"text-align: justify;\">Định hướng tập trung vào chất lượng sản phẩm, Anova Feed đã mạnh dạn đầu tư dây chuyền sản xuất hiện đại, hoàn toàn tự động được nhập khẩu từ châu Âu đi kèm với hệ thống quản lý chất lượng đã được quốc tế chứng nhận như: ISO 9001:2015, ISO 22000:2005 và HACCP đảm bảo cho chất lượng thành phẩm luôn ở mức tối ưu nhất.</p>\r\n<p style=\"text-align: justify;\">Hiện tại với 3 nhà máy đang hoạt động tại Long An, Đồng Nai và Hưng Yên cùng hệ thống phân phối trải dài khắp 63 tỉnh thành đảm bảo đáp ứng nhu cầu của khách hàng nhanh chóng và tiện lợi nhất.</p>\r\n<p style=\"text-align: justify;\">Với mục tiêu cung cấp cho thị trường 1 triệu tấn thức ăn gia súc, gia cầm và thủy sản vào năm 2020, Anova Feed đã và đang không ngừng đầu tư, cải tiến công nghệ, nguồn nhân lực ngày càng chuyên nghiệp, hiệu quả nhằm hiện thực hóa mục tiêu trở thành thương hiệu Việt hàng đầu trong ngành thức ăn chăn nuôi.</p></div>\r\n      </div>\r\n    </div>\r\n  </div>',1,'class=\"about-intro clearfix\"','2018-07-06 11:00:10','2018-07-06 11:03:00',NULL),(2,'Tầm nhìn - sứ mệnh','part-2','<div class=\"container\">\r\n    <h2 class=\"abouttitle\">Tầm nhìn - Sứ mệnh</h2>\r\n    <div class=\"visionlist clearfix\">\r\n      <div class=\"row flex flex-wrap\">\r\n        <div class=\"col-xs-12 col-md-6\">\r\n          <div class=\"visioncol\">\r\n            <figure>\r\n              <div class=\"visionimg\">\r\n                <img src=\"img/tamnhin.png\" alt=\"Tầm nhìn\">\r\n              </div>\r\n              <figcaption>\r\n                <h3 class=\"visionname\">Tầm nhìn</h3>\r\n                <div class=\"visiondes\"><p style=\"text-align: justify;\">Trở thành thương hiệu tin yêu hàng đầu của nhà chăn nuôi về thức ăn an toàn với chất lượng cao và tính ổn định, có khả năng truy xuất nguồn gốc, cùng kết hợp với công nghệ hiện đại và các  gói giải pháp dịch vụ khác biệt nhằm tối ưu hóa hiệu quả chăn nuôi.</p></div>\r\n              </figcaption>\r\n            </figure>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-xs-12 col-md-6\">\r\n          <div class=\"visioncol\">\r\n            <figure>\r\n              <div class=\"visionimg\">\r\n                <img src=\"img/sumenh.png\" alt=\"Sứ mệnh\">\r\n              </div>\r\n              <figcaption>\r\n                <h3 class=\"visionname\">Sứ mệnh</h3>\r\n                <div class=\"visiondes\"><p style=\"text-align: justify;\">Mang lại hiệu quả và sự hài lòng cao nhất cho khách hàng và cổ đông.\r\n</p>\r\n<p style=\"text-align: justify;\">Tạo ra môi trường làm việc năng động chuyên nghiệp, thử thách để thu hút nhân tài và phát triển bền vững.\r\n</p>\r\n<p style=\"text-align: justify;\">Đảm bảo ổn định chất lượng, luôn cải tiến sản phẩm cho hiệu quả cao. Kiểm soát được quá trình truy nguyên nguồn gốc cho việc sản xuất thức ăn an toàn.</p></div>\r\n              </figcaption>\r\n            </figure>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>',1,'data-parallax=\"scroll\" data-image-src=\"/Data/Sites/1/media/gioi-thieu/aboutbg.jpg\" class=\"about-vision parallax-window clearfix\"','2018-07-06 11:04:13','2018-07-06 11:05:22',NULL),(3,'Giá trị cốt lõii','part-3','<div class=\"container\">\r\n    <h2 class=\"abouttitle\">Giá trị cốt lõi</h2>\r\n    <div class=\"corevalue\">CHÍNH TRỰC - HIỆU QUẢ - CHUYÊN NGHIỆP</div>\r\n  </div>',1,'class=\"about-core clearfix\"','2018-07-06 11:07:25','2018-07-06 11:09:45',NULL),(4,'Lịch sử hình thành','part-4','<div class=\"container\">\r\n                                <h2 class=\"abouttitle\">Lịch sử hình thành</h2>\r\n                                <div class=\"timeline clearfix\">\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2015</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Phát triển với định hướng trở thành tập đoàn giữ vai trò tiên phong và chủ đạo trong việc thiết lập chuỗi thực phẩm khép kín. Với lợi thế về bề dày kinh nghiệm trong ngành và khả năng kiểm soát toàn bộ nguồn đầu vào trong chuỗi cung ứng, Tập đoàn Anova mong muốn hoàn thiện chuỗi thực phẩm khép kín - truy xuất nguồn gốc.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2014</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập <strong>Công ty Cổ Phần Anova Biotech</strong>, chuyên phân phối vaccine nhập khẩu, chất lượng cao tại thị trường Việt Nam. Thành lập <strong>Công ty Anova Farm</strong>, chính thức đầu tư vào lĩnh vực trang trại, nhằm nhanh chóng hoàn thiện chiến lược khép kín chuỗi thực phẩm.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2013</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Vinh dự được Nhà nước lựa chọn là cổ đông chiến lược và chính thức trở thành cổ đông của hai đơn vị sản xuất Vaccine duy nhất tại Việt Nam là:<br>\r\n                                                    - Công ty Cổ Phần Thuốc Thú Y Trung Ương <strong>Navetco</strong><br>\r\n                                                    - Công ty Cổ phần Thuốc Thú Y Trung Ương <strong>Vetvaco</strong></div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2012</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập <strong>Công ty Cổ Phần Anova Feed </strong>- đánh dấu bước phát triển của Tập đoàn Anova trong lĩnh vực sản xuất thức ăn gia súc.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2009</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\"><strong>Tập đoàn Anova </strong>được thành lập, hợp nhất toàn bộ các công ty thành viên trong lĩnh vực thuốc thú y để phát triển và thực hiện sứ mệnh nâng cao hiệu suất chăn nuôi, văn hoá tiêu dùng và bảo vệ sức khoẻ cộng đồng.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2007</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\"><p>Tái cấu trúc và hợp nhất các công ty thành 2 tập đoàn:&nbsp;</p>\r\n                                                    <p>&nbsp;</p>\r\n                                                    <div class=\"row\">\r\n                                                        <div class=\"col-md-3\">\r\n                                                            <p><img alt=\"\" src=\"img/anova.png\"></p>\r\n                                                        </div>\r\n                                                        <div class=\"col-md-8\"><strong>\r\n                                                                Anova Corporation:</strong><br>\r\n                                                            <p>Hoạt động trong lĩnh vực Trại chăn nuôi, Thức ăn gia súc, Thuốc thú y, Vaccine và tiến đến thiết lập chuỗi giá trị cung cấp nguồn thực phẩm sạch chất lượng cao, an toàn giàu dinh dưỡng.</p>\r\n                                                            <p>&nbsp;</p>\r\n                                                        </div>\r\n                                                    </div>\r\n                                                    <div class=\"row\">\r\n                                                        <div class=\"col-md-3\">\r\n                                                            <p><img alt=\"\" src=\"img/Novaland.png\"></p>\r\n                                                        </div>\r\n                                                        <div class=\"col-md-8\"><strong>\r\n                                                                Novaland Group:</strong><br>\r\n                                                            Hoạt động trong lĩnh vực bất động sản<br>\r\n                                                            <p><a href=\"http://www.novaland.com.vn/\">www.novaland.com.vn</a></p>\r\n                                                        </div>\r\n                                                    </div></div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2002</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Công ty TNHH Liên Doanh Anova ra đời, góp phần mở rộng thị phần thuốc thú y hiện có.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">1996</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập N&amp; M - hiện là <strong>Công ty Cổ Phần Anovatrade</strong> - Hợp tác với Mitsui, Công ty hàng đầu Nhật Bản thiết lập hệ thống phân phối acid amin cho thị trường Việt Nam.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">1995</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Liên doanh với Philippines đưa Công ty liên doanh sản xuất Thuốc thú y <strong>Biophamachemie</strong> vào hoạt động mở rộng hệ thống phân phối trong nước và xuất khẩu thuốc thú y đến nhiều quốc gia trên thế giới.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>',1,'class=\"history-page clearfix\"','2018-07-06 11:08:48','2018-07-06 11:08:48',NULL);
+/*!40000 ALTER TABLE `aboutcontent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `company`
+--
+
+DROP TABLE IF EXISTS `company`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company`
+--
+
+LOCK TABLES `company` WRITE;
+/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+INSERT INTO `company` VALUES (1,'Cty 1','1530714451-9.jpg','2018-07-04 07:27:31','2018-07-04 07:27:31',NULL),(2,'Cty2','1530714473-9.jpg','2018-07-04 07:27:53','2018-07-04 07:27:53',NULL),(3,'Cty 3','1530714484-9.jpg','2018-07-04 07:28:04','2018-07-04 07:28:04',NULL),(4,'Cty 4','1530714495-9.jpg','2018-07-04 07:28:15','2018-07-04 07:28:15',NULL),(5,'Cty 5','1530714505-9.jpg','2018-07-04 07:28:25','2018-07-04 07:28:25',NULL),(6,'Cty 6','1530714514-9.jpg','2018-07-04 07:28:34','2018-07-04 07:28:34',NULL),(7,'Cty 7','1530714539-6.jpg','2018-07-04 07:28:59','2018-07-04 07:28:59',NULL),(8,'Cty 8','1530714551-6.jpg','2018-07-04 07:29:11','2018-07-04 07:29:11',NULL);
+/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contactinfo`
+--
+
+DROP TABLE IF EXISTS `contactinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contactinfo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `first_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `second_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `third_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `work_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `work_day` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contactinfo`
+--
+
+LOCK TABLES `contactinfo` WRITE;
+/*!40000 ALTER TABLE `contactinfo` DISABLE KEYS */;
+INSERT INTO `contactinfo` VALUES (1,'Công ty siêu Lầy','ngõ 366 mỹ đình, cầu giấy, hà nội','0988958479','01658902480',NULL,'dotuan0601@gmail.com','7:30 - 17:30','(Thứ 2 - Thứ 7)','2018-07-21 02:58:01','2018-07-21 02:58:01',NULL);
+/*!40000 ALTER TABLE `contactinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqcategory`
+--
+
+DROP TABLE IF EXISTS `faqcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqcategory`
+--
+
+LOCK TABLES `faqcategory` WRITE;
+/*!40000 ALTER TABLE `faqcategory` DISABLE KEYS */;
+INSERT INTO `faqcategory` VALUES (1,'-- Tất cả --',1,'2018-07-19 08:52:38','2018-07-19 08:57:49',NULL),(2,'Câu hỏi về vịt',1,'2018-07-19 08:52:48','2018-07-19 08:52:48',NULL),(3,'Câu hỏi về lợn',1,'2018-07-19 08:52:58','2018-07-19 08:52:58',NULL);
+/*!40000 ALTER TABLE `faqcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqlist`
+--
+
+DROP TABLE IF EXISTS `faqlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqlist` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci,
+  `is_home_page` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqlist`
+--
+
+LOCK TABLES `faqlist` WRITE;
+/*!40000 ALTER TABLE `faqlist` DISABLE KEYS */;
+INSERT INTO `faqlist` VALUES (1,'Làm sao biết heo nái sắp sinh','Chào bạn, khi heo nái sắp sinh có những biểu hiện sau:\r\nCắn phá chuồng, có biểu hiện bồn chồn.\r\nĂn ít hoặc bỏ ăn.\r\nDãy vú ấm lên, sậm màu.\r\nVuốt núm vú sữa bắn thành tia.\r\nDịch nhờn có phân xu thì đẻ trong vòng 30 phút.\r\nChúc bạn chăn nuôi thàng công.',1,'2018-07-21 22:49:14','2018-07-21 23:01:51',NULL),(2,'Làm sao heo không bị tiêu chảy','Trai loi 2',1,'2018-07-21 22:49:49','2018-07-21 22:56:51',NULL),(3,'Cho heo nái ăn như thế nào','Tra loi 3',1,'2018-07-21 22:50:16','2018-07-21 22:56:58',NULL),(4,'Bổ sung vitamin C như thế nào','Tra loi 4',NULL,'2018-07-21 22:50:55','2018-07-21 22:57:04',NULL),(5,'Cho heo con bú sữa đầu','Tra loi 5',NULL,'2018-07-21 22:51:21','2018-07-21 22:57:11',NULL);
+/*!40000 ALTER TABLE `faqlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqquestion`
+--
+
+DROP TABLE IF EXISTS `faqquestion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqquestion` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `faqcategory_id` int(11) DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqquestion`
+--
+
+LOCK TABLES `faqquestion` WRITE;
+/*!40000 ALTER TABLE `faqquestion` DISABLE KEYS */;
+INSERT INTO `faqquestion` VALUES (1,'Đỗ Vũ Tuấn','abc@gmail.com',2,'ble tét','2018-07-21 00:44:34','2018-07-21 00:44:34',NULL),(2,'Đỗ Vũ Tuấn','abc@gmail.com',1,'xong phan nay','2018-07-21 00:51:57','2018-07-21 00:51:57',NULL);
+/*!40000 ALTER TABLE `faqquestion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `feedback`
+--
+
+DROP TABLE IF EXISTS `feedback`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `feedback` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `short_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `feedback`
+--
+
+LOCK TABLES `feedback` WRITE;
+/*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
+INSERT INTO `feedback` VALUES (1,'Gop y 1111Gop y 1111Gop y 1111','Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111','2018-07-05 08:27:46','2018-07-05 08:27:46',NULL),(2,'test captcha','test captcha','2018-07-05 09:09:08','2018-07-05 09:09:08',NULL),(3,'sfdsafa','sfdsafa','2018-07-05 09:13:02','2018-07-05 09:13:02',NULL),(4,'bbbbbbbbbbbbbbbbbbbbbb','bbbbbbbbbbbbbbbbbbbbbb','2018-07-05 09:23:59','2018-07-05 09:23:59',NULL),(5,'','','2018-07-20 20:48:38','2018-07-20 20:48:38',NULL);
+/*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `footerinfo`
+--
+
+DROP TABLE IF EXISTS `footerinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `footerinfo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company_info` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `copyright` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footerinfo`
+--
+
+LOCK TABLES `footerinfo` WRITE;
+/*!40000 ALTER TABLE `footerinfo` DISABLE KEYS */;
+INSERT INTO `footerinfo` VALUES (1,'Công ty 1 thành viên Dv - Siêu Lầy','0988958479','abcxxx444','dotuan0601@gmail.com','2017 thuộc về Dv. Designed by Dv.','2018-07-04 08:45:26','2018-07-04 08:45:26',NULL);
+/*!40000 ALTER TABLE `footerinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `footersitemap`
+--
+
+DROP TABLE IF EXISTS `footersitemap`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `footersitemap` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_parent` tinyint(4) DEFAULT '0',
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footersitemap`
+--
+
+LOCK TABLES `footersitemap` WRITE;
+/*!40000 ALTER TABLE `footersitemap` DISABLE KEYS */;
+INSERT INTO `footersitemap` VALUES (1,'Sản phẩm',NULL,1,'http://google.com','2018-07-04 09:33:04','2018-07-04 09:33:04',NULL),(2,'Sản phẩm 1','Sản phẩm',NULL,NULL,'2018-07-04 09:33:19','2018-07-04 09:33:19',NULL),(3,'Sản phẩm 2','Sản phẩm',NULL,NULL,'2018-07-04 09:33:31','2018-07-04 09:33:31',NULL),(4,'Sản phẩm 3','Sản phẩm',NULL,NULL,'2018-07-04 09:33:43','2018-07-04 09:33:43',NULL),(5,'Middle',NULL,1,NULL,'2018-07-04 09:33:54','2018-07-04 09:33:54',NULL),(6,'Middle 1','Middle',NULL,NULL,'2018-07-04 09:34:04','2018-07-04 09:34:04',NULL),(7,'Middle 2','Middle',NULL,NULL,'2018-07-04 09:34:16','2018-07-04 09:34:16',NULL),(8,'Middle 3','Middle',NULL,NULL,'2018-07-04 09:34:31','2018-07-04 09:34:31',NULL),(9,'Right',NULL,1,NULL,'2018-07-04 09:34:40','2018-07-04 09:34:40',NULL),(10,'Right 11','Right',NULL,NULL,'2018-07-04 09:34:50','2018-07-04 09:34:50',NULL),(11,'Right 22','Right',NULL,NULL,'2018-07-04 09:34:59','2018-07-04 09:34:59',NULL),(12,'Right 3','Right',NULL,NULL,'2018-07-04 09:35:10','2018-07-04 09:35:10',NULL);
+/*!40000 ALTER TABLE `footersitemap` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `frmenu`
+--
+
+DROP TABLE IF EXISTS `frmenu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `frmenu` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `frmenu`
+--
+
+LOCK TABLES `frmenu` WRITE;
+/*!40000 ALTER TABLE `frmenu` DISABLE KEYS */;
+INSERT INTO `frmenu` VALUES (1,'Trang chủ',NULL,'2018-07-03 09:41:05','2018-07-03 09:41:05',NULL),(2,'Giới thiệu',NULL,'2018-07-03 09:41:16','2018-07-03 09:41:16',NULL),(3,'Sản phẩm',NULL,'2018-07-03 09:41:23','2018-07-03 09:41:23',NULL),(4,'Sản phẩm 1','Sản phẩm','2018-07-03 09:41:32','2018-07-03 09:41:32',NULL),(5,'Sản phẩm 2','Sản phẩm','2018-07-03 09:41:44','2018-07-03 09:41:44',NULL),(6,'Sản phẩm 3','Sản phẩm','2018-07-03 09:41:54','2018-07-03 09:41:54',NULL),(7,'Góp ý',NULL,'2018-07-05 06:01:11','2018-07-05 06:01:11',NULL),(8,'Kiến thức chăn nuôi',NULL,'2018-07-07 20:53:21','2018-07-07 20:53:21',NULL),(9,'Tin tức - sự kiện',NULL,'2018-07-12 08:01:36','2018-07-12 08:01:36',NULL),(10,'Tin thị trường nổi bật','Tin tức - sự kiện','2018-07-12 08:02:17','2018-07-12 08:02:17',NULL),(11,'Tin công ty','Tin tức - sự kiện','2018-07-12 08:02:32','2018-07-12 08:02:32',NULL),(12,'Video kỹ thuật chăn nuôi','Kiến thức chăn nuôi','2018-07-16 07:40:01','2018-07-16 07:40:01',NULL),(13,'Chăn nuôi cùng chuyên gia','Kiến thức chăn nuôi','2018-07-16 07:40:36','2018-07-16 07:40:36',NULL),(14,'Câu hỏi thường gặp','Kiến thức chăn nuôi','2018-07-16 07:40:53','2018-07-16 07:40:53',NULL),(15,'Tuyển dụng',NULL,'2018-07-21 00:57:03','2018-07-21 00:57:03',NULL),(16,'Chính sách nhân sự','Tuyển dụng','2018-07-21 00:57:27','2018-07-21 00:57:27',NULL),(17,'Cơ hội nghề nghiệp','Tuyển dụng','2018-07-21 00:57:51','2018-07-21 00:57:51',NULL),(18,'Liên hệ',NULL,'2018-07-21 02:00:07','2018-07-21 02:00:07',NULL);
+/*!40000 ALTER TABLE `frmenu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `imageact`
+--
+
+DROP TABLE IF EXISTS `imageact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `imageact` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `img_small` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_large` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `imageact`
+--
+
+LOCK TABLES `imageact` WRITE;
+/*!40000 ALTER TABLE `imageact` DISABLE KEYS */;
+INSERT INTO `imageact` VALUES (1,'1530715554-2222.jpg','1530715616-bai_viet_to.jpg','Ảnh to nè',1,'2018-07-04 07:45:54','2018-07-04 07:46:56',NULL),(2,'1530715578-9.jpg','1530715578-9.jpg','Ảnh nhỏ 1',NULL,'2018-07-04 07:46:18','2018-07-04 07:46:18',NULL),(3,'1530715636-9.jpg','1530715636-9.jpg','Ảnh nhỏ 2',NULL,'2018-07-04 07:47:16','2018-07-04 07:47:16',NULL),(4,'1530715650-6.jpg','1530715650-6.jpg','Ảnh nhỏ 3',NULL,'2018-07-04 07:47:30','2018-07-04 07:47:30',NULL),(5,'1530715682-bang-ron-300x100cm-sx-new.jpg','1530715682-bang-ron-300x100cm-sx-new.jpg','Ảnh nhỏ 4',NULL,'2018-07-04 07:48:02','2018-07-04 07:48:02',NULL),(6,'1530715710-cover-website-8c.jpg','1530715711-cover-website-8c.jpg','Ảnh nhỏ 5',NULL,'2018-07-04 07:48:31','2018-07-04 07:48:31',NULL),(7,'1530715727-cover-website-7b.jpg','1530715727-cover-website-7b.jpg','Ảnh nhỏ 6',NULL,'2018-07-04 07:48:47','2018-07-04 07:48:47',NULL),(8,'1530715743-cover-website-3c.jpg','1530715743-cover-website-3c.jpg','Ảnh nhỏ 7',NULL,'2018-07-04 07:49:03','2018-07-04 07:49:03',NULL),(9,'1530715759-cover-website-4c.jpg','1530715759-cover-website-4c.jpg','Ảnh nhỏ 8',NULL,'2018-07-04 07:49:19','2018-07-04 07:49:19',NULL);
+/*!40000 ALTER TABLE `imageact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `knowledgecategory`
+--
+
+DROP TABLE IF EXISTS `knowledgecategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `knowledgecategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `knowledgecategory`
+--
+
+LOCK TABLES `knowledgecategory` WRITE;
+/*!40000 ALTER TABLE `knowledgecategory` DISABLE KEYS */;
+INSERT INTO `knowledgecategory` VALUES (1,'Heo',1,'2018-07-07 20:50:10','2018-07-07 20:50:10',NULL),(2,'Bò',1,'2018-07-07 20:50:27','2018-07-07 20:50:27',NULL),(3,'Cá',1,'2018-07-07 20:53:53','2018-07-07 20:53:53',NULL),(4,'Gia súc - Gia cầm',1,'2018-07-07 20:54:04','2018-07-07 20:54:04',NULL);
+/*!40000 ALTER TABLE `knowledgecategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `knowledgevideo`
+--
+
+DROP TABLE IF EXISTS `knowledgevideo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `knowledgevideo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_src` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `knowledgecategory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `knowledgevideo`
+--
+
+LOCK TABLES `knowledgevideo` WRITE;
+/*!40000 ALTER TABLE `knowledgevideo` DISABLE KEYS */;
+INSERT INTO `knowledgevideo` VALUES (1,'Đại diện heo','1531028226-Beautiful-Full-HD-Images-HD.jpg','https://www.youtube.com/watch?v=9hAF88vX1OM',1,1,'2018-07-07 22:37:06','2018-07-07 22:37:06',NULL),(2,'Video 222','1531029000-7.png','https://www.youtube.com/watch?v=QU5Wn1-86VU',NULL,1,'2018-07-07 22:50:00','2018-07-08 06:59:27',NULL),(3,'Video 333','1531029026-aboutbg.jpg','https://www.youtube.com/watch?v=WQjxtMd_CDM',NULL,1,'2018-07-07 22:50:26','2018-07-08 06:59:45',NULL);
+/*!40000 ALTER TABLE `knowledgevideo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu_role`
+--
+
+DROP TABLE IF EXISTS `menu_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu_role` (
+  `menu_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
+  UNIQUE KEY `menu_role_menu_id_role_id_unique` (`menu_id`,`role_id`),
+  KEY `menu_role_menu_id_index` (`menu_id`),
+  KEY `menu_role_role_id_index` (`role_id`),
+  CONSTRAINT `menu_role_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `menu_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu_role`
+--
+
+LOCK TABLES `menu_role` WRITE;
+/*!40000 ALTER TABLE `menu_role` DISABLE KEYS */;
+INSERT INTO `menu_role` VALUES (7,1),(7,2),(9,1),(9,2),(19,1),(19,2),(21,1),(21,2),(23,1),(23,2),(24,1),(24,2),(26,1),(26,2),(31,1),(31,2),(32,1),(32,2),(35,1),(35,2),(36,1),(36,2),(38,1),(38,2),(42,1),(42,2),(44,1),(44,2),(45,1),(45,2),(47,1),(47,2),(52,1),(52,2),(53,1),(53,2),(55,1),(55,2),(57,1),(57,2),(59,1),(59,2),(60,1),(60,2),(61,1),(61,2),(63,1),(63,2),(67,1),(67,2),(68,1),(68,2),(70,1),(70,2),(72,1),(72,2),(73,1),(73,2),(75,1),(75,2);
+/*!40000 ALTER TABLE `menu_role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menus`
+--
+
+DROP TABLE IF EXISTS `menus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `position` int(11) DEFAULT NULL,
+  `menu_type` int(11) NOT NULL DEFAULT '1',
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `menus_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menus`
+--
+
+LOCK TABLES `menus` WRITE;
+/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` VALUES (1,NULL,0,NULL,'User','User',NULL,NULL,NULL),(2,NULL,0,NULL,'Role','Role',NULL,NULL,NULL),(7,0,2,'fa-database','QuảnLýNộiDung','Quản lý Trang chủ',NULL,'2018-07-03 09:38:19','2018-07-04 09:44:43'),(9,0,1,'fa-database','FrMenu','Menu trang chủ',7,'2018-07-03 09:40:48','2018-07-03 09:40:48'),(19,0,1,'fa-database','PriceShow','Show giá',7,'2018-07-03 10:48:14','2018-07-03 10:48:14'),(21,0,1,'fa-database','Company','Công ty thành viên',7,'2018-07-04 07:26:39','2018-07-04 07:26:39'),(23,0,1,'fa-database','ImageAct','Hình ảnh hoạt động',7,'2018-07-04 07:41:06','2018-07-04 07:41:06'),(24,0,2,'fa-database','QuảnLýFooter','Quản lý Footer',NULL,'2018-07-04 08:39:37','2018-07-04 08:39:37'),(26,0,1,'fa-database','FooterInfo','Thông tin trong footer',24,'2018-07-04 08:44:18','2018-07-04 08:44:18'),(31,0,1,'fa-database','FooterSitemap','Footer Sitemap',24,'2018-07-04 09:32:39','2018-07-04 09:32:39'),(32,0,2,'fa-database','QuảnLýGópý','Quản lý Góp ý',NULL,'2018-07-05 05:52:27','2018-07-05 05:52:27'),(35,0,1,'fa-database','Feedback','Danh sách',32,'2018-07-05 08:25:35','2018-07-05 08:25:35'),(36,0,2,'fa-database','QuảnLýTrangGiớiThiệu','Quản lý trang giới thiệu',NULL,'2018-07-06 10:26:04','2018-07-06 10:26:04'),(38,0,1,'fa-database','AboutCategory','Đề mục chính',36,'2018-07-06 10:29:30','2018-07-06 10:29:30'),(42,0,1,'fa-database','AboutContent','Nội dung giới thiệu',36,'2018-07-06 10:58:53','2018-07-06 10:58:53'),(44,0,1,'fa-database','AboutArchive','Thành tựu - Giải thưởng',36,'2018-07-07 20:03:16','2018-07-07 20:03:16'),(45,0,2,'fa-database','QuảnLýTrangKiếnThứcChănNuôi','Quản lý Trang Kiến thức chăn nuôi',NULL,'2018-07-07 20:46:58','2018-07-07 20:46:58'),(47,0,1,'fa-database','KnowledgeCategory','Danh mục kiến thức',45,'2018-07-07 20:49:58','2018-07-07 20:49:58'),(52,0,1,'fa-database','KnowledgeVideo','Video kiến thức',45,'2018-07-07 22:36:39','2018-07-07 22:36:39'),(53,0,2,'fa-database','QuảnLýSảnPhẩm','Quản lý sản phẩm',NULL,'2018-07-09 08:30:56','2018-07-09 08:30:56'),(55,0,1,'fa-database','ProductCategory','Danh mục sản phẩm',53,'2018-07-09 08:38:07','2018-07-09 08:38:07'),(57,0,1,'fa-database','Products','Danh sách sản phẩm',53,'2018-07-09 09:53:34','2018-07-09 09:53:34'),(59,0,1,'fa-database','ProductDetail','Chi tiết sản phẩm',53,'2018-07-10 08:54:27','2018-07-10 08:54:27'),(60,0,2,'fa-database','QuảnLýTinTứcSựKiện','Quản lý tin tức - sự kiện',NULL,'2018-07-12 08:21:08','2018-07-12 08:21:08'),(61,0,1,'fa-database','News','Danh sách tin bài',60,'2018-07-12 08:32:38','2018-07-12 08:32:38'),(63,0,1,'fa-database','FaqCategory','Danh mục câu hỏi người dùng',45,'2018-07-19 08:52:09','2018-07-19 08:52:09'),(67,0,1,'fa-database','FaqQuestion','Danh sách câu hỏi người dùng',45,'2018-07-21 00:44:06','2018-07-21 00:44:06'),(68,0,2,'fa-database','QuảnLýLiênHệ','Quản lý liên hệ',NULL,'2018-07-21 02:49:44','2018-07-21 02:49:44'),(70,0,1,'fa-database','UserContact','Liên hệ người dùng',68,'2018-07-21 02:53:04','2018-07-21 02:53:04'),(72,0,1,'fa-database','ContactInfo','Thông tin liên hệ',68,'2018-07-21 02:56:52','2018-07-21 02:56:52'),(73,0,2,'fa-database','QuảnLýHìnhảnhHoạtđộng','Quản lý hình ảnh hoạt động',NULL,'2018-07-21 22:28:25','2018-07-21 22:28:25'),(75,0,1,'fa-database','FaqList','Danh sách câu hỏi thường gặp',45,'2018-07-21 22:48:29','2018-07-21 22:48:29');
+/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2015_10_10_000000_create_menus_table',1),(4,'2015_10_10_000000_create_roles_table',1),(5,'2015_10_10_000000_update_users_table',1),(6,'2015_12_11_000000_create_users_logs_table',1),(7,'2016_03_14_000000_update_menus_table',1),(8,'2018_07_03_164048_create_frmenu_table',2),(9,'2018_07_03_164513_create_products_table',3),(10,'2018_07_03_170722_create_news_table',4),(11,'2018_07_03_171403_create_news_table',5),(12,'2018_07_03_171710_create_news_table',6),(13,'2018_07_03_174438_create_priceshow_table',7),(14,'2018_07_03_174815_create_priceshow_table',8),(15,'2018_07_04_142639_create_company_table',9),(16,'2018_07_04_144106_create_imageact_table',10),(17,'2018_07_04_154419_create_footerinfo_table',11),(18,'2018_07_04_160343_create_footersitemap_table',12),(19,'2018_07_04_163034_create_footersitemap_table',13),(20,'2018_07_04_163239_create_footersitemap_table',14),(21,'2018_07_05_130013_create_feedback_table',15),(22,'2018_07_05_152535_create_feedback_table',16),(23,'2018_07_06_172930_create_aboutcategory_table',17),(24,'2018_07_06_174446_create_aboutcontent_table',18),(25,'2018_07_06_175853_create_aboutcontent_table',19),(26,'2018_07_08_030316_create_aboutarchive_table',20),(27,'2018_07_08_034958_create_knowledgecategory_table',21),(28,'2018_07_08_052520_create_aboutvideos_table',22),(29,'2018_07_08_053305_create_knowledgevideo_table',23),(30,'2018_07_08_053639_create_knowledgevideo_table',24),(31,'2018_07_09_153807_create_productcategory_table',25),(32,'2018_07_09_165008_create_products_table',26),(33,'2018_07_09_165334_create_products_table',27),(34,'2018_07_10_155427_create_productdetail_table',28),(35,'2018_07_12_153238_create_news_table',29),(36,'2018_07_19_155209_create_faqcategory_table',30),(37,'2018_07_21_071111_create_faqquestion_table',31),(38,'2018_07_21_074406_create_faqquestion_table',32),(39,'2018_07_21_095304_create_usercontact_table',33),(40,'2018_07_21_095652_create_contactinfo_table',34),(41,'2018_07_22_054830_create_faqlist_table',35);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news`
+--
+
+DROP TABLE IF EXISTS `news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frmenu_id` int(11) DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `short_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `news`
+--
+
+LOCK TABLES `news` WRITE;
+/*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES (1,'Bài to',9,1,'Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu TPHCM','<div class=\"content\"><p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"><strong>Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu TPHCM, Bệnh viện Nhi Đồng 1 và các trẻ em có hoàn cảnh đặc biệt của mái ấm tình thương Kim Chi - chùa Long Thạnh, tỉnh Long An.</strong></span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Trong chuyến đi, đoàn đã có dịp lắng nghe những tâm tư, tình cảm cũng như những trăn trở của những bệnh nhân để có thể kịp thời đồng cảm và sẻ chia với những khó khăn ấy. Hi vọng với những đóng góp của mình, Anova Feed sẽ phần nào phụ giúp cho những hoàn cảnh khó khăn có thêm nghị lực để vượt qua những thử thách của bệnh tật. </span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-1.jpg\"></span></p>\r\n<p style=\"text-align: center;\"><em><span style=\"font-size: 13pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">Hình ảnh được ghi nhận tại Bệnh viện Ung bướu TP.Hồ Chí Minh và Bệnh viện Nhi đồng<span style=\"text-decoration: underline;\"> 1</span></span></em></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Rời TP HCM, chúng tôi đến thăm và tặng quà cho các trẻ em có hoàn cảnh đặc biệt đang sinh sống và học tập tại Mái ấm Kim Chi của chùa Long Thạnh (Long An). Nơi đậy, hiện đang cưu mang 150 mảnh đời bất hạnh từ 1 tháng tuổi đến 17 tuổi.</span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"><img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-2.jpg\"><br>\r\n</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Các em đã được thầy Út (trụ trì) nhận về nuôi và chăm lo toàn bộ từ miếng cơm, tấm áo đến sách, vở, bút, mực cả đến những khoản chi phí không tên khác. 150 em tuy không phải số lượng đông như những Trung tâm, mái ấm khác,nhưng ngần ấy em cũng là ngần ấy nỗi lo toan của những người phụ trách.</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Ngoài việc chăm sóc các em thì Mái ấm Kim Chi còn tạo điều kiện cho các em học tập bằng việc mở trường tiểu học, trung học và trung học phổ thông Bồ Đề Phương Duy để sau này các em có được một tương lai tươi sáng hơn.</span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp; </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-3.jpg\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span></p>\r\n<p style=\"text-align: center;\"><strong><em><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></em></strong><em><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">Thành viên trong đoàn trao “Món quà tình thương” và giao lưu tại mái ấm</span></em></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kết thúc chuyến đi, đọng lại trong mỗi thành viên là niềm hi vọng vượt qua bệnh tật của những bệnh nhân hiểm nghèo cũng như những ánh mắt đong đầy tình yêu thương cuộc sống từ các em có hoàn cảnh khó khăn của Mái ấm </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kim Chi. </span></p>\r\n<p style=\"text-align: left;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kính chúc các cô chú, anh chị bệnh nhân và các em của bệnh viện Ung Bướu, Nhi Đồng 1 và mái ấm Kim Chi được dồi dào sức khỏe và hạnh phúc.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p></div>','1531409656-cover-website-2c.jpg','2018-07-12 08:34:16','2018-07-13 09:00:20',NULL),(2,'Bài nhỏ 1',9,NULL,NULL,NULL,'1531409790-cover-website-3c.jpg','2018-07-12 08:36:30','2018-07-12 08:36:30',NULL),(3,'Bài nhỏ 2',9,NULL,NULL,NULL,'1531411893-cover-website-4c.jpg','2018-07-12 09:11:33','2018-07-12 09:11:33',NULL),(4,'Ble Ble',13,NULL,'Đây không phải là mô tả ngắn đâu','<div class=\"content\">\r\n<p style=\"text-align:justify\"><strong>Ch&iacute;nh phủ vừa ban h&agrave;nh Nghị định 55/2017/NĐ-CP quản l&yacute; nu&ocirc;i, chế biến v&agrave; xuất khẩu sản phẩm c&aacute; tra.</strong></p>\r\n\r\n<p style=\"text-align:justify\">Việc nu&ocirc;i c&aacute; tra thương phẩm phải đ&aacute;p ứng 4 điều kiện: c&oacute; địa điểm, diện t&iacute;ch nu&ocirc;i c&aacute; tra ph&ugrave; hợp với quy hoạch về sử dụng đất của Ủy ban Nh&acirc;n d&acirc;n cấp tỉnh; c&oacute; cơ sở hạ tầng đ&aacute;p ứng y&ecirc;u cầu kỹ thuật về nu&ocirc;i c&aacute; tra thương phẩm, c&oacute; hệ thống cấp, tho&aacute;t nước ri&ecirc;ng biệt, c&oacute; nơi xử l&yacute; chất thải, b&ugrave;n thải đ&aacute;p ứng y&ecirc;u cầu về bảo vệ m&ocirc;i trường v&agrave; vệ sinh th&uacute; y; đ&aacute;p ứng c&aacute;c quy định về điều kiện đảm bảo an to&agrave;n thực phẩm theo quy định của ph&aacute;p luật về an to&agrave;n thực phẩm; c&oacute; Giấy chứng nhận m&atilde; số nhận diện ao nu&ocirc;i c&aacute; tra theo quy định.</p>\r\n\r\n<div style=\"text-align: center;\"><img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/thi-truong-noi-bat/5-1.jpg\" /></div>\r\n\r\n<p style=\"text-align:center\"><em>Cho c&aacute; tra ăn. (Ảnh: Nam Th&aacute;i/TTXVN)</em></p>\r\n\r\n<p style=\"text-align:justify\">Về m&atilde; số nhận diện ao nu&ocirc;i, m&atilde; số gồm 11 số v&agrave; c&oacute; cấu tr&uacute;c AA-BB-CCCC-DDD, trong đ&oacute;: AA l&agrave; m&atilde; số tỉnh, th&agrave;nh phố trực thuộc trung ương &aacute;p dụng trong quản l&yacute; nu&ocirc;i trồng thủy sản; BB l&agrave; m&atilde; số đối tượng nu&ocirc;i (đối với c&aacute; tra l&agrave; 01); CCCC l&agrave; số thứ tự cơ sở nu&ocirc;i được cấp từ 0001 đến 9999; DDD l&agrave; số thứ tự ao nu&ocirc;i của cơ sở nu&ocirc;i c&aacute; tra, được cấp theo thứ tự từ 001 đến 999.&nbsp;</p>\r\n\r\n<p style=\"text-align:justify\">Cơ quan quản l&yacute; nu&ocirc;i trồng thủy sản cấp tỉnh thực hiện cấp m&atilde; số nhận diện ao nu&ocirc;i. Mỗi ao nu&ocirc;i được cấp duy nhất một m&atilde; số nhận diện.</p>\r\n\r\n<p style=\"text-align:justify\">Chủ cơ sở nu&ocirc;i phải thực hiện đăng k&yacute; m&atilde; số nhận diện ao nu&ocirc;i lần đầu hoặc đăng k&yacute; lại khi thay đổi chủ cơ sở nu&ocirc;i hoặc thay đổi diện t&iacute;ch ao nu&ocirc;i.&nbsp;</p>\r\n\r\n<p style=\"text-align:justify\">Nghị định cũng quy định r&otilde; điều kiện chế biến c&aacute; tra, cụ thể phải đ&aacute;p ứng 4 điều kiện: đ&aacute;p ứng c&aacute;c quy định về điều kiện đầu tư kinh doanh tại Điều 21 của Nghị định 66/2016/NĐ-CP ng&agrave;y 1/7/2016 của Ch&iacute;nh phủ quy định điều kiện đầu tư kinh doanh về bảo vệ v&agrave; kiểm dịch thực vật; giống c&acirc;y trồng; nu&ocirc;i động vật rừng th&ocirc;ng thường; chăn nu&ocirc;i; thủy sản; thực phẩm; đ&aacute;p ứng c&aacute;c quy định, quy chuẩn kỹ thuật về điều kiện đảm bảo an to&agrave;n thực phẩm trong chế biến thủy sản; c&oacute; Giấy chứng nhận cơ sở đủ điều kiện an to&agrave;n thực phẩm do cơ quan quản l&yacute; nh&agrave; nước c&oacute; thẩm quyền cấp; c&oacute; hệ thống truy xuất nguồn gốc đ&aacute;p ứng c&aacute;c quy định của ph&aacute;p luật v&agrave; đảm bảo khả năng truy xuất đến cơ sở nu&ocirc;i; sản phẩm c&aacute; tra xuất khẩu phải được chế biến từ cơ sở chế biến c&aacute; tra đ&aacute;p ứng c&aacute;c điều kiện chế biến c&aacute; tra n&ecirc;u tr&ecirc;n.</p>\r\n\r\n<p style=\"text-align:justify\">Trường hợp tổ chức, c&aacute; nh&acirc;n xuất khẩu sản phẩm c&aacute; tra kh&ocirc;ng c&oacute; cơ sở chế biến đ&aacute;p ứng c&aacute;c điều kiện chế biến c&aacute; tra, phải đ&aacute;p ứng một trong hai điều kiện: c&oacute; hợp đồng mua sản phẩm c&aacute; tra được chế biến tại cơ sở chế biến c&aacute; tra đ&aacute;p ứng điều kiện chế biến c&aacute; tra n&ecirc;u tr&ecirc;n; c&oacute; hợp đồng gia c&ocirc;ng, chế biến với chủ sở hữu cơ sở chế biến đ&aacute;p ứng điều kiện chế biến c&aacute; tra./.</p>\r\n\r\n<p style=\"text-align:right\"><strong>Nguồn tin: TTXVN/VN+</strong></p>\r\n</div>','1531847891-2222.jpg','2018-07-17 10:18:11','2018-07-17 11:18:43',NULL),(5,'Câu hỏi 1',14,NULL,NULL,'<div class=\"faqcontent\" style=\"display: block\">\r\n<div class=\"content\">Ch&agrave;o bạn, khi heo n&aacute;i sắp sinh c&oacute; những biểu hiện sau:\r\n<ul>\r\n	<li>Cắn ph&aacute; chuồng, c&oacute; biểu hiện bồn chồn.</li>\r\n	<li>Ăn &iacute;t hoặc bỏ ăn.</li>\r\n	<li>D&atilde;y v&uacute; ấm l&ecirc;n, sậm m&agrave;u.</li>\r\n	<li>Vuốt n&uacute;m v&uacute; sữa bắn th&agrave;nh tia.</li>\r\n	<li>Dịch nhờn c&oacute; ph&acirc;n xu th&igrave; đẻ trong v&ograve;ng 30 ph&uacute;t.</li>\r\n</ul>\r\nCh&uacute;c bạn chăn nu&ocirc;i th&agrave;ng c&ocirc;ng.</div>\r\n</div>','1532242449-3a.png','2018-07-17 11:07:49','2018-07-21 23:54:09',NULL),(6,'Gía trị trường ngày 1',10,1,'Tại Dak Lak, giá heo hơi bất ngờ tăng 3.000đ/kg, lên 47.000đ/kg. Tỉnh Bình Dương, Bình Phước, Cần Thơ và Bạc Liêu cùng tăng thêm 2.000đ/kg.','<div class=\"faqcontent\">\r\n<div class=\"content\">\r\n<p>Bước đầu ti&ecirc;n trong phương ph&aacute;p chữa ti&ecirc;u chảy cho lợn l&agrave; x&aacute;c định nguy&ecirc;n nh&acirc;n g&acirc;y ti&ecirc;u chảy. Kiểm tra lại tất cả c&aacute;c kh&acirc;u cho ăn, uống, m&ocirc;i trường sống,&hellip; để x&aacute;c đo&aacute;n định nguy&ecirc;n nh&acirc;n. Nếu thấy lợn ti&ecirc;u chảy k&egrave;m theo c&aacute;c triệu chứng kh&aacute;c cần mang mẫu x&eacute;t nghiệm tới th&uacute; y để x&aacute;c định nguy&ecirc;n nh&acirc;n ch&iacute;nh x&aacute;c v&agrave; c&oacute; phương ph&aacute;p điều trị ph&ugrave; hợp.</p>\r\n\r\n<p>Điều trị cho lợn bằng kh&aacute;ng sinh sau khi x&eacute;t nghiệm, d&ugrave;ng đ&uacute;ng gốc kh&aacute;ng sinh c&oacute; t&aacute;c dụng để tr&aacute;nh t&igrave;nh trạng nhờn thuốc, kh&aacute;ng thuốc. Chữa ti&ecirc;u chảy cho lợn kết hợp ti&ecirc;m kh&aacute;ng sinh, kh&aacute;ng vi&ecirc;m, b&ugrave; nước, muối kho&aacute;ng cho những con bệnh, c&aacute;ch ly lợn bệnh v&agrave; cho ăn, uống kh&aacute;ng sinh quy m&ocirc; to&agrave;n trại nếu ti&ecirc;u chảy l&agrave; biểu hiện của bệnh dịch nguy hiểm.</p>\r\n\r\n<p>Cần chữa ti&ecirc;u chảy cho lợn theo ph&aacute;c đồ thuốc th&uacute; y đưa ra, chữa li&ecirc;n tục v&agrave; dừng nghỉ theo đ&uacute;ng hướng dẫn. Trong suốt thời gian chữa ti&ecirc;u chảy cần kết hợp với vệ sinh, khử tr&ugrave;ng chuồng trại, vật dụng chăn nu&ocirc;i, hạn chế người ra v&agrave;o khu vực chuồng.</p>\r\n</div>\r\n</div>','1532242600-111.jpg','2018-07-17 11:08:53','2018-07-22 00:01:23',NULL),(7,'Chính sách nhân sự',16,NULL,NULL,'<div class=\"content clearfix\"><div class=\"content\">\r\n<p>Biến Anova Feed trở thành nơi làm việc lý tốt nhất là trọng trách và mục tiêu xuyên suốt mà phòng nhân sự cũng như toàn thể từng thành viên của tập đoàn hướng đến. Để đạt được điều đó, chúng tôi tập trung vào việc xây dựng một môi trường làm việc minh bạch, cởi mở, mọi thành viên đều có cơ hội cống hiến, thăng tiến và tỏa sáng đồng thời không ngừng cải tiến và hoàn thiện chính sách lương thưởng, phúc lợi cạnh tranh với thị trường, theo năng lực của nhân viên.</p>\r\n<p>Anova Feed đã vinh dự được nhận một số giải thưởng tôn vinh những cố gắng không ngừng nghỉ trong việc xây dựng môi trường làm việc tốt nhất cho nhân viên như:</p>\r\n<p>1.<span style=\"white-space: pre;\"> </span>Năm 2015: Top 100 Nơi làm việc tốt nhất Việt Nam<br>\r\n2.<span style=\"white-space: pre;\"> </span>Năm 2017: Asia Best Employee Award 2016</p>\r\n<p>Ngoài ra, cũng trong năm 2017, tập đoàn Anova Corporation cũng tự hào được vinh danh tại Vietnam HR Awards 2016 cho các doanh nghiệp có chính sách nhân sự xuất sắc về lương thưởng, phúc lợi, hoạch định và tuyển dụng nhân lực và có môi trường làm việc tốt.</p>\r\n<p>   </p>\r\n</div>\r\n<div class=\"career-policy clearfix\">\r\n<div class=\"policy\">\r\n<h2 class=\"title\">CHÍNH SÁCH LƯƠNG THƯỞNG</h2>\r\n<div class=\"content\">\r\n<p>Tại Anova Feed, các chính sách về lương thưởng, phúc lợi đều được khảo sát và thay đổi hàng năm đề phù hợp theo nhưng báo cáo mới nhất của thị trường nhân sự đầy cạnh tranh và khan hiếm nhân tài hiện nay, bao gồm như: lương, các phụ cấp phục vụ công việc, lương tháng 13, các khoản thưởng theo năng lực và hiệu quả công việc…</p>\r\n</div>\r\n</div>\r\n<div class=\"policy\">\r\n<h2 class=\"title\">CHÍNH SÁCH PHÚC LỢI</h2>\r\n<div class=\"content\">\r\n<p>Bên cạnh chính sách về lương thưởng cạnh tranh với thị trường, chính sách phúc lợi cũng là một điểm đáng ghi nhận của Anova Feed. Tập đoàn luôn quan tâm và xây dựng chế độ phúc lợi tốt nhất cho nhân viên như chương trình bảo hiểm y tế cao cấp mở rộng cho nhân viên và người thân, chính sách khuyến học cho con em CBNV, mua sản phẩm công ty với giá ưu đãi…</p>\r\n</div>\r\n</div>\r\n<div class=\"policy\">\r\n<h2 class=\"title\">ĐÀO TẠO VÀ PHÁT TRIỂN</h2>\r\n<div class=\"content\">\r\nDựa trên định hướng phát triển đã được hoạch định, Anova Feed luôn chú trọng đào tạo và phát triển nguồn nhân lực hiện có để đáp ứng nhu cầu phát triển của từng nhân viên cũng như của tập đoàn. Để hiện thực hóa, phòng nhân sự đã xây dựng nên một chính sách đào tạo và phát triển cụ thể và đa dạng bao gồm nhiều khóa học khác nhau nhằm mục đích trau dồi, cung cấp cho nhân viên những kỹ năng cần thiết; không chỉ nhằm mục đích hoàn thành công việc mà còn&nbsp; hội nhập quốc tế.\r\n<p> </p>\r\n</div>\r\n</div>\r\n</div></div>',NULL,'2018-07-21 01:23:11','2018-07-21 01:42:52',NULL),(8,'Giá thị trường ngày 2',10,NULL,'Giá heo tại Huế, Lâm Đồng, Long An và Bến Tre giảm giá bán hôm nay. Nhiều tỉnh miền Bắc vẫn duy trì đà tăng nhẹ',NULL,'1532242670-1a.png','2018-07-21 23:57:50','2018-07-21 23:57:50',NULL),(9,'Giá thị trường ngày 3',10,NULL,'Tại Sóc Trăng, giá heo hơi hôm nay tăng lên 46.000đ/kg, thêm 3.000đ/kg, nhiều tỉnh miền Nam đã có dấu hiệu tăng giá. Tỉnh Đồng Nai cũng ghi nhận tăng thêm 1.000đ/kg ngay trong sáng nay',NULL,'1532242704-2a.png','2018-07-21 23:58:24','2018-07-21 23:58:24',NULL),(10,'Giá thị trường ngày 4',10,NULL,'Giá heo hơi thêm bất ngờ khi đồng loạt tại nhiều tỉnh hôm nay, Hưng Yên và Bắc Giang chạm “mốc” 55.000đ/kg, các tỉnh miền Trung và miền Tây cũng không nằm ngoài lần tăng giá này.',NULL,'1532242736-3a.png','2018-07-21 23:58:56','2018-07-21 23:58:56',NULL),(11,'Tin khuyến mãi',11,1,'Tự hào luôn cũng đồng hành với người chăn nuôi Việt Nam, Anova Feed thêm lần nữa triển khi chương trình khuyến mãi  20 + 1 & 30 + 1 đầy hấp dẫn.',NULL,'1532245803-cover-website-2c.jpg','2018-07-22 00:50:03','2018-07-22 00:50:03',NULL),(12,'Công ty và WC',11,NULL,'Hòa chung nhịp đập World Cup 2018, ANOVA FEED tiếp tục triển khai Chương trình khuyến mãi 20 + 1 & 30 + 1.',NULL,'1532245835-2222.jpg','2018-07-22 00:50:35','2018-07-22 00:51:33',NULL),(13,'Chia sẻ cùng cộng đồng',11,NULL,'Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu!',NULL,NULL,'2018-07-22 00:51:20','2018-07-22 00:51:20',NULL);
+/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `priceshow`
+--
+
+DROP TABLE IF EXISTS `priceshow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `priceshow` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `price_show_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `priceshow`
+--
+
+LOCK TABLES `priceshow` WRITE;
+/*!40000 ALTER TABLE `priceshow` DISABLE KEYS */;
+INSERT INTO `priceshow` VALUES (1,'Heo hơi <110 kg Miền Bắc: 48.000 - 50.000 đ/kg','2018-07-03 10:48:27','2018-07-03 10:48:27',NULL),(2,'Giờ đã khá muộn rồi mà tôi vẫn code','2018-07-03 10:48:44','2018-07-03 10:48:44',NULL),(3,'Tin thứ 1: aaaaaaaaaaaaaaaaa','2018-07-03 10:48:55','2018-07-03 10:48:55',NULL),(4,'Tin thứ 2: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb','2018-07-03 10:49:05','2018-07-03 10:49:05',NULL),(5,'Tin thứ 3: sắp có tiền web về rooooiiiiiiiiiiiiiiiiiiiiiiiiiiii','2018-07-03 10:49:22','2018-07-03 10:49:22',NULL);
+/*!40000 ALTER TABLE `priceshow` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productcategory`
+--
+
+DROP TABLE IF EXISTS `productcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_home_page` tinyint(4) DEFAULT '0',
+  `status` tinyint(4) DEFAULT '1',
+  `frmenu_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productcategory`
+--
+
+LOCK TABLES `productcategory` WRITE;
+/*!40000 ALTER TABLE `productcategory` DISABLE KEYS */;
+INSERT INTO `productcategory` VALUES (1,'Thức ăn cho heox','1531150773-1a.png',1,1,4,'2018-07-09 08:39:33','2018-07-09 08:39:33',NULL),(2,'Thức ăn cho gia câmx','1531150873-2a.png',1,1,4,'2018-07-09 08:39:58','2018-07-09 08:41:13',NULL),(3,'Thức ăn cho bò','1531150862-3a.png',1,1,4,'2018-07-09 08:41:02','2018-07-09 08:41:02',NULL),(4,'TA1',NULL,NULL,1,5,'2018-07-09 08:41:29','2018-07-09 08:41:29',NULL),(5,'TA2',NULL,NULL,1,5,'2018-07-09 08:41:38','2018-07-09 08:41:38',NULL),(6,'TA3',NULL,NULL,1,5,'2018-07-09 08:41:46','2018-07-09 08:41:46',NULL),(7,'TP1',NULL,NULL,1,6,'2018-07-09 08:41:57','2018-07-09 08:41:57',NULL),(8,'TP2',NULL,NULL,1,6,'2018-07-09 08:42:04','2018-07-09 08:42:04',NULL),(9,'TP3',NULL,NULL,1,6,'2018-07-09 08:42:15','2018-07-09 08:42:15',NULL);
+/*!40000 ALTER TABLE `productcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productdetail`
+--
+
+DROP TABLE IF EXISTS `productdetail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productdetail` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `products_id` int(11) DEFAULT NULL,
+  `ingredient` text COLLATE utf8mb4_unicode_ci,
+  `main_part` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instruction` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productdetail`
+--
+
+LOCK TABLES `productdetail` WRITE;
+/*!40000 ALTER TABLE `productdetail` DISABLE KEYS */;
+INSERT INTO `productdetail` VALUES (1,1,'<div class=\"content\"><table class=\"table\">\r\n        <tbody>\r\n        <tr>\r\n            <td>&nbsp;Đạm tối thiểu (min %)&nbsp;</td>\r\n            <td>&nbsp;17</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Ẩm độ (max %)<br>\r\n            </td>\r\n            <td>&nbsp;14</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Ca (min-max %)</td>\r\n            <td>&nbsp;3,5 - 4,5</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;P (min%)</td>\r\n            <td>&nbsp;0,45 - 1</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Xơ (max %)</td>\r\n            <td>&nbsp;7</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Năng lượng trao đổi ME (min Kcal/kg)</td>\r\n            <td>&nbsp;2.650</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Lysine tổng số ( min %)</td>\r\n            <td>&nbsp;0,85</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Methionine +Cystine tổng số (min %)</td>\r\n            <td>&nbsp;0,7</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Hormone</td>\r\n            <td>&nbsp;Không có</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>','Khô dầu đậu nành, bột cá, tấm gạo, cám gạo, bắp, cám mì, khoai mì, các lạo acid amin, khoáng và vitamin,…','<ul>\r\n    <li>Thức ăn hỗn hợp dành cho gà đẻ thương phẩm</li>\r\n    <li>Không cần bổ sung bất cứ loại thức ăn nào khác</li>\r\n    <li>Cung cấp đầy đủ nước uống sạch và mát</li>\r\n    <li>Bảo quản nơi khô ráo và thoáng mát</li>\r\n</ul>','2018-07-10 08:57:48','2018-07-10 08:57:48',NULL);
+/*!40000 ALTER TABLE `productdetail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frmenu_id` int(11) DEFAULT NULL,
+  `productcategory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Heo 1','1531155285-15.jpg','Thức ăn đậm đặc cho heo từ cai sữa đến xuất chuồng',0,1,'2018-07-09 09:54:45','2018-07-09 09:54:45',NULL),(2,'Thuộc sản phẩm 1','1531155346-super-a-(web).jpg','Thức ăn đặc biệt cho heo con tập ăn',4,1,'2018-07-09 09:55:46','2018-07-09 09:55:46',NULL);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'Administrator','2018-07-03 09:29:16','2018-07-03 09:29:16'),(2,'User','2018-07-03 09:29:16','2018-07-03 09:29:16');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usercontact`
+--
+
+DROP TABLE IF EXISTS `usercontact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usercontact` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usercontact`
+--
+
+LOCK TABLES `usercontact` WRITE;
+/*!40000 ALTER TABLE `usercontact` DISABLE KEYS */;
+INSERT INTO `usercontact` VALUES (1,'Do Tuan','abc@gmail.com','0988958479','test','ble ble','2018-07-21 03:44:50','2018-07-21 03:44:50',NULL);
+/*!40000 ALTER TABLE `usercontact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,1,'admin','admin@admin.com','$2y$10$cH9KyrYO0g.q3hL/zCTXaOflg10vobMGbM/tOukvUmiE5wQEZx/em',NULL,'2018-07-03 09:29:28','2018-07-03 09:29:28');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_logs`
+--
+
+DROP TABLE IF EXISTS `users_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_logs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action_model` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_logs`
+--
+
+LOCK TABLES `users_logs` WRITE;
+/*!40000 ALTER TABLE `users_logs` DISABLE KEYS */;
+INSERT INTO `users_logs` VALUES (1,1,'created','frmenu',1,'2018-07-03 09:41:05','2018-07-03 09:41:05'),(2,1,'created','frmenu',2,'2018-07-03 09:41:16','2018-07-03 09:41:16'),(3,1,'created','frmenu',3,'2018-07-03 09:41:23','2018-07-03 09:41:23'),(4,1,'created','frmenu',4,'2018-07-03 09:41:32','2018-07-03 09:41:32'),(5,1,'created','frmenu',5,'2018-07-03 09:41:44','2018-07-03 09:41:44'),(6,1,'created','frmenu',6,'2018-07-03 09:41:54','2018-07-03 09:41:54'),(7,1,'created','products',1,'2018-07-03 09:46:07','2018-07-03 09:46:07'),(8,1,'created','products',2,'2018-07-03 09:46:26','2018-07-03 09:46:26'),(9,1,'created','products',3,'2018-07-03 09:46:38','2018-07-03 09:46:38'),(10,1,'updated','products',1,'2018-07-03 09:55:50','2018-07-03 09:55:50'),(11,1,'updated','products',2,'2018-07-03 09:57:54','2018-07-03 09:57:54'),(12,1,'updated','products',3,'2018-07-03 09:58:00','2018-07-03 09:58:00'),(13,1,'created','news',1,'2018-07-03 10:14:44','2018-07-03 10:14:44'),(14,1,'created','news',1,'2018-07-03 10:17:56','2018-07-03 10:17:56'),(15,1,'created','news',2,'2018-07-03 10:19:21','2018-07-03 10:19:21'),(16,1,'created','news',3,'2018-07-03 10:19:36','2018-07-03 10:19:36'),(17,1,'created','news',4,'2018-07-03 10:20:00','2018-07-03 10:20:00'),(18,1,'created','priceshow',1,'2018-07-03 10:45:02','2018-07-03 10:45:02'),(19,1,'updated','priceshow',1,'2018-07-03 10:45:15','2018-07-03 10:45:15'),(20,1,'updated','priceshow',1,'2018-07-03 10:45:26','2018-07-03 10:45:26'),(21,1,'created','priceshow',1,'2018-07-03 10:48:27','2018-07-03 10:48:27'),(22,1,'created','priceshow',2,'2018-07-03 10:48:44','2018-07-03 10:48:44'),(23,1,'created','priceshow',3,'2018-07-03 10:48:55','2018-07-03 10:48:55'),(24,1,'created','priceshow',4,'2018-07-03 10:49:05','2018-07-03 10:49:05'),(25,1,'created','priceshow',5,'2018-07-03 10:49:22','2018-07-03 10:49:22'),(26,1,'created','company',1,'2018-07-04 07:27:31','2018-07-04 07:27:31'),(27,1,'created','company',2,'2018-07-04 07:27:53','2018-07-04 07:27:53'),(28,1,'created','company',3,'2018-07-04 07:28:04','2018-07-04 07:28:04'),(29,1,'created','company',4,'2018-07-04 07:28:15','2018-07-04 07:28:15'),(30,1,'created','company',5,'2018-07-04 07:28:25','2018-07-04 07:28:25'),(31,1,'created','company',6,'2018-07-04 07:28:34','2018-07-04 07:28:34'),(32,1,'created','company',7,'2018-07-04 07:28:59','2018-07-04 07:28:59'),(33,1,'created','company',8,'2018-07-04 07:29:11','2018-07-04 07:29:11'),(34,1,'created','imageact',1,'2018-07-04 07:45:54','2018-07-04 07:45:54'),(35,1,'created','imageact',2,'2018-07-04 07:46:18','2018-07-04 07:46:18'),(36,1,'updated','imageact',1,'2018-07-04 07:46:47','2018-07-04 07:46:47'),(37,1,'updated','imageact',1,'2018-07-04 07:46:56','2018-07-04 07:46:56'),(38,1,'created','imageact',3,'2018-07-04 07:47:16','2018-07-04 07:47:16'),(39,1,'created','imageact',4,'2018-07-04 07:47:30','2018-07-04 07:47:30'),(40,1,'created','imageact',5,'2018-07-04 07:48:02','2018-07-04 07:48:02'),(41,1,'created','imageact',6,'2018-07-04 07:48:31','2018-07-04 07:48:31'),(42,1,'created','imageact',7,'2018-07-04 07:48:47','2018-07-04 07:48:47'),(43,1,'created','imageact',8,'2018-07-04 07:49:03','2018-07-04 07:49:03'),(44,1,'created','imageact',9,'2018-07-04 07:49:20','2018-07-04 07:49:20'),(45,1,'created','footerinfo',1,'2018-07-04 08:45:26','2018-07-04 08:45:26'),(46,1,'created','footersitemap',1,'2018-07-04 09:04:15','2018-07-04 09:04:15'),(47,1,'created','footersitemap',2,'2018-07-04 09:04:26','2018-07-04 09:04:26'),(48,1,'created','footersitemap',3,'2018-07-04 09:04:37','2018-07-04 09:04:37'),(49,1,'created','footersitemap',4,'2018-07-04 09:04:49','2018-07-04 09:04:49'),(50,1,'created','footersitemap',5,'2018-07-04 09:05:08','2018-07-04 09:05:08'),(51,1,'created','footersitemap',6,'2018-07-04 09:05:23','2018-07-04 09:05:23'),(52,1,'created','footersitemap',7,'2018-07-04 09:05:35','2018-07-04 09:05:35'),(53,1,'created','footersitemap',8,'2018-07-04 09:05:45','2018-07-04 09:05:45'),(54,1,'created','footersitemap',9,'2018-07-04 09:05:54','2018-07-04 09:05:54'),(55,1,'created','footersitemap',1,'2018-07-04 09:33:04','2018-07-04 09:33:04'),(56,1,'created','footersitemap',2,'2018-07-04 09:33:19','2018-07-04 09:33:19'),(57,1,'created','footersitemap',3,'2018-07-04 09:33:31','2018-07-04 09:33:31'),(58,1,'created','footersitemap',4,'2018-07-04 09:33:44','2018-07-04 09:33:44'),(59,1,'created','footersitemap',5,'2018-07-04 09:33:54','2018-07-04 09:33:54'),(60,1,'created','footersitemap',6,'2018-07-04 09:34:04','2018-07-04 09:34:04'),(61,1,'created','footersitemap',7,'2018-07-04 09:34:16','2018-07-04 09:34:16'),(62,1,'created','footersitemap',8,'2018-07-04 09:34:31','2018-07-04 09:34:31'),(63,1,'created','footersitemap',9,'2018-07-04 09:34:40','2018-07-04 09:34:40'),(64,1,'created','footersitemap',10,'2018-07-04 09:34:50','2018-07-04 09:34:50'),(65,1,'created','footersitemap',11,'2018-07-04 09:34:59','2018-07-04 09:34:59'),(66,1,'created','footersitemap',12,'2018-07-04 09:35:10','2018-07-04 09:35:10'),(67,1,'created','frmenu',7,'2018-07-05 06:01:12','2018-07-05 06:01:12'),(68,1,'created','feedback',1,'2018-07-05 08:12:26','2018-07-05 08:12:26'),(69,1,'created','feedback',2,'2018-07-05 08:13:41','2018-07-05 08:13:41'),(70,1,'created','feedback',3,'2018-07-05 08:17:16','2018-07-05 08:17:16'),(71,1,'created','feedback',4,'2018-07-05 08:20:48','2018-07-05 08:20:48'),(72,1,'created','feedback',5,'2018-07-05 08:22:25','2018-07-05 08:22:25'),(73,1,'created','feedback',1,'2018-07-05 08:27:46','2018-07-05 08:27:46'),(74,1,'created','feedback',2,'2018-07-05 09:09:08','2018-07-05 09:09:08'),(75,1,'created','feedback',3,'2018-07-05 09:13:03','2018-07-05 09:13:03'),(76,1,'created','feedback',4,'2018-07-05 09:23:59','2018-07-05 09:23:59'),(77,1,'created','aboutcategory',1,'2018-07-06 10:29:54','2018-07-06 10:29:54'),(78,1,'created','aboutcategory',2,'2018-07-06 10:30:13','2018-07-06 10:30:13'),(79,1,'created','aboutcategory',3,'2018-07-06 10:30:25','2018-07-06 10:30:25'),(80,1,'updated','aboutcategory',1,'2018-07-06 10:30:48','2018-07-06 10:30:48'),(81,1,'updated','aboutcategory',2,'2018-07-06 10:31:07','2018-07-06 10:31:07'),(82,1,'updated','aboutcategory',3,'2018-07-06 10:31:22','2018-07-06 10:31:22'),(83,1,'created','aboutcategory',4,'2018-07-06 10:31:38','2018-07-06 10:31:38'),(84,1,'created','aboutcategory',5,'2018-07-06 10:32:00','2018-07-06 10:32:00'),(85,1,'updated','aboutcategory',4,'2018-07-06 10:32:07','2018-07-06 10:32:07'),(86,1,'updated','aboutcategory',1,'2018-07-06 10:39:27','2018-07-06 10:39:27'),(87,1,'updated','aboutcategory',2,'2018-07-06 10:39:39','2018-07-06 10:39:39'),(88,1,'updated','aboutcategory',3,'2018-07-06 10:39:46','2018-07-06 10:39:46'),(89,1,'updated','aboutcategory',4,'2018-07-06 10:39:53','2018-07-06 10:39:53'),(90,1,'updated','aboutcategory',5,'2018-07-06 10:40:01','2018-07-06 10:40:01'),(91,1,'created','aboutcontent',1,'2018-07-06 10:45:29','2018-07-06 10:45:29'),(92,1,'updated','aboutcontent',1,'2018-07-06 10:50:58','2018-07-06 10:50:58'),(93,1,'updated','aboutcontent',1,'2018-07-06 10:51:21','2018-07-06 10:51:21'),(94,1,'created','aboutcontent',2,'2018-07-06 10:53:06','2018-07-06 10:53:06'),(95,1,'updated','aboutcontent',2,'2018-07-06 10:54:04','2018-07-06 10:54:04'),(96,1,'created','aboutcontent',1,'2018-07-06 11:00:10','2018-07-06 11:00:10'),(97,1,'updated','aboutcontent',1,'2018-07-06 11:02:19','2018-07-06 11:02:19'),(98,1,'updated','aboutcontent',1,'2018-07-06 11:03:00','2018-07-06 11:03:00'),(99,1,'created','aboutcontent',2,'2018-07-06 11:04:14','2018-07-06 11:04:14'),(100,1,'updated','aboutcontent',2,'2018-07-06 11:05:23','2018-07-06 11:05:23'),(101,1,'created','aboutcontent',3,'2018-07-06 11:07:25','2018-07-06 11:07:25'),(102,1,'created','aboutcontent',4,'2018-07-06 11:08:48','2018-07-06 11:08:48'),(103,1,'updated','aboutcontent',3,'2018-07-06 11:08:59','2018-07-06 11:08:59'),(104,1,'updated','aboutcontent',3,'2018-07-06 11:09:46','2018-07-06 11:09:46'),(105,1,'deleted','aboutcategory',5,'2018-07-07 19:58:18','2018-07-07 19:58:18'),(106,1,'created','aboutarchive',1,'2018-07-07 20:06:52','2018-07-07 20:06:52'),(107,1,'created','aboutarchive',2,'2018-07-07 20:07:07','2018-07-07 20:07:07'),(108,1,'created','aboutarchive',3,'2018-07-07 20:07:21','2018-07-07 20:07:21'),(109,1,'created','aboutarchive',4,'2018-07-07 20:07:39','2018-07-07 20:07:39'),(110,1,'created','aboutarchive',5,'2018-07-07 20:30:14','2018-07-07 20:30:14'),(111,1,'created','aboutarchive',6,'2018-07-07 20:30:24','2018-07-07 20:30:24'),(112,1,'created','aboutarchive',7,'2018-07-07 20:30:34','2018-07-07 20:30:34'),(113,1,'created','aboutarchive',8,'2018-07-07 20:30:35','2018-07-07 20:30:35'),(114,1,'created','aboutarchive',9,'2018-07-07 20:30:55','2018-07-07 20:30:55'),(115,1,'created','aboutarchive',10,'2018-07-07 20:31:07','2018-07-07 20:31:07'),(116,1,'created','knowledgecategory',1,'2018-07-07 20:50:11','2018-07-07 20:50:11'),(117,1,'created','knowledgecategory',2,'2018-07-07 20:50:27','2018-07-07 20:50:27'),(118,1,'created','frmenu',8,'2018-07-07 20:53:21','2018-07-07 20:53:21'),(119,1,'created','knowledgecategory',3,'2018-07-07 20:53:53','2018-07-07 20:53:53'),(120,1,'created','knowledgecategory',4,'2018-07-07 20:54:04','2018-07-07 20:54:04'),(121,1,'created','knowledgevideo',1,'2018-07-07 22:37:06','2018-07-07 22:37:06'),(122,1,'created','knowledgevideo',2,'2018-07-07 22:50:00','2018-07-07 22:50:00'),(123,1,'created','knowledgevideo',3,'2018-07-07 22:50:26','2018-07-07 22:50:26'),(124,1,'updated','knowledgevideo',2,'2018-07-08 06:59:27','2018-07-08 06:59:27'),(125,1,'updated','knowledgevideo',3,'2018-07-08 06:59:45','2018-07-08 06:59:45'),(126,1,'created','productcategory',1,'2018-07-09 08:39:33','2018-07-09 08:39:33'),(127,1,'created','productcategory',2,'2018-07-09 08:39:58','2018-07-09 08:39:58'),(128,1,'created','productcategory',3,'2018-07-09 08:41:02','2018-07-09 08:41:02'),(129,1,'updated','productcategory',2,'2018-07-09 08:41:13','2018-07-09 08:41:13'),(130,1,'created','productcategory',4,'2018-07-09 08:41:29','2018-07-09 08:41:29'),(131,1,'created','productcategory',5,'2018-07-09 08:41:38','2018-07-09 08:41:38'),(132,1,'created','productcategory',6,'2018-07-09 08:41:46','2018-07-09 08:41:46'),(133,1,'created','productcategory',7,'2018-07-09 08:41:57','2018-07-09 08:41:57'),(134,1,'created','productcategory',8,'2018-07-09 08:42:04','2018-07-09 08:42:04'),(135,1,'created','productcategory',9,'2018-07-09 08:42:15','2018-07-09 08:42:15'),(136,1,'created','products',1,'2018-07-09 09:54:45','2018-07-09 09:54:45'),(137,1,'created','products',2,'2018-07-09 09:55:46','2018-07-09 09:55:46'),(138,1,'created','productdetail',1,'2018-07-10 08:57:48','2018-07-10 08:57:48'),(139,1,'created','frmenu',9,'2018-07-12 08:01:36','2018-07-12 08:01:36'),(140,1,'created','frmenu',10,'2018-07-12 08:02:17','2018-07-12 08:02:17'),(141,1,'created','frmenu',11,'2018-07-12 08:02:32','2018-07-12 08:02:32'),(142,1,'created','news',1,'2018-07-12 08:34:16','2018-07-12 08:34:16'),(143,1,'created','news',2,'2018-07-12 08:36:30','2018-07-12 08:36:30'),(144,1,'created','news',3,'2018-07-12 09:11:33','2018-07-12 09:11:33'),(145,1,'updated','news',1,'2018-07-13 09:00:20','2018-07-13 09:00:20'),(146,1,'created','frmenu',12,'2018-07-16 07:40:01','2018-07-16 07:40:01'),(147,1,'created','frmenu',13,'2018-07-16 07:40:36','2018-07-16 07:40:36'),(148,1,'created','frmenu',14,'2018-07-16 07:40:53','2018-07-16 07:40:53'),(149,1,'created','news',4,'2018-07-17 10:18:11','2018-07-17 10:18:11'),(150,1,'updated','news',4,'2018-07-17 10:33:34','2018-07-17 10:33:34'),(151,1,'updated','news',4,'2018-07-17 10:59:53','2018-07-17 10:59:53'),(152,1,'created','news',5,'2018-07-17 11:07:49','2018-07-17 11:07:49'),(153,1,'created','news',6,'2018-07-17 11:08:53','2018-07-17 11:08:53'),(154,1,'updated','news',6,'2018-07-17 11:09:08','2018-07-17 11:09:08'),(155,1,'updated','news',4,'2018-07-17 11:18:43','2018-07-17 11:18:43'),(156,1,'created','faqcategory',1,'2018-07-19 08:52:38','2018-07-19 08:52:38'),(157,1,'created','faqcategory',2,'2018-07-19 08:52:48','2018-07-19 08:52:48'),(158,1,'created','faqcategory',3,'2018-07-19 08:52:58','2018-07-19 08:52:58'),(159,1,'updated','faqcategory',1,'2018-07-19 08:57:49','2018-07-19 08:57:49'),(160,1,'created','faqquestion',1,'2018-07-21 00:38:55','2018-07-21 00:38:55'),(161,1,'created','faqquestion',1,'2018-07-21 00:44:34','2018-07-21 00:44:34'),(162,1,'created','faqquestion',2,'2018-07-21 00:51:57','2018-07-21 00:51:57'),(163,1,'created','frmenu',15,'2018-07-21 00:57:03','2018-07-21 00:57:03'),(164,1,'created','frmenu',16,'2018-07-21 00:57:27','2018-07-21 00:57:27'),(165,1,'created','frmenu',17,'2018-07-21 00:57:51','2018-07-21 00:57:51'),(166,1,'created','news',7,'2018-07-21 01:23:11','2018-07-21 01:23:11'),(167,1,'updated','news',7,'2018-07-21 01:42:52','2018-07-21 01:42:52'),(168,1,'created','frmenu',18,'2018-07-21 02:00:07','2018-07-21 02:00:07'),(169,1,'created','contactinfo',1,'2018-07-21 02:58:01','2018-07-21 02:58:01'),(170,1,'created','usercontact',1,'2018-07-21 03:44:50','2018-07-21 03:44:50'),(171,1,'created','faqlist',1,'2018-07-21 22:49:14','2018-07-21 22:49:14'),(172,1,'created','faqlist',2,'2018-07-21 22:49:49','2018-07-21 22:49:49'),(173,1,'created','faqlist',3,'2018-07-21 22:50:17','2018-07-21 22:50:17'),(174,1,'created','faqlist',4,'2018-07-21 22:50:55','2018-07-21 22:50:55'),(175,1,'created','faqlist',5,'2018-07-21 22:51:21','2018-07-21 22:51:21'),(176,1,'updated','faqlist',1,'2018-07-21 22:56:17','2018-07-21 22:56:17'),(177,1,'updated','faqlist',2,'2018-07-21 22:56:51','2018-07-21 22:56:51'),(178,1,'updated','faqlist',3,'2018-07-21 22:56:58','2018-07-21 22:56:58'),(179,1,'updated','faqlist',4,'2018-07-21 22:57:04','2018-07-21 22:57:04'),(180,1,'updated','faqlist',5,'2018-07-21 22:57:11','2018-07-21 22:57:11'),(181,1,'updated','faqlist',1,'2018-07-21 23:01:51','2018-07-21 23:01:51'),(182,1,'updated','faqlist',1,'2018-07-21 23:02:27','2018-07-21 23:02:27'),(183,1,'updated','news',5,'2018-07-21 23:54:09','2018-07-21 23:54:09'),(184,1,'updated','news',6,'2018-07-21 23:56:40','2018-07-21 23:56:40'),(185,1,'updated','news',6,'2018-07-21 23:57:04','2018-07-21 23:57:04'),(186,1,'created','news',8,'2018-07-21 23:57:50','2018-07-21 23:57:50'),(187,1,'created','news',9,'2018-07-21 23:58:24','2018-07-21 23:58:24'),(188,1,'created','news',10,'2018-07-21 23:58:56','2018-07-21 23:58:56'),(189,1,'updated','news',6,'2018-07-22 00:01:23','2018-07-22 00:01:23'),(190,1,'created','news',11,'2018-07-22 00:50:03','2018-07-22 00:50:03'),(191,1,'created','news',12,'2018-07-22 00:50:35','2018-07-22 00:50:35'),(192,1,'created','news',13,'2018-07-22 00:51:20','2018-07-22 00:51:20'),(193,1,'updated','news',12,'2018-07-22 00:51:33','2018-07-22 00:51:33');
+/*!40000 ALTER TABLE `users_logs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Current Database: `laravel`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `laravel` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `laravel`;
+
+--
+-- Table structure for table `aboutarchive`
+--
+
+DROP TABLE IF EXISTS `aboutarchive`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutarchive` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutarchive`
+--
+
+LOCK TABLES `aboutarchive` WRITE;
+/*!40000 ALTER TABLE `aboutarchive` DISABLE KEYS */;
+INSERT INTO `aboutarchive` VALUES (1,'Vô địch C1','1531019211-Beautiful-Full-HD-Image.jpg','2018-07-07 20:06:52','2018-07-07 20:06:52',NULL),(2,'Giải aa','1531019227-1.png','2018-07-07 20:07:07','2018-07-07 20:07:07',NULL),(3,'Cử tạ x','1531019241-Beautiful-Full-HD-Images-HD.jpg','2018-07-07 20:07:21','2018-07-07 20:07:21',NULL),(4,'1 cái nữa','1531019259-download.jpeg','2018-07-07 20:07:39','2018-07-07 20:07:39',NULL),(5,'1111','1531020613-aboutbg.jpg','2018-07-07 20:30:14','2018-07-07 20:30:14',NULL),(6,'2222','1531020623-Beautiful-Full-HD-Images-HD.jpg','2018-07-07 20:30:24','2018-07-07 20:30:24',NULL),(7,'333333','1531020634-Beautiful-Full-HD-Image.jpg','2018-07-07 20:30:34','2018-07-07 20:30:34',NULL),(8,'333333','1531020634-Beautiful-Full-HD-Image.jpg','2018-07-07 20:30:34','2018-07-07 20:30:34',NULL),(9,'4444','1531020655-11.jpg','2018-07-07 20:30:55','2018-07-07 20:30:55',NULL),(10,'5555','1531020667-download.jpeg','2018-07-07 20:31:07','2018-07-07 20:31:07',NULL);
+/*!40000 ALTER TABLE `aboutarchive` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aboutcategory`
+--
+
+DROP TABLE IF EXISTS `aboutcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutcategory`
+--
+
+LOCK TABLES `aboutcategory` WRITE;
+/*!40000 ALTER TABLE `aboutcategory` DISABLE KEYS */;
+INSERT INTO `aboutcategory` VALUES (1,'DV','part-1',1,'2018-07-06 10:29:54','2018-07-06 10:39:27',NULL),(2,'Tầm nhìn - sứ mệnh','part-2',1,'2018-07-06 10:30:13','2018-07-06 10:39:39',NULL),(3,'Giá trị cốt lõii','part-3',1,'2018-07-06 10:30:25','2018-07-06 10:39:46',NULL),(4,'Lịch sử hình thành','part-4',1,'2018-07-06 10:31:38','2018-07-06 10:39:53',NULL),(5,'Thành tựu - Giải thưởng','part-5',1,'2018-07-06 10:32:00','2018-07-07 19:58:19','2018-07-07 19:58:19');
+/*!40000 ALTER TABLE `aboutcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `aboutcontent`
+--
+
+DROP TABLE IF EXISTS `aboutcontent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `aboutcontent` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `status` tinyint(4) DEFAULT '1',
+  `block_option` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `aboutcontent`
+--
+
+LOCK TABLES `aboutcontent` WRITE;
+/*!40000 ALTER TABLE `aboutcontent` DISABLE KEYS */;
+INSERT INTO `aboutcontent` VALUES (1,'Giới thiệu chung','part-1','<div class=\"container\">\r\n    <h1 class=\"abouttitle\">ANOVA FEED</h1>\r\n    <div class=\"flex flex-content-center\">\r\n      <div class=\"aboutdes\">\r\n        <div class=\"content\"><p style=\"text-align: justify;\">Công ty Cổ phần DV, trực thuộc Tập đoàn ANOVA, một tập đoàn có thế mạnh trong lĩnh vực thức ăn chăn nuôi, thuốc thú y và thuốc thủy sản của Việt Nam. Với tầm nhìn trở thành <em><strong>“Nhà cung cấp chuỗi thức ăn an toàn hàng đầu tại Việt Nam”</strong></em>, tháng 06/2012, tập đoàn Anova đã thành lập công ty cổ phần Anova Feed chuyên về sản xuất thức ăn cho gia súc và gia cầm.</p>\r\n<p style=\"text-align: justify;\">Định hướng tập trung vào chất lượng sản phẩm, Anova Feed đã mạnh dạn đầu tư dây chuyền sản xuất hiện đại, hoàn toàn tự động được nhập khẩu từ châu Âu đi kèm với hệ thống quản lý chất lượng đã được quốc tế chứng nhận như: ISO 9001:2015, ISO 22000:2005 và HACCP đảm bảo cho chất lượng thành phẩm luôn ở mức tối ưu nhất.</p>\r\n<p style=\"text-align: justify;\">Hiện tại với 3 nhà máy đang hoạt động tại Long An, Đồng Nai và Hưng Yên cùng hệ thống phân phối trải dài khắp 63 tỉnh thành đảm bảo đáp ứng nhu cầu của khách hàng nhanh chóng và tiện lợi nhất.</p>\r\n<p style=\"text-align: justify;\">Với mục tiêu cung cấp cho thị trường 1 triệu tấn thức ăn gia súc, gia cầm và thủy sản vào năm 2020, Anova Feed đã và đang không ngừng đầu tư, cải tiến công nghệ, nguồn nhân lực ngày càng chuyên nghiệp, hiệu quả nhằm hiện thực hóa mục tiêu trở thành thương hiệu Việt hàng đầu trong ngành thức ăn chăn nuôi.</p></div>\r\n      </div>\r\n    </div>\r\n  </div>',1,'class=\"about-intro clearfix\"','2018-07-06 11:00:10','2018-07-06 11:03:00',NULL),(2,'Tầm nhìn - sứ mệnh','part-2','<div class=\"container\">\r\n    <h2 class=\"abouttitle\">Tầm nhìn - Sứ mệnh</h2>\r\n    <div class=\"visionlist clearfix\">\r\n      <div class=\"row flex flex-wrap\">\r\n        <div class=\"col-xs-12 col-md-6\">\r\n          <div class=\"visioncol\">\r\n            <figure>\r\n              <div class=\"visionimg\">\r\n                <img src=\"img/tamnhin.png\" alt=\"Tầm nhìn\">\r\n              </div>\r\n              <figcaption>\r\n                <h3 class=\"visionname\">Tầm nhìn</h3>\r\n                <div class=\"visiondes\"><p style=\"text-align: justify;\">Trở thành thương hiệu tin yêu hàng đầu của nhà chăn nuôi về thức ăn an toàn với chất lượng cao và tính ổn định, có khả năng truy xuất nguồn gốc, cùng kết hợp với công nghệ hiện đại và các  gói giải pháp dịch vụ khác biệt nhằm tối ưu hóa hiệu quả chăn nuôi.</p></div>\r\n              </figcaption>\r\n            </figure>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-xs-12 col-md-6\">\r\n          <div class=\"visioncol\">\r\n            <figure>\r\n              <div class=\"visionimg\">\r\n                <img src=\"img/sumenh.png\" alt=\"Sứ mệnh\">\r\n              </div>\r\n              <figcaption>\r\n                <h3 class=\"visionname\">Sứ mệnh</h3>\r\n                <div class=\"visiondes\"><p style=\"text-align: justify;\">Mang lại hiệu quả và sự hài lòng cao nhất cho khách hàng và cổ đông.\r\n</p>\r\n<p style=\"text-align: justify;\">Tạo ra môi trường làm việc năng động chuyên nghiệp, thử thách để thu hút nhân tài và phát triển bền vững.\r\n</p>\r\n<p style=\"text-align: justify;\">Đảm bảo ổn định chất lượng, luôn cải tiến sản phẩm cho hiệu quả cao. Kiểm soát được quá trình truy nguyên nguồn gốc cho việc sản xuất thức ăn an toàn.</p></div>\r\n              </figcaption>\r\n            </figure>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>',1,'data-parallax=\"scroll\" data-image-src=\"/Data/Sites/1/media/gioi-thieu/aboutbg.jpg\" class=\"about-vision parallax-window clearfix\"','2018-07-06 11:04:13','2018-07-06 11:05:22',NULL),(3,'Giá trị cốt lõii','part-3','<div class=\"container\">\r\n    <h2 class=\"abouttitle\">Giá trị cốt lõi</h2>\r\n    <div class=\"corevalue\">CHÍNH TRỰC - HIỆU QUẢ - CHUYÊN NGHIỆP</div>\r\n  </div>',1,'class=\"about-core clearfix\"','2018-07-06 11:07:25','2018-07-06 11:09:45',NULL),(4,'Lịch sử hình thành','part-4','<div class=\"container\">\r\n                                <h2 class=\"abouttitle\">Lịch sử hình thành</h2>\r\n                                <div class=\"timeline clearfix\">\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2015</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Phát triển với định hướng trở thành tập đoàn giữ vai trò tiên phong và chủ đạo trong việc thiết lập chuỗi thực phẩm khép kín. Với lợi thế về bề dày kinh nghiệm trong ngành và khả năng kiểm soát toàn bộ nguồn đầu vào trong chuỗi cung ứng, Tập đoàn Anova mong muốn hoàn thiện chuỗi thực phẩm khép kín - truy xuất nguồn gốc.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2014</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập <strong>Công ty Cổ Phần Anova Biotech</strong>, chuyên phân phối vaccine nhập khẩu, chất lượng cao tại thị trường Việt Nam. Thành lập <strong>Công ty Anova Farm</strong>, chính thức đầu tư vào lĩnh vực trang trại, nhằm nhanh chóng hoàn thiện chiến lược khép kín chuỗi thực phẩm.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2013</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Vinh dự được Nhà nước lựa chọn là cổ đông chiến lược và chính thức trở thành cổ đông của hai đơn vị sản xuất Vaccine duy nhất tại Việt Nam là:<br>\r\n                                                    - Công ty Cổ Phần Thuốc Thú Y Trung Ương <strong>Navetco</strong><br>\r\n                                                    - Công ty Cổ phần Thuốc Thú Y Trung Ương <strong>Vetvaco</strong></div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2012</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập <strong>Công ty Cổ Phần Anova Feed </strong>- đánh dấu bước phát triển của Tập đoàn Anova trong lĩnh vực sản xuất thức ăn gia súc.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2009</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\"><strong>Tập đoàn Anova </strong>được thành lập, hợp nhất toàn bộ các công ty thành viên trong lĩnh vực thuốc thú y để phát triển và thực hiện sứ mệnh nâng cao hiệu suất chăn nuôi, văn hoá tiêu dùng và bảo vệ sức khoẻ cộng đồng.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2007</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\"><p>Tái cấu trúc và hợp nhất các công ty thành 2 tập đoàn:&nbsp;</p>\r\n                                                    <p>&nbsp;</p>\r\n                                                    <div class=\"row\">\r\n                                                        <div class=\"col-md-3\">\r\n                                                            <p><img alt=\"\" src=\"img/anova.png\"></p>\r\n                                                        </div>\r\n                                                        <div class=\"col-md-8\"><strong>\r\n                                                                Anova Corporation:</strong><br>\r\n                                                            <p>Hoạt động trong lĩnh vực Trại chăn nuôi, Thức ăn gia súc, Thuốc thú y, Vaccine và tiến đến thiết lập chuỗi giá trị cung cấp nguồn thực phẩm sạch chất lượng cao, an toàn giàu dinh dưỡng.</p>\r\n                                                            <p>&nbsp;</p>\r\n                                                        </div>\r\n                                                    </div>\r\n                                                    <div class=\"row\">\r\n                                                        <div class=\"col-md-3\">\r\n                                                            <p><img alt=\"\" src=\"img/Novaland.png\"></p>\r\n                                                        </div>\r\n                                                        <div class=\"col-md-8\"><strong>\r\n                                                                Novaland Group:</strong><br>\r\n                                                            Hoạt động trong lĩnh vực bất động sản<br>\r\n                                                            <p><a href=\"http://www.novaland.com.vn/\">www.novaland.com.vn</a></p>\r\n                                                        </div>\r\n                                                    </div></div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">2002</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Công ty TNHH Liên Doanh Anova ra đời, góp phần mở rộng thị phần thuốc thú y hiện có.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">1996</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Thành lập N&amp; M - hiện là <strong>Công ty Cổ Phần Anovatrade</strong> - Hợp tác với Mitsui, Công ty hàng đầu Nhật Bản thiết lập hệ thống phân phối acid amin cho thị trường Việt Nam.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"milestone clearfix\">\r\n                                        <div class=\"row flex flex-wrap\">\r\n                                            <div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-3\">\r\n                                                <div class=\"year\">1995</div>\r\n                                            </div>\r\n                                            <div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-9\">\r\n                                                <div class=\"event\">Liên doanh với Philippines đưa Công ty liên doanh sản xuất Thuốc thú y <strong>Biophamachemie</strong> vào hoạt động mở rộng hệ thống phân phối trong nước và xuất khẩu thuốc thú y đến nhiều quốc gia trên thế giới.</div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </div>',1,'class=\"history-page clearfix\"','2018-07-06 11:08:48','2018-07-06 11:08:48',NULL);
+/*!40000 ALTER TABLE `aboutcontent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `company`
+--
+
+DROP TABLE IF EXISTS `company`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `company` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `company`
+--
+
+LOCK TABLES `company` WRITE;
+/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+INSERT INTO `company` VALUES (1,'Cty 1','1530714451-9.jpg','2018-07-04 07:27:31','2018-07-04 07:27:31',NULL),(2,'Cty2','1530714473-9.jpg','2018-07-04 07:27:53','2018-07-04 07:27:53',NULL),(3,'Cty 3','1530714484-9.jpg','2018-07-04 07:28:04','2018-07-04 07:28:04',NULL),(4,'Cty 4','1530714495-9.jpg','2018-07-04 07:28:15','2018-07-04 07:28:15',NULL),(5,'Cty 5','1530714505-9.jpg','2018-07-04 07:28:25','2018-07-04 07:28:25',NULL),(6,'Cty 6','1530714514-9.jpg','2018-07-04 07:28:34','2018-07-04 07:28:34',NULL),(7,'Cty 7','1530714539-6.jpg','2018-07-04 07:28:59','2018-07-04 07:28:59',NULL),(8,'Cty 8','1530714551-6.jpg','2018-07-04 07:29:11','2018-07-04 07:29:11',NULL);
+/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contactinfo`
+--
+
+DROP TABLE IF EXISTS `contactinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contactinfo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text COLLATE utf8mb4_unicode_ci,
+  `first_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `second_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `third_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `work_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `work_day` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contactinfo`
+--
+
+LOCK TABLES `contactinfo` WRITE;
+/*!40000 ALTER TABLE `contactinfo` DISABLE KEYS */;
+INSERT INTO `contactinfo` VALUES (1,'Công ty siêu Lầy','ngõ 366 mỹ đình, cầu giấy, hà nội','0988958479','01658902480',NULL,'dotuan0601@gmail.com','7:30 - 17:30','(Thứ 2 - Thứ 7)','2018-07-21 02:58:01','2018-07-21 02:58:01',NULL);
+/*!40000 ALTER TABLE `contactinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqcategory`
+--
+
+DROP TABLE IF EXISTS `faqcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_active` tinyint(4) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqcategory`
+--
+
+LOCK TABLES `faqcategory` WRITE;
+/*!40000 ALTER TABLE `faqcategory` DISABLE KEYS */;
+INSERT INTO `faqcategory` VALUES (1,'-- Tất cả --',1,'2018-07-19 08:52:38','2018-07-19 08:57:49',NULL),(2,'Câu hỏi về vịt',1,'2018-07-19 08:52:48','2018-07-19 08:52:48',NULL),(3,'Câu hỏi về lợn',1,'2018-07-19 08:52:58','2018-07-19 08:52:58',NULL);
+/*!40000 ALTER TABLE `faqcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqlist`
+--
+
+DROP TABLE IF EXISTS `faqlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqlist` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci,
+  `is_home_page` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqlist`
+--
+
+LOCK TABLES `faqlist` WRITE;
+/*!40000 ALTER TABLE `faqlist` DISABLE KEYS */;
+INSERT INTO `faqlist` VALUES (1,'Làm sao biết heo nái sắp sinh','Chào bạn, khi heo nái sắp sinh có những biểu hiện sau:\r\nCắn phá chuồng, có biểu hiện bồn chồn.\r\nĂn ít hoặc bỏ ăn.\r\nDãy vú ấm lên, sậm màu.\r\nVuốt núm vú sữa bắn thành tia.\r\nDịch nhờn có phân xu thì đẻ trong vòng 30 phút.\r\nChúc bạn chăn nuôi thàng công.',1,'2018-07-21 22:49:14','2018-07-21 23:01:51',NULL),(2,'Làm sao heo không bị tiêu chảy','Trai loi 2',1,'2018-07-21 22:49:49','2018-07-21 22:56:51',NULL),(3,'Cho heo nái ăn như thế nào','Tra loi 3',1,'2018-07-21 22:50:16','2018-07-21 22:56:58',NULL),(4,'Bổ sung vitamin C như thế nào','Tra loi 4',NULL,'2018-07-21 22:50:55','2018-07-21 22:57:04',NULL),(5,'Cho heo con bú sữa đầu','Tra loi 5',NULL,'2018-07-21 22:51:21','2018-07-21 22:57:11',NULL);
+/*!40000 ALTER TABLE `faqlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faqquestion`
+--
+
+DROP TABLE IF EXISTS `faqquestion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faqquestion` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `faqcategory_id` int(11) DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faqquestion`
+--
+
+LOCK TABLES `faqquestion` WRITE;
+/*!40000 ALTER TABLE `faqquestion` DISABLE KEYS */;
+INSERT INTO `faqquestion` VALUES (1,'Đỗ Vũ Tuấn','abc@gmail.com',2,'ble tét','2018-07-21 00:44:34','2018-07-21 00:44:34',NULL),(2,'Đỗ Vũ Tuấn','abc@gmail.com',1,'xong phan nay','2018-07-21 00:51:57','2018-07-21 00:51:57',NULL);
+/*!40000 ALTER TABLE `faqquestion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `feedback`
+--
+
+DROP TABLE IF EXISTS `feedback`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `feedback` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `short_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `feedback`
+--
+
+LOCK TABLES `feedback` WRITE;
+/*!40000 ALTER TABLE `feedback` DISABLE KEYS */;
+INSERT INTO `feedback` VALUES (1,'Gop y 1111Gop y 1111Gop y 1111','Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111Gop y 1111','2018-07-05 08:27:46','2018-07-05 08:27:46',NULL),(2,'test captcha','test captcha','2018-07-05 09:09:08','2018-07-05 09:09:08',NULL),(3,'sfdsafa','sfdsafa','2018-07-05 09:13:02','2018-07-05 09:13:02',NULL),(4,'bbbbbbbbbbbbbbbbbbbbbb','bbbbbbbbbbbbbbbbbbbbbb','2018-07-05 09:23:59','2018-07-05 09:23:59',NULL),(5,'','','2018-07-20 20:48:38','2018-07-20 20:48:38',NULL);
+/*!40000 ALTER TABLE `feedback` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `footerinfo`
+--
+
+DROP TABLE IF EXISTS `footerinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `footerinfo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `company_info` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `copyright` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footerinfo`
+--
+
+LOCK TABLES `footerinfo` WRITE;
+/*!40000 ALTER TABLE `footerinfo` DISABLE KEYS */;
+INSERT INTO `footerinfo` VALUES (1,'Công ty 1 thành viên Dv - Siêu Lầy','0988958479','abcxxx444','dotuan0601@gmail.com','2017 thuộc về Dv. Designed by Dv.','2018-07-04 08:45:26','2018-07-04 08:45:26',NULL);
+/*!40000 ALTER TABLE `footerinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `footersitemap`
+--
+
+DROP TABLE IF EXISTS `footersitemap`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `footersitemap` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_parent` tinyint(4) DEFAULT '0',
+  `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `footersitemap`
+--
+
+LOCK TABLES `footersitemap` WRITE;
+/*!40000 ALTER TABLE `footersitemap` DISABLE KEYS */;
+INSERT INTO `footersitemap` VALUES (1,'Sản phẩm',NULL,1,'http://google.com','2018-07-04 09:33:04','2018-07-04 09:33:04',NULL),(2,'Sản phẩm 1','Sản phẩm',NULL,NULL,'2018-07-04 09:33:19','2018-07-04 09:33:19',NULL),(3,'Sản phẩm 2','Sản phẩm',NULL,NULL,'2018-07-04 09:33:31','2018-07-04 09:33:31',NULL),(4,'Sản phẩm 3','Sản phẩm',NULL,NULL,'2018-07-04 09:33:43','2018-07-04 09:33:43',NULL),(5,'Middle',NULL,1,NULL,'2018-07-04 09:33:54','2018-07-04 09:33:54',NULL),(6,'Middle 1','Middle',NULL,NULL,'2018-07-04 09:34:04','2018-07-04 09:34:04',NULL),(7,'Middle 2','Middle',NULL,NULL,'2018-07-04 09:34:16','2018-07-04 09:34:16',NULL),(8,'Middle 3','Middle',NULL,NULL,'2018-07-04 09:34:31','2018-07-04 09:34:31',NULL),(9,'Right',NULL,1,NULL,'2018-07-04 09:34:40','2018-07-04 09:34:40',NULL),(10,'Right 11','Right',NULL,NULL,'2018-07-04 09:34:50','2018-07-04 09:34:50',NULL),(11,'Right 22','Right',NULL,NULL,'2018-07-04 09:34:59','2018-07-04 09:34:59',NULL),(12,'Right 3','Right',NULL,NULL,'2018-07-04 09:35:10','2018-07-04 09:35:10',NULL);
+/*!40000 ALTER TABLE `footersitemap` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `frmenu`
+--
+
+DROP TABLE IF EXISTS `frmenu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `frmenu` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `frmenu`
+--
+
+LOCK TABLES `frmenu` WRITE;
+/*!40000 ALTER TABLE `frmenu` DISABLE KEYS */;
+INSERT INTO `frmenu` VALUES (1,'Trang chủ',NULL,'2018-07-03 09:41:05','2018-07-03 09:41:05',NULL),(2,'Giới thiệu',NULL,'2018-07-03 09:41:16','2018-07-03 09:41:16',NULL),(3,'Sản phẩm',NULL,'2018-07-03 09:41:23','2018-07-03 09:41:23',NULL),(4,'Sản phẩm 1','Sản phẩm','2018-07-03 09:41:32','2018-07-03 09:41:32',NULL),(5,'Sản phẩm 2','Sản phẩm','2018-07-03 09:41:44','2018-07-03 09:41:44',NULL),(6,'Sản phẩm 3','Sản phẩm','2018-07-03 09:41:54','2018-07-03 09:41:54',NULL),(7,'Góp ý',NULL,'2018-07-05 06:01:11','2018-07-05 06:01:11',NULL),(8,'Kiến thức chăn nuôi',NULL,'2018-07-07 20:53:21','2018-07-07 20:53:21',NULL),(9,'Tin tức - sự kiện',NULL,'2018-07-12 08:01:36','2018-07-12 08:01:36',NULL),(10,'Tin thị trường nổi bật','Tin tức - sự kiện','2018-07-12 08:02:17','2018-07-12 08:02:17',NULL),(11,'Tin công ty','Tin tức - sự kiện','2018-07-12 08:02:32','2018-07-12 08:02:32',NULL),(12,'Video kỹ thuật chăn nuôi','Kiến thức chăn nuôi','2018-07-16 07:40:01','2018-07-16 07:40:01',NULL),(13,'Chăn nuôi cùng chuyên gia','Kiến thức chăn nuôi','2018-07-16 07:40:36','2018-07-16 07:40:36',NULL),(14,'Câu hỏi thường gặp','Kiến thức chăn nuôi','2018-07-16 07:40:53','2018-07-16 07:40:53',NULL),(15,'Tuyển dụng',NULL,'2018-07-21 00:57:03','2018-07-21 00:57:03',NULL),(16,'Chính sách nhân sự','Tuyển dụng','2018-07-21 00:57:27','2018-07-21 00:57:27',NULL),(17,'Cơ hội nghề nghiệp','Tuyển dụng','2018-07-21 00:57:51','2018-07-21 00:57:51',NULL),(18,'Liên hệ',NULL,'2018-07-21 02:00:07','2018-07-21 02:00:07',NULL);
+/*!40000 ALTER TABLE `frmenu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `imageact`
+--
+
+DROP TABLE IF EXISTS `imageact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `imageact` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `img_small` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_large` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `imageact`
+--
+
+LOCK TABLES `imageact` WRITE;
+/*!40000 ALTER TABLE `imageact` DISABLE KEYS */;
+INSERT INTO `imageact` VALUES (1,'1530715554-2222.jpg','1530715616-bai_viet_to.jpg','Ảnh to nè',1,'2018-07-04 07:45:54','2018-07-04 07:46:56',NULL),(2,'1530715578-9.jpg','1530715578-9.jpg','Ảnh nhỏ 1',NULL,'2018-07-04 07:46:18','2018-07-04 07:46:18',NULL),(3,'1530715636-9.jpg','1530715636-9.jpg','Ảnh nhỏ 2',NULL,'2018-07-04 07:47:16','2018-07-04 07:47:16',NULL),(4,'1530715650-6.jpg','1530715650-6.jpg','Ảnh nhỏ 3',NULL,'2018-07-04 07:47:30','2018-07-04 07:47:30',NULL),(5,'1530715682-bang-ron-300x100cm-sx-new.jpg','1530715682-bang-ron-300x100cm-sx-new.jpg','Ảnh nhỏ 4',NULL,'2018-07-04 07:48:02','2018-07-04 07:48:02',NULL),(6,'1530715710-cover-website-8c.jpg','1530715711-cover-website-8c.jpg','Ảnh nhỏ 5',NULL,'2018-07-04 07:48:31','2018-07-04 07:48:31',NULL),(7,'1530715727-cover-website-7b.jpg','1530715727-cover-website-7b.jpg','Ảnh nhỏ 6',NULL,'2018-07-04 07:48:47','2018-07-04 07:48:47',NULL),(8,'1530715743-cover-website-3c.jpg','1530715743-cover-website-3c.jpg','Ảnh nhỏ 7',NULL,'2018-07-04 07:49:03','2018-07-04 07:49:03',NULL),(9,'1530715759-cover-website-4c.jpg','1530715759-cover-website-4c.jpg','Ảnh nhỏ 8',NULL,'2018-07-04 07:49:19','2018-07-04 07:49:19',NULL);
+/*!40000 ALTER TABLE `imageact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `knowledgecategory`
+--
+
+DROP TABLE IF EXISTS `knowledgecategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `knowledgecategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `knowledgecategory`
+--
+
+LOCK TABLES `knowledgecategory` WRITE;
+/*!40000 ALTER TABLE `knowledgecategory` DISABLE KEYS */;
+INSERT INTO `knowledgecategory` VALUES (1,'Heo',1,'2018-07-07 20:50:10','2018-07-07 20:50:10',NULL),(2,'Bò',1,'2018-07-07 20:50:27','2018-07-07 20:50:27',NULL),(3,'Cá',1,'2018-07-07 20:53:53','2018-07-07 20:53:53',NULL),(4,'Gia súc - Gia cầm',1,'2018-07-07 20:54:04','2018-07-07 20:54:04',NULL);
+/*!40000 ALTER TABLE `knowledgecategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `knowledgevideo`
+--
+
+DROP TABLE IF EXISTS `knowledgevideo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `knowledgevideo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video_src` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `knowledgecategory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `knowledgevideo`
+--
+
+LOCK TABLES `knowledgevideo` WRITE;
+/*!40000 ALTER TABLE `knowledgevideo` DISABLE KEYS */;
+INSERT INTO `knowledgevideo` VALUES (1,'Đại diện heo','1531028226-Beautiful-Full-HD-Images-HD.jpg','https://www.youtube.com/watch?v=9hAF88vX1OM',1,1,'2018-07-07 22:37:06','2018-07-07 22:37:06',NULL),(2,'Video 222','1531029000-7.png','https://www.youtube.com/watch?v=QU5Wn1-86VU',NULL,1,'2018-07-07 22:50:00','2018-07-08 06:59:27',NULL),(3,'Video 333','1531029026-aboutbg.jpg','https://www.youtube.com/watch?v=WQjxtMd_CDM',NULL,1,'2018-07-07 22:50:26','2018-07-08 06:59:45',NULL);
+/*!40000 ALTER TABLE `knowledgevideo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu_role`
+--
+
+DROP TABLE IF EXISTS `menu_role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu_role` (
+  `menu_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
+  UNIQUE KEY `menu_role_menu_id_role_id_unique` (`menu_id`,`role_id`),
+  KEY `menu_role_menu_id_index` (`menu_id`),
+  KEY `menu_role_role_id_index` (`role_id`),
+  CONSTRAINT `menu_role_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `menu_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu_role`
+--
+
+LOCK TABLES `menu_role` WRITE;
+/*!40000 ALTER TABLE `menu_role` DISABLE KEYS */;
+INSERT INTO `menu_role` VALUES (7,1),(7,2),(9,1),(9,2),(19,1),(19,2),(21,1),(21,2),(23,1),(23,2),(24,1),(24,2),(26,1),(26,2),(31,1),(31,2),(32,1),(32,2),(35,1),(35,2),(36,1),(36,2),(38,1),(38,2),(42,1),(42,2),(44,1),(44,2),(45,1),(45,2),(47,1),(47,2),(52,1),(52,2),(53,1),(53,2),(55,1),(55,2),(57,1),(57,2),(59,1),(59,2),(60,1),(60,2),(61,1),(61,2),(63,1),(63,2),(67,1),(67,2),(68,1),(68,2),(70,1),(70,2),(72,1),(72,2),(73,1),(73,2),(75,1),(75,2);
+/*!40000 ALTER TABLE `menu_role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menus`
+--
+
+DROP TABLE IF EXISTS `menus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menus` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `position` int(11) DEFAULT NULL,
+  `menu_type` int(11) NOT NULL DEFAULT '1',
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `menus_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menus`
+--
+
+LOCK TABLES `menus` WRITE;
+/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
+INSERT INTO `menus` VALUES (1,NULL,0,NULL,'User','User',NULL,NULL,NULL),(2,NULL,0,NULL,'Role','Role',NULL,NULL,NULL),(7,0,2,'fa-database','QuảnLýNộiDung','Quản lý Trang chủ',NULL,'2018-07-03 09:38:19','2018-07-04 09:44:43'),(9,0,1,'fa-database','FrMenu','Menu trang chủ',7,'2018-07-03 09:40:48','2018-07-03 09:40:48'),(19,0,1,'fa-database','PriceShow','Show giá',7,'2018-07-03 10:48:14','2018-07-03 10:48:14'),(21,0,1,'fa-database','Company','Công ty thành viên',7,'2018-07-04 07:26:39','2018-07-04 07:26:39'),(23,0,1,'fa-database','ImageAct','Hình ảnh hoạt động',7,'2018-07-04 07:41:06','2018-07-04 07:41:06'),(24,0,2,'fa-database','QuảnLýFooter','Quản lý Footer',NULL,'2018-07-04 08:39:37','2018-07-04 08:39:37'),(26,0,1,'fa-database','FooterInfo','Thông tin trong footer',24,'2018-07-04 08:44:18','2018-07-04 08:44:18'),(31,0,1,'fa-database','FooterSitemap','Footer Sitemap',24,'2018-07-04 09:32:39','2018-07-04 09:32:39'),(32,0,2,'fa-database','QuảnLýGópý','Quản lý Góp ý',NULL,'2018-07-05 05:52:27','2018-07-05 05:52:27'),(35,0,1,'fa-database','Feedback','Danh sách',32,'2018-07-05 08:25:35','2018-07-05 08:25:35'),(36,0,2,'fa-database','QuảnLýTrangGiớiThiệu','Quản lý trang giới thiệu',NULL,'2018-07-06 10:26:04','2018-07-06 10:26:04'),(38,0,1,'fa-database','AboutCategory','Đề mục chính',36,'2018-07-06 10:29:30','2018-07-06 10:29:30'),(42,0,1,'fa-database','AboutContent','Nội dung giới thiệu',36,'2018-07-06 10:58:53','2018-07-06 10:58:53'),(44,0,1,'fa-database','AboutArchive','Thành tựu - Giải thưởng',36,'2018-07-07 20:03:16','2018-07-07 20:03:16'),(45,0,2,'fa-database','QuảnLýTrangKiếnThứcChănNuôi','Quản lý Trang Kiến thức chăn nuôi',NULL,'2018-07-07 20:46:58','2018-07-07 20:46:58'),(47,0,1,'fa-database','KnowledgeCategory','Danh mục kiến thức',45,'2018-07-07 20:49:58','2018-07-07 20:49:58'),(52,0,1,'fa-database','KnowledgeVideo','Video kiến thức',45,'2018-07-07 22:36:39','2018-07-07 22:36:39'),(53,0,2,'fa-database','QuảnLýSảnPhẩm','Quản lý sản phẩm',NULL,'2018-07-09 08:30:56','2018-07-09 08:30:56'),(55,0,1,'fa-database','ProductCategory','Danh mục sản phẩm',53,'2018-07-09 08:38:07','2018-07-09 08:38:07'),(57,0,1,'fa-database','Products','Danh sách sản phẩm',53,'2018-07-09 09:53:34','2018-07-09 09:53:34'),(59,0,1,'fa-database','ProductDetail','Chi tiết sản phẩm',53,'2018-07-10 08:54:27','2018-07-10 08:54:27'),(60,0,2,'fa-database','QuảnLýTinTứcSựKiện','Quản lý tin tức - sự kiện',NULL,'2018-07-12 08:21:08','2018-07-12 08:21:08'),(61,0,1,'fa-database','News','Danh sách tin bài',60,'2018-07-12 08:32:38','2018-07-12 08:32:38'),(63,0,1,'fa-database','FaqCategory','Danh mục câu hỏi người dùng',45,'2018-07-19 08:52:09','2018-07-19 08:52:09'),(67,0,1,'fa-database','FaqQuestion','Danh sách câu hỏi người dùng',45,'2018-07-21 00:44:06','2018-07-21 00:44:06'),(68,0,2,'fa-database','QuảnLýLiênHệ','Quản lý liên hệ',NULL,'2018-07-21 02:49:44','2018-07-21 02:49:44'),(70,0,1,'fa-database','UserContact','Liên hệ người dùng',68,'2018-07-21 02:53:04','2018-07-21 02:53:04'),(72,0,1,'fa-database','ContactInfo','Thông tin liên hệ',68,'2018-07-21 02:56:52','2018-07-21 02:56:52'),(73,0,2,'fa-database','QuảnLýHìnhảnhHoạtđộng','Quản lý hình ảnh hoạt động',NULL,'2018-07-21 22:28:25','2018-07-21 22:28:25'),(75,0,1,'fa-database','FaqList','Danh sách câu hỏi thường gặp',45,'2018-07-21 22:48:29','2018-07-21 22:48:29');
+/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2015_10_10_000000_create_menus_table',1),(4,'2015_10_10_000000_create_roles_table',1),(5,'2015_10_10_000000_update_users_table',1),(6,'2015_12_11_000000_create_users_logs_table',1),(7,'2016_03_14_000000_update_menus_table',1),(8,'2018_07_03_164048_create_frmenu_table',2),(9,'2018_07_03_164513_create_products_table',3),(10,'2018_07_03_170722_create_news_table',4),(11,'2018_07_03_171403_create_news_table',5),(12,'2018_07_03_171710_create_news_table',6),(13,'2018_07_03_174438_create_priceshow_table',7),(14,'2018_07_03_174815_create_priceshow_table',8),(15,'2018_07_04_142639_create_company_table',9),(16,'2018_07_04_144106_create_imageact_table',10),(17,'2018_07_04_154419_create_footerinfo_table',11),(18,'2018_07_04_160343_create_footersitemap_table',12),(19,'2018_07_04_163034_create_footersitemap_table',13),(20,'2018_07_04_163239_create_footersitemap_table',14),(21,'2018_07_05_130013_create_feedback_table',15),(22,'2018_07_05_152535_create_feedback_table',16),(23,'2018_07_06_172930_create_aboutcategory_table',17),(24,'2018_07_06_174446_create_aboutcontent_table',18),(25,'2018_07_06_175853_create_aboutcontent_table',19),(26,'2018_07_08_030316_create_aboutarchive_table',20),(27,'2018_07_08_034958_create_knowledgecategory_table',21),(28,'2018_07_08_052520_create_aboutvideos_table',22),(29,'2018_07_08_053305_create_knowledgevideo_table',23),(30,'2018_07_08_053639_create_knowledgevideo_table',24),(31,'2018_07_09_153807_create_productcategory_table',25),(32,'2018_07_09_165008_create_products_table',26),(33,'2018_07_09_165334_create_products_table',27),(34,'2018_07_10_155427_create_productdetail_table',28),(35,'2018_07_12_153238_create_news_table',29),(36,'2018_07_19_155209_create_faqcategory_table',30),(37,'2018_07_21_071111_create_faqquestion_table',31),(38,'2018_07_21_074406_create_faqquestion_table',32),(39,'2018_07_21_095304_create_usercontact_table',33),(40,'2018_07_21_095652_create_contactinfo_table',34),(41,'2018_07_22_054830_create_faqlist_table',35);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `news`
+--
+
+DROP TABLE IF EXISTS `news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `news` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frmenu_id` int(11) DEFAULT NULL,
+  `is_feature` tinyint(4) DEFAULT '0',
+  `short_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `news`
+--
+
+LOCK TABLES `news` WRITE;
+/*!40000 ALTER TABLE `news` DISABLE KEYS */;
+INSERT INTO `news` VALUES (1,'Bài to',9,1,'Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu TPHCM','<div class=\"content\"><p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"><strong>Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu TPHCM, Bệnh viện Nhi Đồng 1 và các trẻ em có hoàn cảnh đặc biệt của mái ấm tình thương Kim Chi - chùa Long Thạnh, tỉnh Long An.</strong></span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Trong chuyến đi, đoàn đã có dịp lắng nghe những tâm tư, tình cảm cũng như những trăn trở của những bệnh nhân để có thể kịp thời đồng cảm và sẻ chia với những khó khăn ấy. Hi vọng với những đóng góp của mình, Anova Feed sẽ phần nào phụ giúp cho những hoàn cảnh khó khăn có thêm nghị lực để vượt qua những thử thách của bệnh tật. </span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-1.jpg\"></span></p>\r\n<p style=\"text-align: center;\"><em><span style=\"font-size: 13pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">Hình ảnh được ghi nhận tại Bệnh viện Ung bướu TP.Hồ Chí Minh và Bệnh viện Nhi đồng<span style=\"text-decoration: underline;\"> 1</span></span></em></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Rời TP HCM, chúng tôi đến thăm và tặng quà cho các trẻ em có hoàn cảnh đặc biệt đang sinh sống và học tập tại Mái ấm Kim Chi của chùa Long Thạnh (Long An). Nơi đậy, hiện đang cưu mang 150 mảnh đời bất hạnh từ 1 tháng tuổi đến 17 tuổi.</span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"><img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-2.jpg\"><br>\r\n</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Các em đã được thầy Út (trụ trì) nhận về nuôi và chăm lo toàn bộ từ miếng cơm, tấm áo đến sách, vở, bút, mực cả đến những khoản chi phí không tên khác. 150 em tuy không phải số lượng đông như những Trung tâm, mái ấm khác,nhưng ngần ấy em cũng là ngần ấy nỗi lo toan của những người phụ trách.</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Ngoài việc chăm sóc các em thì Mái ấm Kim Chi còn tạo điều kiện cho các em học tập bằng việc mở trường tiểu học, trung học và trung học phổ thông Bồ Đề Phương Duy để sau này các em có được một tương lai tươi sáng hơn.</span></p>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp; </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/tin-cty/hinh-tong-hop-3.jpg\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\"> </span></p>\r\n<p style=\"text-align: center;\"><strong><em><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></em></strong><em><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif; color: #1f497d;\">Thành viên trong đoàn trao “Món quà tình thương” và giao lưu tại mái ấm</span></em></p>\r\n<p style=\"text-align: justify;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kết thúc chuyến đi, đọng lại trong mỗi thành viên là niềm hi vọng vượt qua bệnh tật của những bệnh nhân hiểm nghèo cũng như những ánh mắt đong đầy tình yêu thương cuộc sống từ các em có hoàn cảnh khó khăn của Mái ấm </span><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kim Chi. </span></p>\r\n<p style=\"text-align: left;\"><span style=\"font-size: 12pt; font-family: \'Times New Roman\', serif;\">Kính chúc các cô chú, anh chị bệnh nhân và các em của bệnh viện Ung Bướu, Nhi Đồng 1 và mái ấm Kim Chi được dồi dào sức khỏe và hạnh phúc.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p></div>','1531409656-cover-website-2c.jpg','2018-07-12 08:34:16','2018-07-13 09:00:20',NULL),(2,'Bài nhỏ 1',9,NULL,NULL,NULL,'1531409790-cover-website-3c.jpg','2018-07-12 08:36:30','2018-07-12 08:36:30',NULL),(3,'Bài nhỏ 2',9,NULL,NULL,NULL,'1531411893-cover-website-4c.jpg','2018-07-12 09:11:33','2018-07-12 09:11:33',NULL),(4,'Ble Ble',13,NULL,'Đây không phải là mô tả ngắn đâu','<div class=\"content\">\r\n<p style=\"text-align:justify\"><strong>Ch&iacute;nh phủ vừa ban h&agrave;nh Nghị định 55/2017/NĐ-CP quản l&yacute; nu&ocirc;i, chế biến v&agrave; xuất khẩu sản phẩm c&aacute; tra.</strong></p>\r\n\r\n<p style=\"text-align:justify\">Việc nu&ocirc;i c&aacute; tra thương phẩm phải đ&aacute;p ứng 4 điều kiện: c&oacute; địa điểm, diện t&iacute;ch nu&ocirc;i c&aacute; tra ph&ugrave; hợp với quy hoạch về sử dụng đất của Ủy ban Nh&acirc;n d&acirc;n cấp tỉnh; c&oacute; cơ sở hạ tầng đ&aacute;p ứng y&ecirc;u cầu kỹ thuật về nu&ocirc;i c&aacute; tra thương phẩm, c&oacute; hệ thống cấp, tho&aacute;t nước ri&ecirc;ng biệt, c&oacute; nơi xử l&yacute; chất thải, b&ugrave;n thải đ&aacute;p ứng y&ecirc;u cầu về bảo vệ m&ocirc;i trường v&agrave; vệ sinh th&uacute; y; đ&aacute;p ứng c&aacute;c quy định về điều kiện đảm bảo an to&agrave;n thực phẩm theo quy định của ph&aacute;p luật về an to&agrave;n thực phẩm; c&oacute; Giấy chứng nhận m&atilde; số nhận diện ao nu&ocirc;i c&aacute; tra theo quy định.</p>\r\n\r\n<div style=\"text-align: center;\"><img alt=\"\" src=\"/Data/Sites/1/media/tin-tuc/thi-truong-noi-bat/5-1.jpg\" /></div>\r\n\r\n<p style=\"text-align:center\"><em>Cho c&aacute; tra ăn. (Ảnh: Nam Th&aacute;i/TTXVN)</em></p>\r\n\r\n<p style=\"text-align:justify\">Về m&atilde; số nhận diện ao nu&ocirc;i, m&atilde; số gồm 11 số v&agrave; c&oacute; cấu tr&uacute;c AA-BB-CCCC-DDD, trong đ&oacute;: AA l&agrave; m&atilde; số tỉnh, th&agrave;nh phố trực thuộc trung ương &aacute;p dụng trong quản l&yacute; nu&ocirc;i trồng thủy sản; BB l&agrave; m&atilde; số đối tượng nu&ocirc;i (đối với c&aacute; tra l&agrave; 01); CCCC l&agrave; số thứ tự cơ sở nu&ocirc;i được cấp từ 0001 đến 9999; DDD l&agrave; số thứ tự ao nu&ocirc;i của cơ sở nu&ocirc;i c&aacute; tra, được cấp theo thứ tự từ 001 đến 999.&nbsp;</p>\r\n\r\n<p style=\"text-align:justify\">Cơ quan quản l&yacute; nu&ocirc;i trồng thủy sản cấp tỉnh thực hiện cấp m&atilde; số nhận diện ao nu&ocirc;i. Mỗi ao nu&ocirc;i được cấp duy nhất một m&atilde; số nhận diện.</p>\r\n\r\n<p style=\"text-align:justify\">Chủ cơ sở nu&ocirc;i phải thực hiện đăng k&yacute; m&atilde; số nhận diện ao nu&ocirc;i lần đầu hoặc đăng k&yacute; lại khi thay đổi chủ cơ sở nu&ocirc;i hoặc thay đổi diện t&iacute;ch ao nu&ocirc;i.&nbsp;</p>\r\n\r\n<p style=\"text-align:justify\">Nghị định cũng quy định r&otilde; điều kiện chế biến c&aacute; tra, cụ thể phải đ&aacute;p ứng 4 điều kiện: đ&aacute;p ứng c&aacute;c quy định về điều kiện đầu tư kinh doanh tại Điều 21 của Nghị định 66/2016/NĐ-CP ng&agrave;y 1/7/2016 của Ch&iacute;nh phủ quy định điều kiện đầu tư kinh doanh về bảo vệ v&agrave; kiểm dịch thực vật; giống c&acirc;y trồng; nu&ocirc;i động vật rừng th&ocirc;ng thường; chăn nu&ocirc;i; thủy sản; thực phẩm; đ&aacute;p ứng c&aacute;c quy định, quy chuẩn kỹ thuật về điều kiện đảm bảo an to&agrave;n thực phẩm trong chế biến thủy sản; c&oacute; Giấy chứng nhận cơ sở đủ điều kiện an to&agrave;n thực phẩm do cơ quan quản l&yacute; nh&agrave; nước c&oacute; thẩm quyền cấp; c&oacute; hệ thống truy xuất nguồn gốc đ&aacute;p ứng c&aacute;c quy định của ph&aacute;p luật v&agrave; đảm bảo khả năng truy xuất đến cơ sở nu&ocirc;i; sản phẩm c&aacute; tra xuất khẩu phải được chế biến từ cơ sở chế biến c&aacute; tra đ&aacute;p ứng c&aacute;c điều kiện chế biến c&aacute; tra n&ecirc;u tr&ecirc;n.</p>\r\n\r\n<p style=\"text-align:justify\">Trường hợp tổ chức, c&aacute; nh&acirc;n xuất khẩu sản phẩm c&aacute; tra kh&ocirc;ng c&oacute; cơ sở chế biến đ&aacute;p ứng c&aacute;c điều kiện chế biến c&aacute; tra, phải đ&aacute;p ứng một trong hai điều kiện: c&oacute; hợp đồng mua sản phẩm c&aacute; tra được chế biến tại cơ sở chế biến c&aacute; tra đ&aacute;p ứng điều kiện chế biến c&aacute; tra n&ecirc;u tr&ecirc;n; c&oacute; hợp đồng gia c&ocirc;ng, chế biến với chủ sở hữu cơ sở chế biến đ&aacute;p ứng điều kiện chế biến c&aacute; tra./.</p>\r\n\r\n<p style=\"text-align:right\"><strong>Nguồn tin: TTXVN/VN+</strong></p>\r\n</div>','1531847891-2222.jpg','2018-07-17 10:18:11','2018-07-17 11:18:43',NULL),(5,'Câu hỏi 1',14,NULL,NULL,'<div class=\"faqcontent\" style=\"display: block\">\r\n<div class=\"content\">Ch&agrave;o bạn, khi heo n&aacute;i sắp sinh c&oacute; những biểu hiện sau:\r\n<ul>\r\n	<li>Cắn ph&aacute; chuồng, c&oacute; biểu hiện bồn chồn.</li>\r\n	<li>Ăn &iacute;t hoặc bỏ ăn.</li>\r\n	<li>D&atilde;y v&uacute; ấm l&ecirc;n, sậm m&agrave;u.</li>\r\n	<li>Vuốt n&uacute;m v&uacute; sữa bắn th&agrave;nh tia.</li>\r\n	<li>Dịch nhờn c&oacute; ph&acirc;n xu th&igrave; đẻ trong v&ograve;ng 30 ph&uacute;t.</li>\r\n</ul>\r\nCh&uacute;c bạn chăn nu&ocirc;i th&agrave;ng c&ocirc;ng.</div>\r\n</div>','1532242449-3a.png','2018-07-17 11:07:49','2018-07-21 23:54:09',NULL),(6,'Gía trị trường ngày 1',10,1,'Tại Dak Lak, giá heo hơi bất ngờ tăng 3.000đ/kg, lên 47.000đ/kg. Tỉnh Bình Dương, Bình Phước, Cần Thơ và Bạc Liêu cùng tăng thêm 2.000đ/kg.','<div class=\"faqcontent\">\r\n<div class=\"content\">\r\n<p>Bước đầu ti&ecirc;n trong phương ph&aacute;p chữa ti&ecirc;u chảy cho lợn l&agrave; x&aacute;c định nguy&ecirc;n nh&acirc;n g&acirc;y ti&ecirc;u chảy. Kiểm tra lại tất cả c&aacute;c kh&acirc;u cho ăn, uống, m&ocirc;i trường sống,&hellip; để x&aacute;c đo&aacute;n định nguy&ecirc;n nh&acirc;n. Nếu thấy lợn ti&ecirc;u chảy k&egrave;m theo c&aacute;c triệu chứng kh&aacute;c cần mang mẫu x&eacute;t nghiệm tới th&uacute; y để x&aacute;c định nguy&ecirc;n nh&acirc;n ch&iacute;nh x&aacute;c v&agrave; c&oacute; phương ph&aacute;p điều trị ph&ugrave; hợp.</p>\r\n\r\n<p>Điều trị cho lợn bằng kh&aacute;ng sinh sau khi x&eacute;t nghiệm, d&ugrave;ng đ&uacute;ng gốc kh&aacute;ng sinh c&oacute; t&aacute;c dụng để tr&aacute;nh t&igrave;nh trạng nhờn thuốc, kh&aacute;ng thuốc. Chữa ti&ecirc;u chảy cho lợn kết hợp ti&ecirc;m kh&aacute;ng sinh, kh&aacute;ng vi&ecirc;m, b&ugrave; nước, muối kho&aacute;ng cho những con bệnh, c&aacute;ch ly lợn bệnh v&agrave; cho ăn, uống kh&aacute;ng sinh quy m&ocirc; to&agrave;n trại nếu ti&ecirc;u chảy l&agrave; biểu hiện của bệnh dịch nguy hiểm.</p>\r\n\r\n<p>Cần chữa ti&ecirc;u chảy cho lợn theo ph&aacute;c đồ thuốc th&uacute; y đưa ra, chữa li&ecirc;n tục v&agrave; dừng nghỉ theo đ&uacute;ng hướng dẫn. Trong suốt thời gian chữa ti&ecirc;u chảy cần kết hợp với vệ sinh, khử tr&ugrave;ng chuồng trại, vật dụng chăn nu&ocirc;i, hạn chế người ra v&agrave;o khu vực chuồng.</p>\r\n</div>\r\n</div>','1532242600-111.jpg','2018-07-17 11:08:53','2018-07-22 00:01:23',NULL),(7,'Chính sách nhân sự',16,NULL,NULL,'<div class=\"content clearfix\"><div class=\"content\">\r\n<p>Biến Anova Feed trở thành nơi làm việc lý tốt nhất là trọng trách và mục tiêu xuyên suốt mà phòng nhân sự cũng như toàn thể từng thành viên của tập đoàn hướng đến. Để đạt được điều đó, chúng tôi tập trung vào việc xây dựng một môi trường làm việc minh bạch, cởi mở, mọi thành viên đều có cơ hội cống hiến, thăng tiến và tỏa sáng đồng thời không ngừng cải tiến và hoàn thiện chính sách lương thưởng, phúc lợi cạnh tranh với thị trường, theo năng lực của nhân viên.</p>\r\n<p>Anova Feed đã vinh dự được nhận một số giải thưởng tôn vinh những cố gắng không ngừng nghỉ trong việc xây dựng môi trường làm việc tốt nhất cho nhân viên như:</p>\r\n<p>1.<span style=\"white-space: pre;\"> </span>Năm 2015: Top 100 Nơi làm việc tốt nhất Việt Nam<br>\r\n2.<span style=\"white-space: pre;\"> </span>Năm 2017: Asia Best Employee Award 2016</p>\r\n<p>Ngoài ra, cũng trong năm 2017, tập đoàn Anova Corporation cũng tự hào được vinh danh tại Vietnam HR Awards 2016 cho các doanh nghiệp có chính sách nhân sự xuất sắc về lương thưởng, phúc lợi, hoạch định và tuyển dụng nhân lực và có môi trường làm việc tốt.</p>\r\n<p>   </p>\r\n</div>\r\n<div class=\"career-policy clearfix\">\r\n<div class=\"policy\">\r\n<h2 class=\"title\">CHÍNH SÁCH LƯƠNG THƯỞNG</h2>\r\n<div class=\"content\">\r\n<p>Tại Anova Feed, các chính sách về lương thưởng, phúc lợi đều được khảo sát và thay đổi hàng năm đề phù hợp theo nhưng báo cáo mới nhất của thị trường nhân sự đầy cạnh tranh và khan hiếm nhân tài hiện nay, bao gồm như: lương, các phụ cấp phục vụ công việc, lương tháng 13, các khoản thưởng theo năng lực và hiệu quả công việc…</p>\r\n</div>\r\n</div>\r\n<div class=\"policy\">\r\n<h2 class=\"title\">CHÍNH SÁCH PHÚC LỢI</h2>\r\n<div class=\"content\">\r\n<p>Bên cạnh chính sách về lương thưởng cạnh tranh với thị trường, chính sách phúc lợi cũng là một điểm đáng ghi nhận của Anova Feed. Tập đoàn luôn quan tâm và xây dựng chế độ phúc lợi tốt nhất cho nhân viên như chương trình bảo hiểm y tế cao cấp mở rộng cho nhân viên và người thân, chính sách khuyến học cho con em CBNV, mua sản phẩm công ty với giá ưu đãi…</p>\r\n</div>\r\n</div>\r\n<div class=\"policy\">\r\n<h2 class=\"title\">ĐÀO TẠO VÀ PHÁT TRIỂN</h2>\r\n<div class=\"content\">\r\nDựa trên định hướng phát triển đã được hoạch định, Anova Feed luôn chú trọng đào tạo và phát triển nguồn nhân lực hiện có để đáp ứng nhu cầu phát triển của từng nhân viên cũng như của tập đoàn. Để hiện thực hóa, phòng nhân sự đã xây dựng nên một chính sách đào tạo và phát triển cụ thể và đa dạng bao gồm nhiều khóa học khác nhau nhằm mục đích trau dồi, cung cấp cho nhân viên những kỹ năng cần thiết; không chỉ nhằm mục đích hoàn thành công việc mà còn&nbsp; hội nhập quốc tế.\r\n<p> </p>\r\n</div>\r\n</div>\r\n</div></div>',NULL,'2018-07-21 01:23:11','2018-07-21 01:42:52',NULL),(8,'Giá thị trường ngày 2',10,NULL,'Giá heo tại Huế, Lâm Đồng, Long An và Bến Tre giảm giá bán hôm nay. Nhiều tỉnh miền Bắc vẫn duy trì đà tăng nhẹ',NULL,'1532242670-1a.png','2018-07-21 23:57:50','2018-07-21 23:57:50',NULL),(9,'Giá thị trường ngày 3',10,NULL,'Tại Sóc Trăng, giá heo hơi hôm nay tăng lên 46.000đ/kg, thêm 3.000đ/kg, nhiều tỉnh miền Nam đã có dấu hiệu tăng giá. Tỉnh Đồng Nai cũng ghi nhận tăng thêm 1.000đ/kg ngay trong sáng nay',NULL,'1532242704-2a.png','2018-07-21 23:58:24','2018-07-21 23:58:24',NULL),(10,'Giá thị trường ngày 4',10,NULL,'Giá heo hơi thêm bất ngờ khi đồng loạt tại nhiều tỉnh hôm nay, Hưng Yên và Bắc Giang chạm “mốc” 55.000đ/kg, các tỉnh miền Trung và miền Tây cũng không nằm ngoài lần tăng giá này.',NULL,'1532242736-3a.png','2018-07-21 23:58:56','2018-07-21 23:58:56',NULL),(11,'Tin khuyến mãi',11,1,'Tự hào luôn cũng đồng hành với người chăn nuôi Việt Nam, Anova Feed thêm lần nữa triển khi chương trình khuyến mãi  20 + 1 & 30 + 1 đầy hấp dẫn.',NULL,'1532245803-cover-website-2c.jpg','2018-07-22 00:50:03','2018-07-22 00:50:03',NULL),(12,'Công ty và WC',11,NULL,'Hòa chung nhịp đập World Cup 2018, ANOVA FEED tiếp tục triển khai Chương trình khuyến mãi 20 + 1 & 30 + 1.',NULL,'1532245835-2222.jpg','2018-07-22 00:50:35','2018-07-22 00:51:33',NULL),(13,'Chia sẻ cùng cộng đồng',11,NULL,'Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu!',NULL,NULL,'2018-07-22 00:51:20','2018-07-22 00:51:20',NULL);
+/*!40000 ALTER TABLE `news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `priceshow`
+--
+
+DROP TABLE IF EXISTS `priceshow`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `priceshow` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `price_show_content` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `priceshow`
+--
+
+LOCK TABLES `priceshow` WRITE;
+/*!40000 ALTER TABLE `priceshow` DISABLE KEYS */;
+INSERT INTO `priceshow` VALUES (1,'Heo hơi <110 kg Miền Bắc: 48.000 - 50.000 đ/kg','2018-07-03 10:48:27','2018-07-03 10:48:27',NULL),(2,'Giờ đã khá muộn rồi mà tôi vẫn code','2018-07-03 10:48:44','2018-07-03 10:48:44',NULL),(3,'Tin thứ 1: aaaaaaaaaaaaaaaaa','2018-07-03 10:48:55','2018-07-03 10:48:55',NULL),(4,'Tin thứ 2: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb','2018-07-03 10:49:05','2018-07-03 10:49:05',NULL),(5,'Tin thứ 3: sắp có tiền web về rooooiiiiiiiiiiiiiiiiiiiiiiiiiiii','2018-07-03 10:49:22','2018-07-03 10:49:22',NULL);
+/*!40000 ALTER TABLE `priceshow` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productcategory`
+--
+
+DROP TABLE IF EXISTS `productcategory`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productcategory` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_home_page` tinyint(4) DEFAULT '0',
+  `status` tinyint(4) DEFAULT '1',
+  `frmenu_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productcategory`
+--
+
+LOCK TABLES `productcategory` WRITE;
+/*!40000 ALTER TABLE `productcategory` DISABLE KEYS */;
+INSERT INTO `productcategory` VALUES (1,'Thức ăn cho heox','1531150773-1a.png',1,1,4,'2018-07-09 08:39:33','2018-07-09 08:39:33',NULL),(2,'Thức ăn cho gia câmx','1531150873-2a.png',1,1,4,'2018-07-09 08:39:58','2018-07-09 08:41:13',NULL),(3,'Thức ăn cho bò','1531150862-3a.png',1,1,4,'2018-07-09 08:41:02','2018-07-09 08:41:02',NULL),(4,'TA1',NULL,NULL,1,5,'2018-07-09 08:41:29','2018-07-09 08:41:29',NULL),(5,'TA2',NULL,NULL,1,5,'2018-07-09 08:41:38','2018-07-09 08:41:38',NULL),(6,'TA3',NULL,NULL,1,5,'2018-07-09 08:41:46','2018-07-09 08:41:46',NULL),(7,'TP1',NULL,NULL,1,6,'2018-07-09 08:41:57','2018-07-09 08:41:57',NULL),(8,'TP2',NULL,NULL,1,6,'2018-07-09 08:42:04','2018-07-09 08:42:04',NULL),(9,'TP3',NULL,NULL,1,6,'2018-07-09 08:42:15','2018-07-09 08:42:15',NULL);
+/*!40000 ALTER TABLE `productcategory` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productdetail`
+--
+
+DROP TABLE IF EXISTS `productdetail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productdetail` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `products_id` int(11) DEFAULT NULL,
+  `ingredient` text COLLATE utf8mb4_unicode_ci,
+  `main_part` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instruction` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productdetail`
+--
+
+LOCK TABLES `productdetail` WRITE;
+/*!40000 ALTER TABLE `productdetail` DISABLE KEYS */;
+INSERT INTO `productdetail` VALUES (1,1,'<div class=\"content\"><table class=\"table\">\r\n        <tbody>\r\n        <tr>\r\n            <td>&nbsp;Đạm tối thiểu (min %)&nbsp;</td>\r\n            <td>&nbsp;17</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Ẩm độ (max %)<br>\r\n            </td>\r\n            <td>&nbsp;14</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Ca (min-max %)</td>\r\n            <td>&nbsp;3,5 - 4,5</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;P (min%)</td>\r\n            <td>&nbsp;0,45 - 1</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Xơ (max %)</td>\r\n            <td>&nbsp;7</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Năng lượng trao đổi ME (min Kcal/kg)</td>\r\n            <td>&nbsp;2.650</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Lysine tổng số ( min %)</td>\r\n            <td>&nbsp;0,85</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Methionine +Cystine tổng số (min %)</td>\r\n            <td>&nbsp;0,7</td>\r\n        </tr>\r\n        <tr>\r\n            <td>&nbsp;Hormone</td>\r\n            <td>&nbsp;Không có</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>','Khô dầu đậu nành, bột cá, tấm gạo, cám gạo, bắp, cám mì, khoai mì, các lạo acid amin, khoáng và vitamin,…','<ul>\r\n    <li>Thức ăn hỗn hợp dành cho gà đẻ thương phẩm</li>\r\n    <li>Không cần bổ sung bất cứ loại thức ăn nào khác</li>\r\n    <li>Cung cấp đầy đủ nước uống sạch và mát</li>\r\n    <li>Bảo quản nơi khô ráo và thoáng mát</li>\r\n</ul>','2018-07-10 08:57:48','2018-07-10 08:57:48',NULL);
+/*!40000 ALTER TABLE `productdetail` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `frmenu_id` int(11) DEFAULT NULL,
+  `productcategory_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Heo 1','1531155285-15.jpg','Thức ăn đậm đặc cho heo từ cai sữa đến xuất chuồng',0,1,'2018-07-09 09:54:45','2018-07-09 09:54:45',NULL),(2,'Thuộc sản phẩm 1','1531155346-super-a-(web).jpg','Thức ăn đặc biệt cho heo con tập ăn',4,1,'2018-07-09 09:55:46','2018-07-09 09:55:46',NULL);
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'Administrator','2018-07-03 09:29:16','2018-07-03 09:29:16'),(2,'User','2018-07-03 09:29:16','2018-07-03 09:29:16');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usercontact`
+--
+
+DROP TABLE IF EXISTS `usercontact`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usercontact` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usercontact`
+--
+
+LOCK TABLES `usercontact` WRITE;
+/*!40000 ALTER TABLE `usercontact` DISABLE KEYS */;
+INSERT INTO `usercontact` VALUES (1,'Do Tuan','abc@gmail.com','0988958479','test','ble ble','2018-07-21 03:44:50','2018-07-21 03:44:50',NULL);
+/*!40000 ALTER TABLE `usercontact` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,1,'admin','admin@admin.com','$2y$10$cH9KyrYO0g.q3hL/zCTXaOflg10vobMGbM/tOukvUmiE5wQEZx/em',NULL,'2018-07-03 09:29:28','2018-07-03 09:29:28');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_logs`
+--
+
+DROP TABLE IF EXISTS `users_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_logs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action_model` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_logs`
+--
+
+LOCK TABLES `users_logs` WRITE;
+/*!40000 ALTER TABLE `users_logs` DISABLE KEYS */;
+INSERT INTO `users_logs` VALUES (1,1,'created','frmenu',1,'2018-07-03 09:41:05','2018-07-03 09:41:05'),(2,1,'created','frmenu',2,'2018-07-03 09:41:16','2018-07-03 09:41:16'),(3,1,'created','frmenu',3,'2018-07-03 09:41:23','2018-07-03 09:41:23'),(4,1,'created','frmenu',4,'2018-07-03 09:41:32','2018-07-03 09:41:32'),(5,1,'created','frmenu',5,'2018-07-03 09:41:44','2018-07-03 09:41:44'),(6,1,'created','frmenu',6,'2018-07-03 09:41:54','2018-07-03 09:41:54'),(7,1,'created','products',1,'2018-07-03 09:46:07','2018-07-03 09:46:07'),(8,1,'created','products',2,'2018-07-03 09:46:26','2018-07-03 09:46:26'),(9,1,'created','products',3,'2018-07-03 09:46:38','2018-07-03 09:46:38'),(10,1,'updated','products',1,'2018-07-03 09:55:50','2018-07-03 09:55:50'),(11,1,'updated','products',2,'2018-07-03 09:57:54','2018-07-03 09:57:54'),(12,1,'updated','products',3,'2018-07-03 09:58:00','2018-07-03 09:58:00'),(13,1,'created','news',1,'2018-07-03 10:14:44','2018-07-03 10:14:44'),(14,1,'created','news',1,'2018-07-03 10:17:56','2018-07-03 10:17:56'),(15,1,'created','news',2,'2018-07-03 10:19:21','2018-07-03 10:19:21'),(16,1,'created','news',3,'2018-07-03 10:19:36','2018-07-03 10:19:36'),(17,1,'created','news',4,'2018-07-03 10:20:00','2018-07-03 10:20:00'),(18,1,'created','priceshow',1,'2018-07-03 10:45:02','2018-07-03 10:45:02'),(19,1,'updated','priceshow',1,'2018-07-03 10:45:15','2018-07-03 10:45:15'),(20,1,'updated','priceshow',1,'2018-07-03 10:45:26','2018-07-03 10:45:26'),(21,1,'created','priceshow',1,'2018-07-03 10:48:27','2018-07-03 10:48:27'),(22,1,'created','priceshow',2,'2018-07-03 10:48:44','2018-07-03 10:48:44'),(23,1,'created','priceshow',3,'2018-07-03 10:48:55','2018-07-03 10:48:55'),(24,1,'created','priceshow',4,'2018-07-03 10:49:05','2018-07-03 10:49:05'),(25,1,'created','priceshow',5,'2018-07-03 10:49:22','2018-07-03 10:49:22'),(26,1,'created','company',1,'2018-07-04 07:27:31','2018-07-04 07:27:31'),(27,1,'created','company',2,'2018-07-04 07:27:53','2018-07-04 07:27:53'),(28,1,'created','company',3,'2018-07-04 07:28:04','2018-07-04 07:28:04'),(29,1,'created','company',4,'2018-07-04 07:28:15','2018-07-04 07:28:15'),(30,1,'created','company',5,'2018-07-04 07:28:25','2018-07-04 07:28:25'),(31,1,'created','company',6,'2018-07-04 07:28:34','2018-07-04 07:28:34'),(32,1,'created','company',7,'2018-07-04 07:28:59','2018-07-04 07:28:59'),(33,1,'created','company',8,'2018-07-04 07:29:11','2018-07-04 07:29:11'),(34,1,'created','imageact',1,'2018-07-04 07:45:54','2018-07-04 07:45:54'),(35,1,'created','imageact',2,'2018-07-04 07:46:18','2018-07-04 07:46:18'),(36,1,'updated','imageact',1,'2018-07-04 07:46:47','2018-07-04 07:46:47'),(37,1,'updated','imageact',1,'2018-07-04 07:46:56','2018-07-04 07:46:56'),(38,1,'created','imageact',3,'2018-07-04 07:47:16','2018-07-04 07:47:16'),(39,1,'created','imageact',4,'2018-07-04 07:47:30','2018-07-04 07:47:30'),(40,1,'created','imageact',5,'2018-07-04 07:48:02','2018-07-04 07:48:02'),(41,1,'created','imageact',6,'2018-07-04 07:48:31','2018-07-04 07:48:31'),(42,1,'created','imageact',7,'2018-07-04 07:48:47','2018-07-04 07:48:47'),(43,1,'created','imageact',8,'2018-07-04 07:49:03','2018-07-04 07:49:03'),(44,1,'created','imageact',9,'2018-07-04 07:49:20','2018-07-04 07:49:20'),(45,1,'created','footerinfo',1,'2018-07-04 08:45:26','2018-07-04 08:45:26'),(46,1,'created','footersitemap',1,'2018-07-04 09:04:15','2018-07-04 09:04:15'),(47,1,'created','footersitemap',2,'2018-07-04 09:04:26','2018-07-04 09:04:26'),(48,1,'created','footersitemap',3,'2018-07-04 09:04:37','2018-07-04 09:04:37'),(49,1,'created','footersitemap',4,'2018-07-04 09:04:49','2018-07-04 09:04:49'),(50,1,'created','footersitemap',5,'2018-07-04 09:05:08','2018-07-04 09:05:08'),(51,1,'created','footersitemap',6,'2018-07-04 09:05:23','2018-07-04 09:05:23'),(52,1,'created','footersitemap',7,'2018-07-04 09:05:35','2018-07-04 09:05:35'),(53,1,'created','footersitemap',8,'2018-07-04 09:05:45','2018-07-04 09:05:45'),(54,1,'created','footersitemap',9,'2018-07-04 09:05:54','2018-07-04 09:05:54'),(55,1,'created','footersitemap',1,'2018-07-04 09:33:04','2018-07-04 09:33:04'),(56,1,'created','footersitemap',2,'2018-07-04 09:33:19','2018-07-04 09:33:19'),(57,1,'created','footersitemap',3,'2018-07-04 09:33:31','2018-07-04 09:33:31'),(58,1,'created','footersitemap',4,'2018-07-04 09:33:44','2018-07-04 09:33:44'),(59,1,'created','footersitemap',5,'2018-07-04 09:33:54','2018-07-04 09:33:54'),(60,1,'created','footersitemap',6,'2018-07-04 09:34:04','2018-07-04 09:34:04'),(61,1,'created','footersitemap',7,'2018-07-04 09:34:16','2018-07-04 09:34:16'),(62,1,'created','footersitemap',8,'2018-07-04 09:34:31','2018-07-04 09:34:31'),(63,1,'created','footersitemap',9,'2018-07-04 09:34:40','2018-07-04 09:34:40'),(64,1,'created','footersitemap',10,'2018-07-04 09:34:50','2018-07-04 09:34:50'),(65,1,'created','footersitemap',11,'2018-07-04 09:34:59','2018-07-04 09:34:59'),(66,1,'created','footersitemap',12,'2018-07-04 09:35:10','2018-07-04 09:35:10'),(67,1,'created','frmenu',7,'2018-07-05 06:01:12','2018-07-05 06:01:12'),(68,1,'created','feedback',1,'2018-07-05 08:12:26','2018-07-05 08:12:26'),(69,1,'created','feedback',2,'2018-07-05 08:13:41','2018-07-05 08:13:41'),(70,1,'created','feedback',3,'2018-07-05 08:17:16','2018-07-05 08:17:16'),(71,1,'created','feedback',4,'2018-07-05 08:20:48','2018-07-05 08:20:48'),(72,1,'created','feedback',5,'2018-07-05 08:22:25','2018-07-05 08:22:25'),(73,1,'created','feedback',1,'2018-07-05 08:27:46','2018-07-05 08:27:46'),(74,1,'created','feedback',2,'2018-07-05 09:09:08','2018-07-05 09:09:08'),(75,1,'created','feedback',3,'2018-07-05 09:13:03','2018-07-05 09:13:03'),(76,1,'created','feedback',4,'2018-07-05 09:23:59','2018-07-05 09:23:59'),(77,1,'created','aboutcategory',1,'2018-07-06 10:29:54','2018-07-06 10:29:54'),(78,1,'created','aboutcategory',2,'2018-07-06 10:30:13','2018-07-06 10:30:13'),(79,1,'created','aboutcategory',3,'2018-07-06 10:30:25','2018-07-06 10:30:25'),(80,1,'updated','aboutcategory',1,'2018-07-06 10:30:48','2018-07-06 10:30:48'),(81,1,'updated','aboutcategory',2,'2018-07-06 10:31:07','2018-07-06 10:31:07'),(82,1,'updated','aboutcategory',3,'2018-07-06 10:31:22','2018-07-06 10:31:22'),(83,1,'created','aboutcategory',4,'2018-07-06 10:31:38','2018-07-06 10:31:38'),(84,1,'created','aboutcategory',5,'2018-07-06 10:32:00','2018-07-06 10:32:00'),(85,1,'updated','aboutcategory',4,'2018-07-06 10:32:07','2018-07-06 10:32:07'),(86,1,'updated','aboutcategory',1,'2018-07-06 10:39:27','2018-07-06 10:39:27'),(87,1,'updated','aboutcategory',2,'2018-07-06 10:39:39','2018-07-06 10:39:39'),(88,1,'updated','aboutcategory',3,'2018-07-06 10:39:46','2018-07-06 10:39:46'),(89,1,'updated','aboutcategory',4,'2018-07-06 10:39:53','2018-07-06 10:39:53'),(90,1,'updated','aboutcategory',5,'2018-07-06 10:40:01','2018-07-06 10:40:01'),(91,1,'created','aboutcontent',1,'2018-07-06 10:45:29','2018-07-06 10:45:29'),(92,1,'updated','aboutcontent',1,'2018-07-06 10:50:58','2018-07-06 10:50:58'),(93,1,'updated','aboutcontent',1,'2018-07-06 10:51:21','2018-07-06 10:51:21'),(94,1,'created','aboutcontent',2,'2018-07-06 10:53:06','2018-07-06 10:53:06'),(95,1,'updated','aboutcontent',2,'2018-07-06 10:54:04','2018-07-06 10:54:04'),(96,1,'created','aboutcontent',1,'2018-07-06 11:00:10','2018-07-06 11:00:10'),(97,1,'updated','aboutcontent',1,'2018-07-06 11:02:19','2018-07-06 11:02:19'),(98,1,'updated','aboutcontent',1,'2018-07-06 11:03:00','2018-07-06 11:03:00'),(99,1,'created','aboutcontent',2,'2018-07-06 11:04:14','2018-07-06 11:04:14'),(100,1,'updated','aboutcontent',2,'2018-07-06 11:05:23','2018-07-06 11:05:23'),(101,1,'created','aboutcontent',3,'2018-07-06 11:07:25','2018-07-06 11:07:25'),(102,1,'created','aboutcontent',4,'2018-07-06 11:08:48','2018-07-06 11:08:48'),(103,1,'updated','aboutcontent',3,'2018-07-06 11:08:59','2018-07-06 11:08:59'),(104,1,'updated','aboutcontent',3,'2018-07-06 11:09:46','2018-07-06 11:09:46'),(105,1,'deleted','aboutcategory',5,'2018-07-07 19:58:18','2018-07-07 19:58:18'),(106,1,'created','aboutarchive',1,'2018-07-07 20:06:52','2018-07-07 20:06:52'),(107,1,'created','aboutarchive',2,'2018-07-07 20:07:07','2018-07-07 20:07:07'),(108,1,'created','aboutarchive',3,'2018-07-07 20:07:21','2018-07-07 20:07:21'),(109,1,'created','aboutarchive',4,'2018-07-07 20:07:39','2018-07-07 20:07:39'),(110,1,'created','aboutarchive',5,'2018-07-07 20:30:14','2018-07-07 20:30:14'),(111,1,'created','aboutarchive',6,'2018-07-07 20:30:24','2018-07-07 20:30:24'),(112,1,'created','aboutarchive',7,'2018-07-07 20:30:34','2018-07-07 20:30:34'),(113,1,'created','aboutarchive',8,'2018-07-07 20:30:35','2018-07-07 20:30:35'),(114,1,'created','aboutarchive',9,'2018-07-07 20:30:55','2018-07-07 20:30:55'),(115,1,'created','aboutarchive',10,'2018-07-07 20:31:07','2018-07-07 20:31:07'),(116,1,'created','knowledgecategory',1,'2018-07-07 20:50:11','2018-07-07 20:50:11'),(117,1,'created','knowledgecategory',2,'2018-07-07 20:50:27','2018-07-07 20:50:27'),(118,1,'created','frmenu',8,'2018-07-07 20:53:21','2018-07-07 20:53:21'),(119,1,'created','knowledgecategory',3,'2018-07-07 20:53:53','2018-07-07 20:53:53'),(120,1,'created','knowledgecategory',4,'2018-07-07 20:54:04','2018-07-07 20:54:04'),(121,1,'created','knowledgevideo',1,'2018-07-07 22:37:06','2018-07-07 22:37:06'),(122,1,'created','knowledgevideo',2,'2018-07-07 22:50:00','2018-07-07 22:50:00'),(123,1,'created','knowledgevideo',3,'2018-07-07 22:50:26','2018-07-07 22:50:26'),(124,1,'updated','knowledgevideo',2,'2018-07-08 06:59:27','2018-07-08 06:59:27'),(125,1,'updated','knowledgevideo',3,'2018-07-08 06:59:45','2018-07-08 06:59:45'),(126,1,'created','productcategory',1,'2018-07-09 08:39:33','2018-07-09 08:39:33'),(127,1,'created','productcategory',2,'2018-07-09 08:39:58','2018-07-09 08:39:58'),(128,1,'created','productcategory',3,'2018-07-09 08:41:02','2018-07-09 08:41:02'),(129,1,'updated','productcategory',2,'2018-07-09 08:41:13','2018-07-09 08:41:13'),(130,1,'created','productcategory',4,'2018-07-09 08:41:29','2018-07-09 08:41:29'),(131,1,'created','productcategory',5,'2018-07-09 08:41:38','2018-07-09 08:41:38'),(132,1,'created','productcategory',6,'2018-07-09 08:41:46','2018-07-09 08:41:46'),(133,1,'created','productcategory',7,'2018-07-09 08:41:57','2018-07-09 08:41:57'),(134,1,'created','productcategory',8,'2018-07-09 08:42:04','2018-07-09 08:42:04'),(135,1,'created','productcategory',9,'2018-07-09 08:42:15','2018-07-09 08:42:15'),(136,1,'created','products',1,'2018-07-09 09:54:45','2018-07-09 09:54:45'),(137,1,'created','products',2,'2018-07-09 09:55:46','2018-07-09 09:55:46'),(138,1,'created','productdetail',1,'2018-07-10 08:57:48','2018-07-10 08:57:48'),(139,1,'created','frmenu',9,'2018-07-12 08:01:36','2018-07-12 08:01:36'),(140,1,'created','frmenu',10,'2018-07-12 08:02:17','2018-07-12 08:02:17'),(141,1,'created','frmenu',11,'2018-07-12 08:02:32','2018-07-12 08:02:32'),(142,1,'created','news',1,'2018-07-12 08:34:16','2018-07-12 08:34:16'),(143,1,'created','news',2,'2018-07-12 08:36:30','2018-07-12 08:36:30'),(144,1,'created','news',3,'2018-07-12 09:11:33','2018-07-12 09:11:33'),(145,1,'updated','news',1,'2018-07-13 09:00:20','2018-07-13 09:00:20'),(146,1,'created','frmenu',12,'2018-07-16 07:40:01','2018-07-16 07:40:01'),(147,1,'created','frmenu',13,'2018-07-16 07:40:36','2018-07-16 07:40:36'),(148,1,'created','frmenu',14,'2018-07-16 07:40:53','2018-07-16 07:40:53'),(149,1,'created','news',4,'2018-07-17 10:18:11','2018-07-17 10:18:11'),(150,1,'updated','news',4,'2018-07-17 10:33:34','2018-07-17 10:33:34'),(151,1,'updated','news',4,'2018-07-17 10:59:53','2018-07-17 10:59:53'),(152,1,'created','news',5,'2018-07-17 11:07:49','2018-07-17 11:07:49'),(153,1,'created','news',6,'2018-07-17 11:08:53','2018-07-17 11:08:53'),(154,1,'updated','news',6,'2018-07-17 11:09:08','2018-07-17 11:09:08'),(155,1,'updated','news',4,'2018-07-17 11:18:43','2018-07-17 11:18:43'),(156,1,'created','faqcategory',1,'2018-07-19 08:52:38','2018-07-19 08:52:38'),(157,1,'created','faqcategory',2,'2018-07-19 08:52:48','2018-07-19 08:52:48'),(158,1,'created','faqcategory',3,'2018-07-19 08:52:58','2018-07-19 08:52:58'),(159,1,'updated','faqcategory',1,'2018-07-19 08:57:49','2018-07-19 08:57:49'),(160,1,'created','faqquestion',1,'2018-07-21 00:38:55','2018-07-21 00:38:55'),(161,1,'created','faqquestion',1,'2018-07-21 00:44:34','2018-07-21 00:44:34'),(162,1,'created','faqquestion',2,'2018-07-21 00:51:57','2018-07-21 00:51:57'),(163,1,'created','frmenu',15,'2018-07-21 00:57:03','2018-07-21 00:57:03'),(164,1,'created','frmenu',16,'2018-07-21 00:57:27','2018-07-21 00:57:27'),(165,1,'created','frmenu',17,'2018-07-21 00:57:51','2018-07-21 00:57:51'),(166,1,'created','news',7,'2018-07-21 01:23:11','2018-07-21 01:23:11'),(167,1,'updated','news',7,'2018-07-21 01:42:52','2018-07-21 01:42:52'),(168,1,'created','frmenu',18,'2018-07-21 02:00:07','2018-07-21 02:00:07'),(169,1,'created','contactinfo',1,'2018-07-21 02:58:01','2018-07-21 02:58:01'),(170,1,'created','usercontact',1,'2018-07-21 03:44:50','2018-07-21 03:44:50'),(171,1,'created','faqlist',1,'2018-07-21 22:49:14','2018-07-21 22:49:14'),(172,1,'created','faqlist',2,'2018-07-21 22:49:49','2018-07-21 22:49:49'),(173,1,'created','faqlist',3,'2018-07-21 22:50:17','2018-07-21 22:50:17'),(174,1,'created','faqlist',4,'2018-07-21 22:50:55','2018-07-21 22:50:55'),(175,1,'created','faqlist',5,'2018-07-21 22:51:21','2018-07-21 22:51:21'),(176,1,'updated','faqlist',1,'2018-07-21 22:56:17','2018-07-21 22:56:17'),(177,1,'updated','faqlist',2,'2018-07-21 22:56:51','2018-07-21 22:56:51'),(178,1,'updated','faqlist',3,'2018-07-21 22:56:58','2018-07-21 22:56:58'),(179,1,'updated','faqlist',4,'2018-07-21 22:57:04','2018-07-21 22:57:04'),(180,1,'updated','faqlist',5,'2018-07-21 22:57:11','2018-07-21 22:57:11'),(181,1,'updated','faqlist',1,'2018-07-21 23:01:51','2018-07-21 23:01:51'),(182,1,'updated','faqlist',1,'2018-07-21 23:02:27','2018-07-21 23:02:27'),(183,1,'updated','news',5,'2018-07-21 23:54:09','2018-07-21 23:54:09'),(184,1,'updated','news',6,'2018-07-21 23:56:40','2018-07-21 23:56:40'),(185,1,'updated','news',6,'2018-07-21 23:57:04','2018-07-21 23:57:04'),(186,1,'created','news',8,'2018-07-21 23:57:50','2018-07-21 23:57:50'),(187,1,'created','news',9,'2018-07-21 23:58:24','2018-07-21 23:58:24'),(188,1,'created','news',10,'2018-07-21 23:58:56','2018-07-21 23:58:56'),(189,1,'updated','news',6,'2018-07-22 00:01:23','2018-07-22 00:01:23'),(190,1,'created','news',11,'2018-07-22 00:50:03','2018-07-22 00:50:03'),(191,1,'created','news',12,'2018-07-22 00:50:35','2018-07-22 00:50:35'),(192,1,'created','news',13,'2018-07-22 00:51:20','2018-07-22 00:51:20'),(193,1,'updated','news',12,'2018-07-22 00:51:33','2018-07-22 00:51:33');
+/*!40000 ALTER TABLE `users_logs` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-07-22 16:41:31
