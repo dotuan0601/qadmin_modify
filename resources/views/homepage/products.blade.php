@@ -6,10 +6,10 @@
                 <div class="productcol">
                     <figure>
                         <div style="text-align: center;">
-                            <a href="/san-pham/anova-feed/thuc-an-cho-heo" class="productimg" style="background-color: #ffffff;"><img alt="" src="{{$product->img_link}}"></a>
+                            <a href="/san-pham/anova-feed/thuc-an-cho-heo" class="productimg" style="background-color: #ffffff;"><img alt="" src="{{ 'uploads/' . $product->img}}"></a>
                         </div>
                         <figcaption>
-                            <h3 class="productname" style="text-align: center;"> <a href="/san-pham/anova-feed">{{$product->product_name}}</a></h3>
+                            <h3 class="productname" style="text-align: center;"> <a href="/san-pham/anova-feed">{{$product->name}}</a></h3>
                         </figcaption>
                     </figure>
                 </div>
