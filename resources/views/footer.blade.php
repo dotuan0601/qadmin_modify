@@ -5,7 +5,7 @@
                 <div class="col-xs-12 col-md-4 col-lg-3 col-xl-2">
                     <div class="footercol Module Module-139">
                         <div class="ModuleContent">
-                            <div class="sitelogo"><a href="https://anovafeed.vn/#"><img alt="" src="img/logo.png"></a></div>
+                            <div class="sitelogo"><a href="https://anovafeed.vn/#"><img alt="" src="{{ asset('img/logo.png') }}"></a></div>
                             <a href="https://anovafeed.vn/Data/Sites/1/media/test.txt" class="download">
                             </a>
                             <div class="text">

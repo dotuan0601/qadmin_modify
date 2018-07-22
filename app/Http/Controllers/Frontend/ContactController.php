@@ -74,7 +74,10 @@ class ContactController extends Controller {
                         ];
                     }
 
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }

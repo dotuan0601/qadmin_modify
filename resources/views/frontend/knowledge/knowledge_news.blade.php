@@ -76,22 +76,9 @@
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
             <div class="overlay"></div>
-            <div class="search clearfix">
-                <div class="container">
-                    <div class="searchwrap">
-                        <div class="Module Module-137"><div id="ctl00_mdl137_ctl00_Search_pnlSearch" class="searchbox">
 
-                                <input onfocus="javascript:watermarkEnter(this, &#39;&#39;);" onblur="javascript:watermarkLeave(this, &#39;&#39;);" name="ctl00$mdl137$ctl00$Search$txtSearch" type="text" id="ctl00_mdl137_ctl00_Search_txtSearch" title="Tìm kiếm" class="searchinput" autocomplete="off" placeholder="Tìm kiếm...">
+            @include('frontend.search')
 
-                                <button onclick="__doPostBack(&#39;ctl00$mdl137$ctl00$Search$btnSearch&#39;,&#39;&#39;)" id="ctl00_mdl137_ctl00_Search_btnSearch" class="searchbutton">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-
-                            </div></div>
-                        <div class="btn-closesearch"><span class="lnr lnr-cross"></span></div>
-                    </div>
-                </div>
-            </div>
             <section class="headertop clearfix">
                 <div class="container">
                     <div class="btn-showmenu"><span></span></div>
@@ -159,13 +146,13 @@
                                                 <article class="col-xs-12 col-sm-6 col-md-4">
                                                     <div class="newscol">
                                                         <figure>
-                                                            <a class="newsimg" href="{{ URL('kien-thuc-chan-nuoi/detail/' . $news->id) }}" target="_self" title="{{ $news->name }}">
+                                                            <a class="newsimg" href="{{ URL('kien-thuc-chan-nuoi/' . $news->id) }}" target="_self" title="{{ $news->name }}">
                                                                 <img src="{{ asset('uploads/' . $news->img) }}" alt="{{ $news->name }}">
                                                             </a>
                                                             <figcaption>
                                                                 <time>25/08/2017</time>
                                                                 <h2 class="newsname">
-                                                                    <a href="{{ URL('kien-thuc-chan-nuoi/detail/' . $news->id) }}" target="_self" title="{{ $news->name }}">{{$news->name}}</a></h2>
+                                                                    <a href="{{ URL('kien-thuc-chan-nuoi/' . $news->id) }}" target="_self" title="{{ $news->name }}">{{$news->name}}</a></h2>
                                                                 <div class="newsdes">{{ $news->short_description }}</div>
                                                             </figcaption>
                                                         </figure>
@@ -182,17 +169,20 @@
                     </div>
                     <div id="ctl00_divRight" class="col-xs-12 col-lg-3 col-right cmszone">
 
-                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-150"><div class="ModuleContent"><nav class="sidebar-category clearfix"><ul>
-                                        <li class="hassub"><a class="hvr-sweep-to-right" href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" target="_self">Video kỹ thuật chăn nuôi</a><ul class="sub">
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo" target="_self">Heo</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/bo" target="_self">Bò</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/gia-cam" target="_self">Gia cầm</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/ca" target="_self">Cá</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="active"><a class="hvr-sweep-to-right" href="https://anovafeed.vn/kien-thuc-chan-nuoi/chan-nuoi-cung-chuyen-gia" target="_self">Chăn nuôi cùng chuyên gia</a></li>
-                                        <li><a class="hvr-sweep-to-right" href="https://anovafeed.vn/kien-thuc-chan-nuoi/cau-hoi-thuong-gap" target="_self">Câu hỏi thường gặp</a></li>
-                                    </ul></nav></div></div><div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-148"><div class="ModuleContent"><section class="news-video clearfix">
+                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-150">
+                            <div class="ModuleContent">
+                                <nav class="sidebar-category clearfix">
+                                    <ul>
+                                        @foreach($left_menus as $left_menu)
+                                            <li class="{{ $left_menu['class'] }}"><a class="hvr-sweep-to-right" href="{{ asset(URL( str_slug($left_menu['parent']) . '/' . str_slug($left_menu['name']) . '/' . $left_menu['id'])) }}" target="_self">{{ $left_menu['name'] }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-148">
+                            <div class="ModuleContent">
+                                <section class="news-video clearfix">
                                     <h3 class="sidebartitle">Video công ty</h3>
                                     <div class="video">
                                         <figure>

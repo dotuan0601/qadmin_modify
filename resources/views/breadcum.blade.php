@@ -3,7 +3,7 @@
     <div class="clearfix Module Module-141">
         <div class="ModuleContent">
             <div class="breadcrumb-bg">
-                <img src="img/default.jpg" alt="">
+                <img src="{{ asset('img/default.jpg') }}" alt="">
                 <div class="breadcrumb-overlay">
                 </div>
             </div>

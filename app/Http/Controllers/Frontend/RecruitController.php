@@ -42,6 +42,7 @@ class RecruitController extends Controller {
         $arr_menu = [];
         $left_menus = [];
         $is_active = true;
+        $current_menu_name = '';
         foreach ($frmenu as $key => $each_menu) {
             if (!$each_menu->parent_id && !array_key_exists($each_menu->name, $arr_menu)) {
                 $arr_menu[$each_menu->name] = [
@@ -50,6 +51,7 @@ class RecruitController extends Controller {
 
                 if (str_slug($each_menu->name) == $current_slug) {
                     $arr_menu[$each_menu->name]['is_active'] = true;
+                    $current_menu_name = $each_menu->name;
                 }
                 else {
                     $arr_menu[$each_menu->name]['is_active'] = false;
@@ -72,7 +74,10 @@ class RecruitController extends Controller {
                         ];
                     }
 
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }
@@ -98,7 +103,7 @@ class RecruitController extends Controller {
 
         $breadcrumb_arr = [
             ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
-            ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
+            ['name'=> $current_menu_name, 'class' => 'itemcrumb active'],
         ];
 
         $news = News::all()->where('id', '=', 7)->first();

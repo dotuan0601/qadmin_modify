@@ -64,11 +64,7 @@
         //]]>
     </script>
 
-
-    <script src="{{ asset('other/WebResource.axd')}}" type="text/javascript"></script>
-
-
-    <script src="{{ asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
+    <script src="{{ asset('other/homepage/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
 
@@ -81,22 +77,7 @@
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
             <div class="overlay"></div>
-            <div class="search clearfix">
-                <div class="container">
-                    <div class="searchwrap">
-                        <div class="Module Module-137"><div id="ctl00_mdl137_ctl00_Search_pnlSearch" class="searchbox">
-
-                                <input onfocus="javascript:watermarkEnter(this, &#39;&#39;);" onblur="javascript:watermarkLeave(this, &#39;&#39;);" name="ctl00$mdl137$ctl00$Search$txtSearch" type="text" id="ctl00_mdl137_ctl00_Search_txtSearch" title="Tìm kiếm" class="searchinput" autocomplete="off" placeholder="Tìm kiếm...">
-
-                                <button onclick="__doPostBack(&#39;ctl00$mdl137$ctl00$Search$btnSearch&#39;,&#39;&#39;)" id="ctl00_mdl137_ctl00_Search_btnSearch" class="searchbutton">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-
-                            </div></div>
-                        <div class="btn-closesearch"><span class="lnr lnr-cross"></span></div>
-                    </div>
-                </div>
-            </div>
+            @include('frontend.search')
             <section class="headertop clearfix">
                 <div class="container">
                     <div class="btn-showmenu"><span></span></div>
@@ -143,19 +124,7 @@
             <div id="ctl00_divAlt1" class="altcontent1 cmszone">
 
 
-                <section class="breadcrumb-wrap clearfix"><div class="clearfix Module Module-141"><div class="ModuleContent"><div class="breadcrumb-bg">
-                                <img src="./Tin tức - Sự kiện - ANOVA FEED_files/default.jpg" alt="">
-                                <div class="breadcrumb-overlay">
-                                </div>
-                            </div>
-                        </div></div><div class="container"><h1 class="pagename"> Tin tức - Sự kiện</h1><div class="clearfix Module Module-142"><ol class="breadcrumb">
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/" class="itemcrumb" itemprop="url"><span itemprop="title">Trang chủ</span></a></li>
-
-                                <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://anovafeed.vn/tin-tuc-su-kien" class="itemcrumb active" itemprop="url"><span itemprop="title">Tin tức - Sự kiện</span></a></li>
-
-
-                            </ol></div></div> </section>
+                @include('breadcum')
 
             </div>
             <div class="container">
@@ -169,12 +138,12 @@
                                         <div class="col-xs-12 col-lg-6">
                                             <div class="newscol big">
                                                 <figure>
-                                                    <a class="newsimg" href="{{ URL('/tin-tuc-su-kien/detail/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">
+                                                    <a class="newsimg" href="{{ URL('/tin-tuc-su-kien/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">
                                                         <img src="{{ 'uploads/' . $feature_top_news->img }}" alt="Anova Feed sẻ chia cùng cộng đồng">
                                                     </a>
                                                     <figcaption>
                                                         <h1 class="newsname">
-                                                            <a href="{{ URL('/tin-tuc-su-kien/detail/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">{{$feature_top_news->name}}</a></h1>
+                                                            <a href="{{ URL('/tin-tuc-su-kien/'. $feature_top_news->id )}}" target="_self" title="{{ $feature_top_news->name }}">{{$feature_top_news->name}}</a></h1>
                                                         <div class="newsdes"><p style="text-align: justify;">{{$feature_top_news->short_description}}</p></div>
                                                     </figcaption>
                                                 </figure>
@@ -200,266 +169,81 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div></div></div><div class="row flex flex-wrap"><div class="col-xs-12 col-lg-9 Module Module-152"><div class="ModuleContent"><div class="newsgroup">
-                                        <h3 class="pagetitle">Tin tức thị trường nổi bật</h3>
-                                        <div class="row flex flex-wrap">
-                                            <div class="newslist-child newslist-child2 clearfix">
-                                                <div class="col-xs-12 col-md-7">
-                                                    <div class="newscol big">
-                                                        <figure>
-                                                            <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat/anova-feed-gia-ca-thi-truong-ngay-1272018" target="_self" title="Anova Feed - Giá cả thị trường ngày 12/7/2018">
-                                                                <img src="./Tin tức - Sự kiện - ANOVA FEED_files/00-gia-heo-(1).jpg" alt="Anova Feed - Giá cả thị trường ngày 12/7/2018">
-                                                            </a>
-                                                            <figcaption>
-                                                                <h3 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat/anova-feed-gia-ca-thi-truong-ngay-1272018" target="_self" title="Anova Feed - Giá cả thị trường ngày 12/7/2018">Anova Feed - Giá cả thị trường ngày 12/7/2018</a></h3>
-                                                                <div class="newsdes"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">Thêm nhiều tỉnh miền Tây hôm nay bắt đầu tăng giá trở lại, tại Đồng Nai cũng ghi nhận tăng thêm 1.000đ/kg, lên 47.000đ/kg.</span></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-12 col-md-5">
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat/anova-feed-gia-ca-thi-truong-ngay-1172018" target="_self" title="Anova Feed - Giá cả thị trường ngày 11/7/2018">Anova Feed - Giá cả thị trường ngày 11/7/2018</a></h4>
-                                                                <div class="newsdes"><p style="text-align: justify;"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">Thêm nhiều tỉnh miền Bắc đồng loạt tăng giá hôm nay, đặc biệt tại Ninh Bình tăng thêm 3.000đ/kg lên 54.000đ/kg.</span></p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat/anova-feed-gia-ca-thi-truong-ngay-1072018" target="_self" title="Anova Feed - Giá cả thị trường ngày 10/7/2018">Anova Feed - Giá cả thị trường ngày 10/7/2018</a></h4>
-                                                                <div class="newsdes"><p style="text-align: justify;"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">Giá heo thịt tại hầu hết các địa phương tạm duy trì trạng thái “chững”, một số nơi biến động nhẹ, chú ý nhất tại Dak Lak và giảm 2.000đ/kg còn 43.000 – 44.000đ/kg.</span></p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat/anova-feed-gia-ca-thi-truong-ngay-0972018" target="_self" title="Anova Feed - Giá cả thị trường ngày 09/7/2018">Anova Feed - Giá cả thị trường ngày 09/7/2018</a></h4>
-                                                                <div class="newsdes"><p style="text-align: justify;"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">Giá heo hơi tại Hà Nội tăng lên 53.000đ/kg, Bắc Giang đang là địa phương có giá “tốt” nhất cả nước, hiện “đứng” mức 54.000đ/kg. Nhiều đại phương khác tại Nam bộ cũng tăng nhẹ hôm nay.</span></p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <a class="btn-viewmore" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-thi-truong-noi-bat">Xem thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div></div></div><div class="row flex flex-wrap"><div class="col-xs-12 col-lg-9 Module Module-152">
+                                <div class="ModuleContent">
+                                    @foreach($list_news as $list_new)
                                     <div class="newsgroup">
-                                        <h3 class="pagetitle">Tin tức công ty</h3>
-                                        <div class="row flex flex-wrap">
-                                            <div class="newslist-child newslist-child2 clearfix">
-                                                <div class="col-xs-12 col-md-7">
-                                                    <div class="newscol big">
-                                                        <figure>
-                                                            <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-tung-bung-khuyen-mai--uu-dai-cuc-cao" target="_self" title="ANOVA FEED - TƯNG BỪNG KHUYẾN MÃI – ƯU ĐÃI CỰC CAO">
-                                                                <img src="./Tin tức - Sự kiện - ANOVA FEED_files/banner-website-(new)-01.jpg" alt="ANOVA FEED - TƯNG BỪNG KHUYẾN MÃI – ƯU ĐÃI CỰC CAO">
-                                                            </a>
-                                                            <figcaption>
-                                                                <h3 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-tung-bung-khuyen-mai--uu-dai-cuc-cao" target="_self" title="ANOVA FEED - TƯNG BỪNG KHUYẾN MÃI – ƯU ĐÃI CỰC CAO">ANOVA FEED - TƯNG BỪNG KHUYẾN MÃI – ƯU ĐÃI CỰC CAO</a></h3>
-                                                                <div class="newsdes"><p><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; color: #000000;">Tự hào luôn cũng đồng hành với người chăn nuôi Việt Nam, Anova Feed thêm lần nữa triển khi chương trình khuyến mãi &nbsp;</span><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif; color: #ff0000;"><strong>20 + 1 </strong></span><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;"><span style="color: #ff0000;"><strong>&amp; 30 + 1</strong> </span><span style="color: #000000;">đầy hấp dẫn.</span></span></p></div>
-                                                            </figcaption>
-                                                        </figure>
+                                        <h3 class="pagetitle">{{ $list_new['menu_name'] }}</h3>
+                                        @if($list_new['list_news'])
+                                            <div class="row flex flex-wrap">
+                                                <div class="newslist-child newslist-child2 clearfix">
+                                                    @if($list_new['feature'])
+                                                        <div class="col-xs-12 col-md-7">
+                                                            <div class="newscol big">
+                                                                <figure>
+                                                                    <a class="newsimg" href="{{ URL('tin-tuc-su-kien/' . $list_new['feature']->id) }}" target="_self" title="{{ $list_new['feature']->name }}">
+                                                                        <img src="{{ asset('uploads/' . $list_new['feature']->img) }}">
+                                                                    </a>
+                                                                    <figcaption>
+                                                                        <h3 class="newsname">
+                                                                            <a href="{{ URL('tin-tuc-su-kien/' . $list_new['feature']->id) }}" target="_self" title="{{ $list_new['feature']->name }}">{{ $list_new['feature']->name }}</a></h3>
+                                                                        <div class="newsdes"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">{{ $list_new['feature']->short_description }}</span></div>
+                                                                    </figcaption>
+                                                                </figure>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                    <div class="col-xs-12 col-md-5">
+                                                        @foreach($list_new['list_news'] as $other_price_new)
+                                                        <div class="newscol">
+                                                            <figure>
+                                                                <figcaption>
+                                                                    <h4 class="newsname">
+                                                                        <a href="{{ URL('tin-tuc-su-kien/' . $other_price_new->id) }}" target="_self" title="{{ $other_price_new->name }}">{{ $other_price_new->name }}</a></h4>
+                                                                    <div class="newsdes"><p style="text-align: justify;"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">{{ $other_price_new->short_description }}</span></p></div>
+                                                                </figcaption>
+                                                            </figure>
+                                                        </div>
+                                                        @endforeach
+                                                        <a class="btn-viewmore" href="{{ URL('tin-tuc-su-kien/' . str_slug($list_new['menu_name']) . '/' . $list_new['menu_id']) }}">Xem thêm</a>
                                                     </div>
-                                                </div>
-                                                <div class="col-xs-12 col-md-5">
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/world-cup-den-roi--tiep-tuc-ve-dich-voi-anova-feed-nhe-1" target="_self" title="WORLD CUP ĐẾN RỒI – TIẾP TỤC VỀ ĐÍCH VỚI ANOVA FEED NHÉ!">WORLD CUP ĐẾN RỒI – TIẾP TỤC VỀ ĐÍCH VỚI ANOVA FEED NHÉ!</a></h4>
-                                                                <div class="newsdes"><p><span style="font-family: &#39;Times New Roman&#39;;">Hòa chung nhịp đập World Cup 2018, ANOVA FEED tiếp tục triển khai Chương trình khuyến mãi <span style="color: #ff0000;"><strong>20 + 1 &amp; 30 + 1.</strong></span></span></p>
-                                                                    <p>&nbsp;</p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-se-chia-cung-cong-dong" target="_self" title="Anova Feed sẻ chia cùng cộng đồng">Anova Feed sẻ chia cùng cộng đồng</a></h4>
-                                                                <div class="newsdes"><p style="text-align: justify;"><span style="font-size: 12pt; font-family: &#39;Times New Roman&#39;, serif;">Nằm trong kế hoạch các hoạt động xã hội hàng năm của công ty, ngày 18/4/2018 vừa qua, Anova Feed đã đi thăm và tặng quà cho các bệnh nhân tại Bệnh viện Ung Bướu TPHCM, Bệnh viện Nhi Đồng 1 và các trẻ em có hoàn cảnh đặc biệt của mái ấm tình thương Kim Chi - chùa Long Thạnh, tỉnh Long An.</span></p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/heo-len-gia-roi-ve-dich-thoi-1" target="_self" title="HEO LÊN GIÁ RỒI - VỀ ĐÍCH THÔI!!!">HEO LÊN GIÁ RỒI - VỀ ĐÍCH THÔI!!!</a></h4>
-                                                                <div class="newsdes"><p style="box-sizing: border-box; margin: 0px 0px 10px; color: #333333; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: left;"><span style="font-family: &#39;Times New Roman&#39;;">Heo tăng giá mạnh sau đợt bão giá kéo dài vừa qua "CÙNG ĐỒNG HÀNG VỚI NGƯỜI CHĂN NUÔI VIỆT". Công ty Cổ phẩn Anova Feed triển khai Chương trình khuyến mãi&nbsp;Khuyến mãi<span style="font-size: 18px;"> 20+1</span> &amp;<span style="font-size: 18px;"> 30+1.</span></span></p></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <a class="btn-viewmore" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty">Xem thêm</a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @else
+                                            <p>Hiện chưa có bài viết cho mục này</p>
+                                        @endif
                                     </div>
-                                    <div class="newsgroup">
-                                        <h3 class="pagetitle">Hoạt động cộng đồng</h3>
-                                        <div class="row flex flex-wrap">
-                                            <div class="newslist-child newslist-child2 clearfix">
-                                                <div class="col-xs-12 col-md-7">
-                                                    <div class="newscol big">
-                                                        <figure>
-                                                            <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong/anova-feed-chung-tay-vi-mien-trung-than-thuong" target="_self" title="ANOVA FEED - CHUNG TAY VÌ MIỀN TRUNG THÂN THƯƠNG">
-                                                                <img src="./Tin tức - Sự kiện - ANOVA FEED_files/4.jpg" alt="ANOVA FEED - CHUNG TAY VÌ MIỀN TRUNG THÂN THƯƠNG">
-                                                            </a>
-                                                            <figcaption>
-                                                                <h3 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong/anova-feed-chung-tay-vi-mien-trung-than-thuong" target="_self" title="ANOVA FEED - CHUNG TAY VÌ MIỀN TRUNG THÂN THƯƠNG">ANOVA FEED - CHUNG TAY VÌ MIỀN TRUNG THÂN THƯƠNG</a></h3>
-                                                                <div class="newsdes">Miền Trung - miền đất của nắng và gió đã phải gánh chịu rất nhiều hậu quả của mưa bão, lũ lụt trong những ngày vừa qua. Nhằm sẻ chia với những...</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-12 col-md-5">
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong/tai-tro-chuong-trinh-chuyen-xe-nhan-ai-ky-5" target="_self" title="Tài trợ chương trình Chuyến xe nhân ái - Kỳ 5">Tài trợ chương trình Chuyến xe nhân ái - Kỳ 5</a></h4>
-                                                                <div class="newsdes">Giống như hầu hết những địa phương khác của huyện Bình Tân, thời gian qua, xã Tân Hưng đã chuyển đổi phần lớn diện tích đất lúa sang trồng khoai lang, bước đầu góp phần...</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong/tai-tro-chuong-trinh-chuyen-xe-nhan-ai-ky-4" target="_self" title="Tài trợ chương trình Chuyến xe nhân ái - Kỳ 4">Tài trợ chương trình Chuyến xe nhân ái - Kỳ 4</a></h4>
-                                                                <div class="newsdes">Chuyến xe nhân ái đến với xã Long An – một xã nằm ven thị trấn Long Hồ nhưng còn lắm những khó khăn bởi kinh tế của xã chủ yếu dựa vào nghề trồng lúa… Trong những năm gần đây,...</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong/tai-tro-chuong-trinh-chuyen-xe-nhan-ai-ky-3" target="_self" title="Tài trợ chương trình Chuyến xe nhân ái - Kỳ 3">Tài trợ chương trình Chuyến xe nhân ái - Kỳ 3</a></h4>
-                                                                <div class="newsdes">Nằm ven theo phụ lưu của dòng Cổ Chiên hiền hòa, xã Hòa Tịnh, huyện Mang Thít, trù phú với những cánh đồng xanh màu lúa non và vườn cây trĩu quả. Thế nhưng,...</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <a class="btn-viewmore" href="https://anovafeed.vn/tin-tuc-su-kien/hoat-dong-cong-dong">Xem thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="newsgroup">
-                                        <h3 class="pagetitle">An toàn y tế chuyên nghiệp</h3>
-                                        <div class="row flex flex-wrap">
-                                            <div class="newslist-child newslist-child2 clearfix">
-                                                <div class="col-xs-12 col-md-7">
-                                                    <div class="newscol big">
-                                                        <figure>
-                                                            <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep/ket-qua-do-dac-quan-trac-moi-truong-2015-qui-12016" target="_self" title="KẾT QUẢ ĐO ĐẠC QUAN TRẮC MÔI TRƯỜNG 2015 &amp; QUÍ 1.2016">
-                                                                <img src="./Tin tức - Sự kiện - ANOVA FEED_files/1.jpg" alt="KẾT QUẢ ĐO ĐẠC QUAN TRẮC MÔI TRƯỜNG 2015 &amp; QUÍ 1.2016">
-                                                            </a>
-                                                            <figcaption>
-                                                                <h3 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep/ket-qua-do-dac-quan-trac-moi-truong-2015-qui-12016" target="_self" title="KẾT QUẢ ĐO ĐẠC QUAN TRẮC MÔI TRƯỜNG 2015 &amp; QUÍ 1.2016">KẾT QUẢ ĐO ĐẠC QUAN TRẮC MÔI TRƯỜNG 2015 &amp; QUÍ 1.2016</a></h3>
-                                                                <div class="newsdes"></div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-12 col-md-5">
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep/hoat-dong-she-cua-anova-feed-p4-1" target="_self" title="Hoạt động SHE của Anova Feed (P.4)">Hoạt động SHE của Anova Feed (P.4)</a></h4>
-                                                                <div class="newsdes">Đảm bảo mọi kế hoạch kinh doanh phải dựa trên hiệu quả lâu dài, có kết quả tốt, trong vòng kiểm soát và không đi ngược lại lợi ích của cộng đồng.</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep/hoat-dong-she-cua-anova-feed-p3-1" target="_self" title="Hoạt động SHE của Anova Feed (P.3)">Hoạt động SHE của Anova Feed (P.3)</a></h4>
-                                                                <div class="newsdes">Đảm bảo mọi kế hoạch kinh doanh phải dựa trên hiệu quả lâu dài, có kết quả tốt, trong vòng kiểm soát và không đi ngược lại lợi ích của cộng đồng.</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="newscol">
-                                                        <figure>
-                                                            <figcaption>
-                                                                <h4 class="newsname">
-                                                                    <a href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep/hoat-dong-she-cua-anova-feed-p2-1" target="_self" title="Hoạt động SHE của Anova Feed (P.2)">Hoạt động SHE của Anova Feed (P.2)</a></h4>
-                                                                <div class="newsdes">Đảm bảo mọi kế hoạch kinh doanh phải dựa trên hiệu quả lâu dài, có kết quả tốt, trong vòng kiểm soát và không đi ngược lại lợi ích của cộng đồng.</div>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <a class="btn-viewmore" href="https://anovafeed.vn/tin-tuc-su-kien/an-toan-y-te-chuyen-nghiep">Xem thêm</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div></div></div><div class="col-xs-12 col-lg-3">               <div class="row flex flex-wrap"><div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-183"><div class="ModuleContent"><section class="news-video clearfix"><h3 class="sidebartitle">Video công ty</h3>
-                                                <div class="video"><figure><a class="videoimg d-block" href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo" title="Heo"><img src="./Tin tức - Sự kiện - ANOVA FEED_files/4(1).jpg" alt="Heo"><span class="play"></span></a><figcaption><h3 class="videoname"><a class="play" href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo" title="Heo">Heo</a></h3></figcaption></figure></div>
-                                                <div class="video"><figure><figcaption><h3 class="videoname"><a class="play" href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/bo" title="Bò">Bò</a></h3></figcaption></figure></div>
-                                                <div class="video"><figure><figcaption><h3 class="videoname"><a class="play" href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/gia-cam" title="Gia cầm">Gia cầm</a></h3></figcaption></figure></div></section></div></div><div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-154"><div class="ModuleContent"><section class="news-daily clearfix">
-                                                <h3 class="sidebartitle">Bản tin hàng tháng</h3>
-                                                <div class="daily-slide slick-initialized slick-slider"><button type="button" data-role="none" class="slick-prev slick-arrow slick-disabled" aria-label="Previous" role="button" aria-disabled="true" style="display: block;">Previous</button>
-                                                    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 860px; transform: translate3d(0px, 0px, 0px);"><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 215px;">
-                                                                <div class="daily-news">
-                                                                    <figure>
-                                                                        <div class="newsimg">
-                                                                            <img src="./Tin tức - Sự kiện - ANOVA FEED_files/00-gia-heo-(2).jpg" alt="Anova Feed - Giá cả thị trường ngày 15/6/2018">
-                                                                        </div>
-                                                                        <figcaption>Anova Feed - Giá cả thị trường ngày 15/6/2018 | <a target="_self" href="https://anovafeed.vn/tin-tuc-su-kien" title="Anova Feed - Giá cả thị trường ngày 15/6/2018" tabindex="0">
-                                                                                DOWNLOAD
-                                                                            </a></figcaption>
-                                                                    </figure>
-                                                                </div>
-                                                            </div><div class="item slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 215px;">
-                                                                <div class="daily-news">
-                                                                    <figure>
-                                                                        <div class="newsimg">
-                                                                            <img src="./Tin tức - Sự kiện - ANOVA FEED_files/00-gia-heo-(3).jpg" alt="Anova Feed - Giá cả thị trường ngày 14/6/2018">
-                                                                        </div>
-                                                                        <figcaption>Anova Feed - Giá cả thị trường ngày 14/6/2018 | <a target="_self" href="https://anovafeed.vn/tin-tuc-su-kien" title="Anova Feed - Giá cả thị trường ngày 14/6/2018" tabindex="-1">
-                                                                                DOWNLOAD
-                                                                            </a></figcaption>
-                                                                    </figure>
-                                                                </div>
-                                                            </div><div class="item slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 215px;">
-                                                                <div class="daily-news">
-                                                                    <figure>
-                                                                        <div class="newsimg">
-                                                                            <img src="./Tin tức - Sự kiện - ANOVA FEED_files/00-gia-heo-(4).jpg" alt="Anova Feed - Giá cả thị trường ngày 13/6/2018">
-                                                                        </div>
-                                                                        <figcaption>Anova Feed - Giá cả thị trường ngày 13/6/2018 | <a target="_self" href="https://anovafeed.vn/tin-tuc-su-kien" title="Anova Feed - Giá cả thị trường ngày 13/6/2018" tabindex="-1">
-                                                                                DOWNLOAD
-                                                                            </a></figcaption>
-                                                                    </figure>
-                                                                </div>
-                                                            </div><div class="item slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 215px;">
-                                                                <div class="daily-news">
-                                                                    <figure>
-                                                                        <div class="newsimg">
-                                                                            <img src="./Tin tức - Sự kiện - ANOVA FEED_files/00-gia-heo-(5).jpg" alt="Anova Feed - Giá cả thị trường ngày 12/6/2018">
-                                                                        </div>
-                                                                        <figcaption>Anova Feed - Giá cả thị trường ngày 12/6/2018 | <a target="_self" href="https://anovafeed.vn/tin-tuc-su-kien" title="Anova Feed - Giá cả thị trường ngày 12/6/2018" tabindex="-1">
-                                                                                DOWNLOAD
-                                                                            </a></figcaption>
-                                                                    </figure>
-                                                                </div>
-                                                            </div></div></div>
+                                    @endforeach
 
 
-
-                                                    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;" aria-disabled="false">Next</button></div>
-                                            </section></div></div></div>             </div>           </div>
+                                    </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-3">
+                                <div class="row flex flex-wrap">
+                                    <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-183">
+                                        <div class="ModuleContent">
+                                            <h2 class="module-title">HƯỚNG DẪN KỸ THUẬT – VIDEO</h2>
+                                            <section class="home-video clearfix">
+                                                <div class="video">
+                                                    <figure>
+                                                        <a class="videoimg" href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo') }}">
+                                                            <img src="img/4.jpg" alt="Heo">
+                                                        </a>
+                                                        <figcaption>
+                                                            <h3 class="videoname"><a href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo') }}" target="_self" title="Heo">Heo</a></h3>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <ul class="videolist">
+                                                    <li><a href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/bo') }}" target="_self" title="Bò">Bò</a></li>
+                                                    <li><a href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/gia-suc-gia-cam') }}" target="_self" title="Gia cầm">Gia cầm</a></li>
+                                                </ul><a href="{{ URL('kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo') }}" class="viewmore">Xem thêm</a>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 

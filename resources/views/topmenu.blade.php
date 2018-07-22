@@ -2,7 +2,7 @@
                 <section class="headerbottom clearfix">
                     <div class="container">
                         <section class="menu clearfix">
-                            <div class="sitelogo Module Module-135"><div class="ModuleContent"><a href="https://anovafeed.vn/"><img alt="" src="img/logo.png"></a>
+                            <div class="sitelogo Module Module-135"><div class="ModuleContent"><a href="https://anovafeed.vn/"><img alt="" src="{{ asset('img/logo.png') }}"></a>
 <div class="text"><span style="font-size: 16px;">HIỆU QUẢ SỐ 1</span></div></div></div>
                             <div class="clearfix Module Module-42"><div class="ModuleContent">
 
@@ -31,7 +31,7 @@
     <div class="sub">
         <ul>
         @foreach( $each_menu['children'] as $sub_menu)
-            <li><a href="/{{str_slug($each_menu['name'])}}/{{str_slug($sub_menu)}}" target="_self">{{$sub_menu}}</a></li>
+            <li><a href="/{{str_slug($each_menu['name'])}}/{{str_slug($sub_menu['name'])}}/{{$sub_menu['id']}}" target="_self">{{$sub_menu['name']}}</a></li>
         @endforeach
         </ul>
         </div>

@@ -32,9 +32,11 @@ Route::get('refreshcaptcha', 'CaptchaController@refreshCaptcha');
 Route::get('/gioi-thieu', 'Frontend\AboutController@index')->name('about.index');
 # kien thuc chan nuoi
 Route::get('/kien-thuc-chan-nuoi', 'Frontend\KnowledgeController@index')->name('knowledge.index');
-Route::get('/kien-thuc-chan-nuoi/{cat_slug}', 'Frontend\KnowledgeController@index')->name('knowledge.index');
-Route::get('/kien-thuc-chan-nuoi/detail/{news_id}', 'Frontend\KnowledgeController@detail')->name('knowledge.detail')->where('news_id', '[0-9]+');
-Route::get('/kien-thuc-chan-nuoi/{cat_slug}/{detail}', 'Frontend\KnowledgeController@index')->name('knowledge.index');
+Route::get('/kien-thuc-chan-nuoi/{cat_slug}/{menu_id}', 'Frontend\KnowledgeController@index')
+    ->where('cat_slug', '[A-Za-z\-]+')->where('menu_id', '[0-9]+')->name('knowledge.index');
+Route::get('/kien-thuc-chan-nuoi/{news_id}', 'Frontend\KnowledgeController@detail')->name('knowledge.detail')->where('news_id', '[0-9]+');
+Route::get('/kien-thuc-chan-nuoi/{cat_slug}/{detail}', 'Frontend\KnowledgeController@index')
+    ->where('cat_slug', '[A-Za-z\-]+')->where('detail', '[A-Za-z\-]+')->name('knowledge.index');
 Route::post('knowledge', 'Frontend\KnowledgeController@store')->name('knowledge.store');
 # san pham
 Route::get('/san-pham', 'Frontend\ProductController@index')->name('product.index');
@@ -43,11 +45,14 @@ Route::get('/san-pham/{current_menu}', 'Frontend\ProductController@index')->name
 Route::get('/san-pham/{current_menu}/{cat_id}', 'Frontend\ProductController@index')->where('cat_id', '[0-9]+')->name('product.index');
 Route::get('/san-pham/{current_menu}/detail/{product_id}', 'Frontend\ProductController@detail')->name('product.detail');
 # tin tuc - su kien
+
+Route::get('/tin-tuc-su-kien/{current_menu}/{menu_id}', 'Frontend\NewsController@list_news')
+    ->where('current_menu', '[A-Za-z\-]+')->where('menu_id', '[0-9]+')->name('news.list_news');
 Route::get('/tin-tuc-su-kien', 'Frontend\NewsController@index')->name('news.index');
 //Route::get('/san-pham/({sub-menu}', 'Frontend\ProductController@index')->name('product.index');
 //Route::get('/san-pham/{current_menu}', 'Frontend\ProductController@index')->name('product.index');
 //Route::get('/san-pham/{current_menu}/{cat_id}', 'Frontend\ProductController@index')->where('cat_id', '[0-9]+')->name('product.index');
-Route::get('/tin-tuc-su-kien/detail/{news_id}', 'Frontend\NewsController@detail')->name('news.detail');
+Route::get('/tin-tuc-su-kien/{news_id}', 'Frontend\NewsController@detail')->where('news_id', '[0-9]+')->name('news.detail');
 # tuyen dung
 Route::get('/tuyen-dung', 'Frontend\RecruitController@index')->name('recruit.index');
 Route::get('/tuyen-dung/{sub-menu}', 'Frontend\RecruitController@index')->name('recruit.index');

@@ -43,6 +43,7 @@ class KnowledgeController extends Controller {
         $frmenu = FrMenu::all();
         $arr_menu = [];
         $current_menu_id = null;
+        $current_menu_name = '';
         $current_children_menu_id = null;
         foreach ($frmenu as $key => $each_menu) {
             if (!$each_menu->parent_id && !array_key_exists($each_menu->name, $arr_menu)) {
@@ -53,6 +54,7 @@ class KnowledgeController extends Controller {
                 if (str_slug($each_menu->name) == $current_menu) {
                     $arr_menu[$each_menu->name]['is_active'] = true;
                     $current_menu_id = $each_menu->id;
+                    $current_menu_name = $each_menu->name;
                 }
                 else {
                     $arr_menu[$each_menu->name]['is_active'] = false;
@@ -60,7 +62,10 @@ class KnowledgeController extends Controller {
             }
             if ($each_menu->parent_id) {
                 if (array_key_exists($each_menu->parent_id, $arr_menu)) {
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
 
                 if (str_slug($each_menu->name) == $current_slug) {
@@ -120,7 +125,7 @@ class KnowledgeController extends Controller {
 
         $breadcrumb_arr = [
             ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
-            ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
+            ['name'=> $current_menu_name, 'class' => 'itemcrumb active'],
         ];
 
         if (!$current_slug || ($current_slug && strpos($current_slug, 'video') > -1) || !$detail) {
@@ -144,8 +149,35 @@ class KnowledgeController extends Controller {
             # news
             $news = News::all()->where('frmenu_id', '=', $current_children_menu_id)->first();
 
+            $menu = FrMenu::all()->where('id', '=', $news->frmenu_id)->first();
+            $same_menus = FrMenu::all()->where('parent_id', '=', $menu->parent_id);
+            foreach ($same_menus as $same_menu) {
+                if ($same_menu->id == $menu->id) {
+                    $left_menus[] = [
+                        'class' => 'active',
+                        'name' => $same_menu->name,
+                        'parent' => $same_menu->parent_id,
+                        'id' => $same_menu->id
+                    ];
+                }
+                else {
+                    $left_menus[] = [
+                        'class' => '',
+                        'parent' => $same_menu->parent_id,
+                        'name' => $same_menu->name,
+                        'id' => $same_menu->id
+                    ];
+                }
+            }
+
+            $breadcrumb_arr = [
+                ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
+                ['name'=> $current_menu_name, 'class' => 'itemcrumb'],
+                ['name'=> $menu->name, 'class' => 'itemcrumb active']
+            ];
+
             return view('frontend.knowledge.knowledge_news', compact('arr_menu', 'cats', 'footer', 'footer_sitemap',
-                'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'news'));
+                'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'news', 'left_menus'));
         }
     }
 
@@ -157,7 +189,6 @@ class KnowledgeController extends Controller {
         $current_menu = 'kien-thuc-chan-nuoi';
         $frmenu = FrMenu::all();
         $arr_menu = [];
-        $current_menu_id = null;
         foreach ($frmenu as $key => $each_menu) {
             if (!$each_menu->parent_id && !array_key_exists($each_menu->name, $arr_menu)) {
                 $arr_menu[$each_menu->name] = [
@@ -166,7 +197,6 @@ class KnowledgeController extends Controller {
 
                 if (str_slug($each_menu->name) == $current_menu) {
                     $arr_menu[$each_menu->name]['is_active'] = true;
-                    $current_menu_id = $each_menu->id;
                 }
                 else {
                     $arr_menu[$each_menu->name]['is_active'] = false;
@@ -174,7 +204,10 @@ class KnowledgeController extends Controller {
             }
             if ($each_menu->parent_id) {
                 if (array_key_exists($each_menu->parent_id, $arr_menu)) {
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }
@@ -239,10 +272,35 @@ class KnowledgeController extends Controller {
         # related video
         $related_videos = KnowledgeVideo::all()->where('is_feature', '!=', 1);
         # news
-        $news = News::all()->where('frmenu_id', '=', $current_menu_id)->first();
+        $news = News::all()->where('id', '=', $detail_id)->first();
+
+        $left_menus = [];
+        $menu = FrMenu::all()->where('id', '=', $news->frmenu_id)->first();
+        if (!$menu) {
+            return redirect('/');
+        }
+        $same_menus = FrMenu::all()->where('parent_id', '=', $menu->parent_id);
+        foreach ($same_menus as $same_menu) {
+            if ($same_menu->id == $menu->id) {
+                $left_menus[] = [
+                    'class' => 'active',
+                    'name' => $same_menu->name,
+                    'parent' => $same_menu->parent_id,
+                    'id' => $same_menu->id
+                ];
+            }
+            else {
+                $left_menus[] = [
+                    'class' => '',
+                    'parent' => $same_menu->parent_id,
+                    'name' => $same_menu->name,
+                    'id' => $same_menu->id
+                ];
+            }
+        }
 
         return view('frontend.knowledge.knowledge_news_detail', compact('arr_menu', 'cats', 'footer', 'footer_sitemap',
-            'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'news'));
+            'breadcrumb_arr', 'current_slug', 'contents', 'archives', 'cat_arr', 'feature_video', 'related_videos', 'news', 'left_menus'));
     }
 
     public function store(Request $request) {

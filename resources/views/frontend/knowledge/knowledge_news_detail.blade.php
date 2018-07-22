@@ -35,43 +35,8 @@
 
 
 <form method="post" action="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" id="aspnetForm">
-    <div class="aspNetHidden">
-        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
-        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-        <input type="hidden" name="__VIEWSTATEFIELDCOUNT" id="__VIEWSTATEFIELDCOUNT" value="2">
-        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk3NjY2MTIwNw9kFgJmD2QWAgIBDxYCHgRsYW5nBQJ2aRYCAgMPFgIeBWNsYXNzBQ1jYW5oY2FtIHZpLXZuFgICBQ9kFg4CCQ9kFgJmD2QWAmYPZBYCZg8PZBYCHghzaXRlcm9vdAUUaHR0cHM6Ly9hbm92YWZlZWQudm4WBAIBDw8WBh4HVG9vbFRpcAULVMOsbSBraeG6v20eCENzc0NsYXNzBQtzZWFyY2hpbnB1dB4EXyFTQgICFgQeDGF1dG9jb21wbGV0ZQUDb2ZmHgtwbGFjZWhvbGRlcgUOVMOsbSBraeG6v20uLi5kAgUPFgIfAQUMc2VhcmNoYnV0dG9uZAIZDw8WBB8EBRNhbHRjb250ZW50MSBjbXN6b25lHwUCAmRkAhsPDxYGHwQFEGxlZnRzaWRlIGNtc3pvbmUfBQICHgdWaXNpYmxlaGRkAh0PDxYEHwQFGmNvbC14cy0xMiBtaWRkbGUtZnVsbHdp">
-        <input type="hidden" name="__VIEWSTATE1" id="__VIEWSTATE1" value="ZHRoHwUCAmRkAh8PDxYGHwQFEXJpZ2h0c2lkZSBjbXN6b25lHwUCAh8IaGRkAiEPDxYGHwQFE2FsdGNvbnRlbnQyIGNtc3pvbmUfBQICHwhoZGQCKQ8PFgIfCGhkZGS/U6MJcFnGdoHu4Gjv7yqu5Q5siw==">
-    </div>
-
-    <script type="text/javascript">
-        //<![CDATA[
-        var theForm = document.forms['aspnetForm'];
-        if (!theForm) {
-            theForm = document.aspnetForm;
-        }
-        function __doPostBack(eventTarget, eventArgument) {
-            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                theForm.__EVENTTARGET.value = eventTarget;
-                theForm.__EVENTARGUMENT.value = eventArgument;
-                theForm.submit();
-            }
-        }
-        //]]>
-    </script>
-
-
-    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
-
 
     <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
-
-
-
-    <script type="text/javascript">
-        //<![CDATA[
-        Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
-        //]]>
-    </script>
 
     <div class="fullpage">
         <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
@@ -166,14 +131,7 @@
                                             </div>
                                         </div>
                                         {!! $news->content !!}
-                                        <div class="share mrb-xs-30">
-                                            <div class="fb-send">
-                                            </div>
-                                            <div class="face-like"><a class="fb-like fb_iframe_widget" data-href="https://anovafeed.vn/kien-thuc-chan-nuoi/chan-nuoi-cung-chuyen-gia/cach-bao-ve-chan-mong-cho--heo-giong" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=256582561077562&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=100"><span style="vertical-align: bottom; width: 68px; height: 20px;"><iframe name="f23af6b56dd8c78" width="100px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.9/plugins/like.php?app_id=256582561077562&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FLnGK1eIuZ8c.js%3Fversion%3D42%23cb%3Df1a2e28265855%26domain%3Danovafeed.vn%26origin%3Dhttps%253A%252F%252Fanovafeed.vn%252Ff1a70524d1fdbd8%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=100" style="border: none; visibility: visible; width: 68px; height: 20px;" class=""></iframe></span></a></div>
-                                            <div class="fb-share-button fb_iframe_widget" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=256582561077562&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe name="f1b05bb4d074acc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:share_button Facebook Social Plugin" src="https://www.facebook.com/v2.9/plugins/share_button.php?app_id=256582561077562&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FLnGK1eIuZ8c.js%3Fversion%3D42%23cb%3Df34ab999dd5b61%26domain%3Danovafeed.vn%26origin%3Dhttps%253A%252F%252Fanovafeed.vn%252Ff1a70524d1fdbd8%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey" style="border: none; visibility: visible; width: 78px; height: 20px;" class=""></iframe></span></div>
-                                            <div class="google"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1531849855413" name="I1_1531849855413" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;count=true&amp;origin=https%3A%2F%2Fanovafeed.vn&amp;url=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;gsrc=3p&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.MDrtqP2SXgo.O%2Fam%3DwQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCPCTMl8nc-Z54fU-_L0BTrYayZTXw%2Fm%3D__features__#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I1_1531849855413&amp;_gfid=I1_1531849855413&amp;parent=https%3A%2F%2Fanovafeed.vn&amp;pfname=&amp;rpctoken=96094753" data-gapiattached="true" title="G+"></iframe></div></div>
-                                            <div class="tweet"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.7a5ca036ea5299f1d2ebb2234731e35e.vi.html#dnt=false&amp;id=twitter-widget-0&amp;lang=vi&amp;original_referer=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong&amp;size=m&amp;text=C%C3%81CH%20B%E1%BA%A2O%20V%E1%BB%86%20CH%C3%82N-M%C3%93NG%20CHO%20%20HEO%20GI%E1%BB%90NG&amp;time=1531849853033&amp;type=share&amp;url=https%3A%2F%2Fanovafeed.vn%2Fkien-thuc-chan-nuoi%2Fchan-nuoi-cung-chuyen-gia%2Fcach-bao-ve-chan-mong-cho--heo-giong" data-url="https://anovafeed.vn/kien-thuc-chan-nuoi/chan-nuoi-cung-chuyen-gia/cach-bao-ve-chan-mong-cho--heo-giong"></iframe></div>
-                                        </div>
+
                                     </section>
 
 
@@ -186,17 +144,20 @@
 
                     <div id="ctl00_divRight" class="col-xs-12 col-lg-3 col-right cmszone">
 
-                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-150"><div class="ModuleContent"><nav class="sidebar-category clearfix"><ul>
-                                        <li class="hassub"><a class="hvr-sweep-to-right" href="https://anovafeed.vn/video-ky-thuat-chan-nuoi/heo" target="_self">Video kỹ thuật chăn nuôi</a><ul class="sub">
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/heo" target="_self">Heo</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/bo" target="_self">Bò</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/gia-cam" target="_self">Gia cầm</a></li>
-                                                <li><a href="https://anovafeed.vn/kien-thuc-chan-nuoi/video-ky-thuat-chan-nuoi/ca" target="_self">Cá</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="active"><a class="hvr-sweep-to-right" href="https://anovafeed.vn/kien-thuc-chan-nuoi/chan-nuoi-cung-chuyen-gia" target="_self">Chăn nuôi cùng chuyên gia</a></li>
-                                        <li><a class="hvr-sweep-to-right" href="https://anovafeed.vn/kien-thuc-chan-nuoi/cau-hoi-thuong-gap" target="_self">Câu hỏi thường gặp</a></li>
-                                    </ul></nav></div></div><div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-148"><div class="ModuleContent"><section class="news-video clearfix">
+                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-150">
+                            <div class="ModuleContent">
+                                <nav class="sidebar-category clearfix">
+                                    <ul>
+                                        @foreach($left_menus as $left_menu)
+                                            <li class="{{ $left_menu['class'] }}"><a class="hvr-sweep-to-right" href="{{ asset(URL( str_slug($left_menu['parent']) . '/' . str_slug($left_menu['name']) . '/' . $left_menu['id'])) }}" target="_self">{{ $left_menu['name'] }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="sidebarcol col-xs-12 col-md-4 col-lg-12 Module Module-148">
+                            <div class="ModuleContent">
+                                <section class="news-video clearfix">
                                     <h3 class="sidebartitle">Video công ty</h3>
                                     <div class="video">
                                         <figure>
@@ -233,19 +194,7 @@
     </div>
 
 
-
-    <div class="aspNetHidden">
-
-        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
-        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAMdLqreG+FHVDdVy5ujD16KZkjPIrYPdaRJvrM8cboIWlGAgFKYmMryi2RTSK/hoF4HkBtvXfC80vCNapVpp80jGt5Dwg==">
-    </div>
-
-    <script type="text/javascript"></script><script type="text/javascript">
-        <!--
-
-        var wmctl00_mdl137_ctl00_Search_txtSearch = document.getElementById('ctl00_mdl137_ctl00_Search_txtSearch'); if(wmctl00_mdl137_ctl00_Search_txtSearch){wmctl00_mdl137_ctl00_Search_txtSearch.value = '';}
-        //-->
-    </script></form>
+</form>
 
 
 </body></html>

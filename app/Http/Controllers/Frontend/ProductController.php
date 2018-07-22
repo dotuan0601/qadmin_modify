@@ -40,6 +40,7 @@ class ProductController extends Controller {
         $current_slug = 'san-pham';
         $frmenu = FrMenu::all();
         $arr_menu = [];
+        $current_menu_name = '';
         foreach ($frmenu as $key => $each_menu) {
             if (!$each_menu->parent_id && !array_key_exists($each_menu->name, $arr_menu)) {
                 $arr_menu[$each_menu->name] = [
@@ -48,6 +49,7 @@ class ProductController extends Controller {
 
                 if (str_slug($each_menu->name) == $current_slug) {
                     $arr_menu[$each_menu->name]['is_active'] = true;
+                    $current_menu_name = $each_menu->name;
                 }
                 else {
                     $arr_menu[$each_menu->name]['is_active'] = false;
@@ -55,7 +57,10 @@ class ProductController extends Controller {
             }
             if ($each_menu->parent_id) {
                 if (array_key_exists($each_menu->parent_id, $arr_menu)) {
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }
@@ -124,7 +129,7 @@ class ProductController extends Controller {
 
         $breadcrumb_arr = [
             ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
-            ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
+            ['name'=> $current_menu_name, 'class' => 'itemcrumb active'],
         ];
 
 //        print_r($product_menus); die;
@@ -145,6 +150,7 @@ class ProductController extends Controller {
         $current_slug = 'san-pham';
         $frmenu = FrMenu::all();
         $arr_menu = [];
+        $current_menu_name = '';
         foreach ($frmenu as $key => $each_menu) {
             if (!$each_menu->parent_id && !array_key_exists($each_menu->name, $arr_menu)) {
                 $arr_menu[$each_menu->name] = [
@@ -153,6 +159,7 @@ class ProductController extends Controller {
 
                 if (str_slug($each_menu->name) == $current_slug) {
                     $arr_menu[$each_menu->name]['is_active'] = true;
+                    $current_menu_name = $each_menu->name;
                 }
                 else {
                     $arr_menu[$each_menu->name]['is_active'] = false;
@@ -160,7 +167,10 @@ class ProductController extends Controller {
             }
             if ($each_menu->parent_id) {
                 if (array_key_exists($each_menu->parent_id, $arr_menu)) {
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }
@@ -185,7 +195,7 @@ class ProductController extends Controller {
 
         $breadcrumb_arr = [
             ['name'=> 'Trang chủ', 'class' => 'itemcrumb'],
-            ['name'=> 'Giới thiệu', 'class' => 'itemcrumb active'],
+            ['name'=> $current_menu_name, 'class' => 'itemcrumb active'],
         ];
 
         $product = Products::all()->where('id', '=', $product_id)->first();

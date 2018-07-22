@@ -133,36 +133,32 @@
                 <section class="row flex flex-wrap">
 
                     <div id="ctl00_divCenter" class="col-xs-12 col-lg-9 col-center">
-                        <div class="Module Module-77"><div class="ModuleContent">
-                                <div id="ctl00_mainContent_ctl00_ctl00_pnlInnerWrap">
-                                    <section class="news-page clearfix">
-                                        <h1 class="pagetitle">Anova Feed sẻ chia cùng cộng đồng</h1>
-                                        <div class="newsdetail">
-                                            <div class="newsinfo">
-                                                <time>
-                                                </time>
-                                            </div>
-                                        </div>
 
-                                        {!! $news_detail->content !!}
-
-                                        <section class="other-news clearfix">
-                                            <h3 class="posttitle">Tin tức khác</h3>
-                                            <div class="postlist">
-                                                @foreach($related_news as $related_new)
-                                                    <div class="post">
-                                                        <time>01/07/2018</time>
-                                                        <h2 class="postname">
-                                                            <a href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-tung-bung-khuyen-mai--uu-dai-cuc-cao" target="_self" title="ANOVA FEED - TƯNG BỪNG KHUYẾN MÃI – ƯU ĐÃI CỰC CAO">{{ $related_new->name }}</a></h2>
+                        <div class="Module Module-77"><div class="ModuleContent"><section class="news-page clearfix">
+                                    <h1 class="pagetitle">Tin tức thị trường nổi bật</h1>
+                                    <div class="newslist-child newslist-child3 clearfix">
+                                        <div class="row flex flex-wrap">
+                                            @foreach($list_news as $list_new)
+                                                <article class="col-xs-12 col-sm-6 col-md-4">
+                                                    <div class="newscol">
+                                                        <figure>
+                                                            <a class="newsimg" href="{{ asset( URL('tin-tuc-su-kien/' . $list_new->id)) }}">
+                                                                <img src="{{ asset('uploads/' . $list_new->img) }}" alt="{{ $list_new->name }}">
+                                                            </a>
+                                                            <figcaption>
+                                                                <time>21/07/2018</time>
+                                                                <h2 class="newsname">
+                                                                    <a href="{{ asset('tin-tuc-su-kien/' . $list_new->id) }}" target="_self" title="{{ $list_new->name }}">{{ $list_new->name }}</a></h2>
+                                                                <div class="newsdes"><strong><em><span style="font-size: 12pt; font-family: 'Times New Roman', serif;"></span></em></strong>
+                                                                    <p style="text-align: justify;"><span style="font-size: 12pt; font-family: 'Times New Roman', serif;">{{ $list_new->short_description }}</span></p></div>
+                                                            </figcaption>
+                                                        </figure>
                                                     </div>
-                                                @endforeach
-                                            </div>
-                                        </section>
-                                    </section>
-
-
-
-                                </div>
+                                                </article>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
 
@@ -210,5 +206,6 @@
         @include('footer')
     </div>
 </form>
-</body>
-</html>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/widget_iframe.7a5ca036ea5299f1d2ebb2234731e35e.html" title="Twitter settings iframe" style="display: none;"></iframe><iframe name="oauth2relay484720350" id="oauth2relay484720350" src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Anova Feed sẻ chia cùng cộng đồng - ANOVA FEED_files/saved_resource.html"></iframe></body></html>

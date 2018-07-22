@@ -49,7 +49,10 @@ class HomepageController extends Controller {
             }
             if ($each_menu->parent_id) {
                 if (array_key_exists($each_menu->parent_id, $arr_menu)) {
-                    $arr_menu[$each_menu->parent_id]['children'][] = $each_menu->name;
+                    $arr_menu[$each_menu->parent_id]['children'][] = [
+                        'name' => $each_menu->name,
+                        'id' => $each_menu->id
+                    ];
                 }
             }
         }
