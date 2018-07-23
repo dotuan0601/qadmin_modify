@@ -20211,7 +20211,7 @@ a:360},{a:0,force3D:"auto",ease:punchgs.Linear.easeNone,onUpdate:function(){var 
                 // This will reverse the target back to the its original style.
                 target.css({
                     'z-index' : originalZIndex,
-                    'width' : '',
+                    //'width' : '',
                     'position' : originalPosition,
                     'left' : '',
                     'top' : originalOffsetTop,

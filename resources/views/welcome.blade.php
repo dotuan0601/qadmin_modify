@@ -33,21 +33,9 @@
         <div class="fullpage">
             <header class="scroll-to-fixed-fixed" style="z-index: 1000; position: fixed; top: 0px; margin-left: 0px; width: 1440px; left: 200px;">
                 <div class="overlay"></div>
-                <div class="search clearfix">
-                    <div class="container">
-                        <div class="searchwrap">
-                            <div class="Module Module-137">
-                                <div id="ctl00_mdl137_ctl00_Search_pnlSearch" class="searchbox">
-                                    <input name="ctl00$mdl137$ctl00$Search$txtSearch" type="text" id="ctl00_mdl137_ctl00_Search_txtSearch" title="Tìm kiếm" class="searchinput" autocomplete="off" placeholder="Tìm kiếm...">
-                                    <button id="ctl00_mdl137_ctl00_Search_btnSearch" class="searchbutton">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="btn-closesearch"><span class="lnr lnr-cross"></span></div>
-                        </div>
-                    </div>
-                </div>
+
+                @include('frontend.search')
+
                 <section class="headertop clearfix">
                     <div class="container">
                         <div class="btn-showmenu"><span></span></div>
@@ -88,10 +76,6 @@
 
                 @include('topmenu')
 
-                <div class="tool clearfix">
-                    <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
-                    <div class="language Module Module-136"></div>
-                </div>
             </header>
             <div style="display: block; width: 1440px; height: 130px; float: none;"></div>
             <main>

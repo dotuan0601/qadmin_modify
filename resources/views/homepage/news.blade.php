@@ -29,12 +29,12 @@
                                         <article>
                                             <div class="newscol">
                                                 <figure>
-                                                    <a class="newsimg" href="new_details/{{$news->id}}" target="_self" title="Dv site – Doanh hiệu Hàng Việt Nam Chất lượng cao 2018">
-                                                        <img src="uploads/{{$news->img}}" alt="Dv site – Doanh hiệu Hàng Việt Nam Chất lượng cao 2018">
+                                                    <a class="newsimg" href="new_details/{{$news->id}}" target="_self" title="{{ $news->title }}">
+                                                        <img src="uploads/{{$news->img}}" alt="{{ $news->name }}">
                                                     </a>
                                                     <figcaption>
                                                         <h3 class="newsname">
-                                                            <a href="new_details/{{$news->id}}" target="_self" title="Dv site – Doanh hiệu Hàng Việt Nam Chất lượng cao 2018">{{$news->title}}</a></h3>
+                                                            <a href="new_details/{{$news->id}}" target="_self" title="{{ $news->title }}">{{$news->title}}</a></h3>
                                                         <div class="newsdes">{{$news->short_description}}</div>
                                                     </figcaption>
                                                 </figure>

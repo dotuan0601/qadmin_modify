@@ -1,6 +1,6 @@
 
 
-<div id="wowslider-container1" class="rev_slider fullscreenbanner revslider-initialised tp-simpleresponsive" style="margin-top: 35px; margin-bottom: 0px; height: 500px;">
+<div id="wowslider-container1" class="rev_slider fullscreenbanner revslider-initialised tp-simpleresponsive" style="margin-bottom: 0px; height: 500px;">
         <div class="ws_images"><ul>
                 <li><img src="{{ asset('img/slideshow/lake.jpg') }}" alt="Lake" title="Lake" id="wows1_0"/></li>
                 <li><img src="{{ asset('img/slideshow/landscape.jpg') }}" alt="Landscape" title="Landscape" id="wows1_1"/></li>

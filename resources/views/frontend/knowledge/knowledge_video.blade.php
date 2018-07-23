@@ -59,11 +59,7 @@
         //]]>
     </script>
 
-
-    <script src="{{asset('other/WebResource.axd')}}" type="text/javascript"></script>
-
-
-    <script src="{{asset('other/ScriptResource.axd')}}" type="text/javascript"></script>
+    <script src="{{asset('other/homepage/ScriptResource.axd')}}" type="text/javascript"></script>
 
 
 
@@ -127,11 +123,6 @@
             <section class="headerbottom clearfix">
                 <div class="container">
                     @include('topmenu')
-
-                    <div class="tool clearfix">
-                        <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
-                        <div class="language Module Module-136"></div>
-                    </div>
                 </div>
             </section>
 

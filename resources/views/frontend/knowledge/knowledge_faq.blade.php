@@ -48,8 +48,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<script src="{{ asset('other/knowledge/ScriptResource.axd') }}" type="text/javascript"></script>
-<script src="{{ asset('other/knowledge/ScriptResource(1).axd') }}" type="text/javascript"></script>
+<script src="{{ asset('other/homepage/ScriptResource.axd') }}" type="text/javascript"></script>
 
 {!! Form::open(['route' => 'knowledge.store', 'id' => 'aspnetForm']) !!}
     <div class="fullpage">
@@ -106,10 +105,6 @@
                 <div class="container">
 
                     @include('topmenu')
-                    <div class="tool clearfix">
-                        <div class="searchtoggle"><i class="fa fa-search" aria-hidden="true"></i></div>
-                        <div class="language Module Module-136"></div>
-                    </div>
                 </div>
             </section>
         </header><div style="display: block; width: 1440px; height: 130px; float: none;"></div>

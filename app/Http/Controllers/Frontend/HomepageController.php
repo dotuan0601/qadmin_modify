@@ -59,8 +59,9 @@ class HomepageController extends Controller {
 
         $products = Products::all();
 
-        $feature_news = News::all()->where('is_feature', '=', 1);
-        $other_news = News::all()->where('is_feature', '=', 0);
+        $feature_news = News::all()->where('is_feature', '=', 1)->take(1);
+        $other_news = News::all()->where('is_feature', '=', 0)
+            ->where('img', '!=', '')->where('short_description', '!=', '')->take(3);
 
         $price_shows  = PriceShow::all();
 
