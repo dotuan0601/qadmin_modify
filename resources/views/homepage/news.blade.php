@@ -7,13 +7,13 @@
                                 <div class="col-xs-12 col-lg-5">
                                     <div class="newscol big">
                                         <figure>
-                                            <a class="newsimg" href="https://anovafeed.vn/tin-tuc-su-kien/tin-tuc-cong-ty/anova-feed-se-chia-cung-cong-dong" target="_self" title="Dv site sẻ chia cùng cộng đồng">
-                                                <img src="uploads/{{$news->img}}" alt="Dv site sẻ chia cùng cộng đồng">
+                                            <a class="newsimg" href="{{ asset( URL('tin-tuc-su-kien/' . $news->id)) }}" target="_self" title="{{$news->title}}">
+                                                <img src="uploads/{{$news->img}}" alt="{{$news->title}}">
                                             </a>
                                             <figcaption>
-                                                <time>11/05/2018</time>
+                                                <time>{{$news->title}}</time>
                                                 <h3 class="newsname">
-                                                    <a href="#" target="_self" title="Dv site sẻ chia cùng cộng đồng">{{$news->title}}</a></h3>
+                                                    <a href="#" target="_self" title="{{$news->title}}">{{$news->title}}</a></h3>
                                                 <div class="newsdes">
                                                     <p style="text-align: justify;">
                                                         {{$news->short_description}}
@@ -29,12 +29,12 @@
                                         <article>
                                             <div class="newscol">
                                                 <figure>
-                                                    <a class="newsimg" href="new_details/{{$news->id}}" target="_self" title="{{ $news->title }}">
+                                                    <a class="newsimg" href="{{ asset( URL('tin-tuc-su-kien/' . $news->id)) }}" target="_self" title="{{ $news->title }}">
                                                         <img src="uploads/{{$news->img}}" alt="{{ $news->name }}">
                                                     </a>
                                                     <figcaption>
                                                         <h3 class="newsname">
-                                                            <a href="new_details/{{$news->id}}" target="_self" title="{{ $news->title }}">{{$news->title}}</a></h3>
+                                                            <a href="{{ asset( URL('tin-tuc-su-kien/' . $news->id)) }}" target="_self" title="{{ $news->title }}">{{$news->title}}</a></h3>
                                                         <div class="newsdes">{{$news->short_description}}</div>
                                                     </figcaption>
                                                 </figure>
