@@ -6,7 +6,7 @@
                 <div class="productcol">
                     <figure>
                         <div style="text-align: center;">
-                            <a href="/san-pham/anova-feed/thuc-an-cho-heo" class="productimg" style="background-color: #ffffff;"><img alt="" src="{{ 'uploads/' . $product->img}}"></a>
+                            <a href=" {{ URL('san-pham') }}" class="productimg" style="background-color: #ffffff;"><img alt="" src="{{ 'uploads/' . $product->img}}"></a>
                         </div>
                         <figcaption>
                             <h3 class="productname" style="text-align: center;"> <a href="/san-pham/anova-feed">{{$product->name}}</a></h3>
